@@ -23,6 +23,27 @@
       ]
     },
     {
+      "categoryId": "existing-solutions",
+      "categoryName": "Existing solutions",
+      "options": [
+        {
+          "optionId": "follow-established-patterns",
+          "shortName": "Follow how others already do it",
+          "fullText": "Never reinvent a wheel. Before designing or building anything, research how established products, libraries and standards already solve the same problem, and follow that pattern.\n- Look first for the major players doing this exact thing, and how they do it.\n- Use an existing library or standard rather than writing your own.\n- Your own reasoning about how it should work is not a substitute for finding how it is done.\n- If you depart from the established pattern, say what it is, why you departed, and get approval first."
+        },
+        {
+          "optionId": "check-for-existing-libraries",
+          "shortName": "Check for existing libraries",
+          "fullText": "Before writing something general-purpose, check whether a well-maintained library already does it, and use it if it fits."
+        },
+        {
+          "optionId": "build-from-scratch",
+          "shortName": "Build it yourself",
+          "fullText": "Build what is needed directly; no need to look for existing solutions first."
+        }
+      ]
+    },
+    {
       "categoryId": "task-tech-spike",
       "categoryName": "Task: Tech spike",
       "options": [
@@ -82,7 +103,7 @@
         {
           "optionId": "official-researched-truths",
           "shortName": "Official researched truths",
-          "fullText": "Treat as true only what you have confirmed from current official sources \u2014 the official documentation, specifications, release notes or issue tracker of the thing in question \u2014 or proved by running it yourself. What you remember from training is a hypothesis until checked. Say where each fact came from."
+          "fullText": "Treat as true only what you have confirmed from current official sources — the official documentation, specifications, release notes or issue tracker of the thing in question — or proved by running it yourself. What you remember from training is a hypothesis until checked. Say where each fact came from."
         },
         {
           "optionId": "explore-freely",
@@ -119,7 +140,7 @@
         {
           "optionId": "strict-scope",
           "shortName": "Strict scope",
-          "fullText": "Do exactly what was asked \u2014 no more, no less.\n- Nothing outside the stated scope is changed, added, cleaned up or \"improved\", however tempting.\n- Build as much as possible to spec, then stop. A piece that can't be built to spec is left incomplete, never replaced with something else.\n- A roadblock, or a spec found not to work, halts the work and asks for approval.\n- Anything you notice outside the scope is reported, not acted on."
+          "fullText": "Do exactly what was asked — no more, no less.\n- Nothing outside the stated scope is changed, added, cleaned up or \"improved\", however tempting.\n- Build as much as possible to spec, then stop. A piece that can't be built to spec is left incomplete, never replaced with something else.\n- A roadblock, or a spec found not to work, halts the work and asks for approval.\n- Anything you notice outside the scope is reported, not acted on."
         },
         {
           "optionId": "scope-with-reported-extras",
@@ -166,7 +187,7 @@
         {
           "optionId": "verbose-oop",
           "shortName": "Verbose OOP",
-          "fullText": "Name everything for what it IS or what it DOES \u2014 NEVER for how it is implemented and never for where it happens to be used.\n- Name for role, not implementation: `retry_with_backoff`, not `loop_helper`; `customer_lookup`, not `redis_cache_wrapper`.\n- Name for what it is, not who uses it: a function that applies a rule to a string is a `string_rule_applier`, even if today only the checkout page calls it.\n- You use paper and pencil to map something, but you don't call them a \"mapper tool\". You run a mapping operation and produce a map \u2014 the tools are a writing and recording tool.\n- Understandable outside of any app context. Never brand internals with the app or product name.\n- Err on the side of verbosity: a short sentence of a name beats a meaningless one."
+          "fullText": "Name everything for what it IS or what it DOES — NEVER for how it is implemented and never for where it happens to be used.\n- Name for role, not implementation: `retry_with_backoff`, not `loop_helper`; `customer_lookup`, not `redis_cache_wrapper`.\n- Name for what it is, not who uses it: a function that applies a rule to a string is a `string_rule_applier`, even if today only the checkout page calls it.\n- You use paper and pencil to map something, but you don't call them a \"mapper tool\". You run a mapping operation and produce a map — the tools are a writing and recording tool.\n- Understandable outside of any app context. Never brand internals with the app or product name.\n- Err on the side of verbosity: a short sentence of a name beats a meaningless one."
         },
         {
           "optionId": "modern-clean",

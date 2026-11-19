@@ -9,6 +9,12 @@
       "editedText": null
     },
     {
+      "categoryId": "existing-solutions",
+      "optionId": "follow-established-patterns",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "source-of-truth",
       "optionId": "official-researched-truths",
       "enabled": true,
