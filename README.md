@@ -2,7 +2,9 @@
 
 # AI Prompt Builder -- Standalone Tool OR Integrated Agent Skill
 
-**Build the prompt for your AI agent: pick the rules it works by, say what you want done, copy the text.**
+**Web Tool: Build the prompt for your AI agent**
+
+**Agent Skill: Ensure requirements collected, save profiles, leverage local web tool for editing/customizing**
 
 [**Open the web tool →**](https://randyhaylor.github.io/ai-prompt-builder/)
 
