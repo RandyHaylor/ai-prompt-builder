@@ -65,7 +65,7 @@ function renderPresetMenu() {
     presets.filter((preset) => !preset.isCustom).map((preset) => option(preset.presetName, preset.presetName)));
   const custom = presets.filter((preset) => preset.isCustom);
   page.presetMenu.replaceChildren(
-    option("", state.selectedPresetName ? "— Custom selection —" : "Choose a preset…"),
+    option("", "Preset…"),
     shipped,
     ...(custom.length
       ? [createElement("optgroup", { label: "Your presets" },
@@ -130,7 +130,7 @@ function renderEntry(entry, index) {
   return createElement("li", { className: "rule-card" }, [
     createElement("div", { className: "rule-card-header" }, [
       createElement("button", {
-        type: "button", className: "drag-handle", title: "Drag to reorder (or use the arrow keys)",
+        type: "button", className: "drag-handle", title: "Drag to reorder (or arrow keys)",
         ariaLabel: `Move rule ${index + 1}, ${category.categoryName}`, innerHTML: "<span></span><span></span><span></span>",
       }),
       createElement("span", { className: "rule-category", textContent: category.categoryName }),
@@ -148,7 +148,7 @@ function renderEntry(entry, index) {
 
 function renderAddRuleMenu() {
   page.addRuleMenu.replaceChildren(
-    createElement("option", { value: "", textContent: "＋ Add a rule…" }),
+    createElement("option", { value: "", textContent: "＋ Add a rule" }),
     ...state.listAllCategories().map((category) =>
       createElement("option", { value: category.categoryId, textContent: category.categoryName })),
     createElement("option", { value: NEW_CATEGORY_MENU_VALUE, textContent: "＋ New category…" }),
@@ -179,7 +179,7 @@ function render() {
   page.savePresetButton.disabled = state.chosenEntries.length === 0;
   renderAddRuleMenu();
   const text = state.composePromptText();
-  page.promptText.textContent = text || "Your rules will appear here.";
+  page.promptText.textContent = text || "Nothing yet.";
   page.promptText.classList.toggle("is-empty", !text);
   page.copyButton.disabled = !text;
   const count = state.chosenEntries.length;

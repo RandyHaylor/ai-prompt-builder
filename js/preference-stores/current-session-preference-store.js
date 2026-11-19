@@ -25,7 +25,7 @@ export const EMPTY_CUSTOMIZATIONS = Object.freeze({
 
 export class CurrentSessionPreferenceStore {
   constructor() {
-    this.storeDescription = "Your additions last until this tab is closed";
+    this.storeDescription = "Your own options and presets last until this tab closes. Saving them comes later.";
     this.customizationsKeptInMemory = structuredClone(EMPTY_CUSTOMIZATIONS);
   }
 
