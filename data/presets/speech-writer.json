@@ -21,12 +21,6 @@
       "editedText": null
     },
     {
-      "categoryId": "speakers-voice",
-      "optionId": "match-the-speakers-voice",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "speakers-tone",
       "optionId": "passionate-empathetic",
       "enabled": true,

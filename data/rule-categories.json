@@ -889,22 +889,6 @@
       ]
     },
     {
-      "categoryId": "speakers-voice",
-      "categoryName": "Speaker's voice",
-      "options": [
-        {
-          "optionId": "match-the-speakers-voice",
-          "shortName": "Match the speaker's voice",
-          "fullText": "- Write in the speaker's own voice\n  - The writer stays invisible\n- Study how they really talk\n  - Past speeches\n  - Interviews and recordings\n  - Their writing\n- Build a voice map\n  - Formal or casual\n  - Short or long sentences\n  - Favourite verbs\n  - Phrases and metaphors they repeat\n  - Sign-offs, thank-yous, small jokes\n  - Words they dislike\n  - Sounds they stumble on\n- Use their repeated phrases as the spine\n- Read each line in their voice\n  - Can't hear them say it? Rewrite it"
-        },
-        {
-          "optionId": "neutral-voice",
-          "shortName": "Neutral voice",
-          "fullText": "- A clear, neutral voice\n  - Not tied to any one speaker"
-        }
-      ]
-    },
-    {
       "categoryId": "speakers-tone",
       "categoryName": "Document tone",
       "options": [
