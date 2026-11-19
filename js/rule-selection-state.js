@@ -207,8 +207,12 @@ export class RuleSelectionState {
     this.notifyChange();
   }
 
+  /** Clear the list and let go of the loaded preset: a cleared list is a fresh start,
+   * not an edit of that preset. */
   clearEntries() {
     this.chosenEntries = [];
+    this.selectedPresetName = null;
+    this.rememberSelectionAsSaved();
     this.notifyChange();
   }
 
