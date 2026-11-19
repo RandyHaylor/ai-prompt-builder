@@ -28,13 +28,24 @@ def new_ruleset(catalog: RuleCatalog, preset: "dict | None" = None, name: "str |
         "entries": [],
         "customText": dict({"text": "", "placement": "end", "enabled": True}, **(source.get("customText") or {})),
     }
+    # A preset stores settings pointing at rules and options in the catalog; any that are
+    # gone are left out and listed under "rulesNotFound" for the caller to report.
+    ruleset["rulesNotFound"] = []
     for entry in source.get("entries", []):
-        if catalog.find_option(entry["categoryId"], entry["optionId"]):
-            ruleset["entries"].append({
-                "categoryId": entry["categoryId"], "optionId": entry["optionId"],
-                "enabled": entry.get("enabled", True) is not False,
-                "editedText": entry.get("editedText"),
-            })
+        if not catalog.find_option(entry["categoryId"], entry["optionId"]):
+            category = catalog.find_category(entry["categoryId"])
+            deleted_built_in = next((c for c in catalog.shipped_categories
+                                     if c["categoryId"] == entry["categoryId"]), None)
+            ruleset["rulesNotFound"].append(
+                f"{category['categoryName']} (option \"{entry['optionId']}\")" if category
+                else deleted_built_in["categoryName"] if deleted_built_in
+                else entry["categoryId"])
+            continue
+        ruleset["entries"].append({
+            "categoryId": entry["categoryId"], "optionId": entry["optionId"],
+            "enabled": entry.get("enabled", True) is not False,
+            "editedText": entry.get("editedText"),
+        })
     return ruleset
 
 

@@ -85,8 +85,14 @@ def command_new(catalog: RuleCatalog, arguments) -> None:
     elif not arguments.blank:
         preset = catalog.find_preset(catalog.preset_selected_by_default)
     ruleset = new_ruleset(catalog, preset, name=arguments.name)
+    rules_not_found = ruleset.pop("rulesNotFound", [])
     write_json(Path(arguments.ruleset_file), ruleset)
     print(f"wrote {arguments.ruleset_file}")
+    if rules_not_found:
+        print("warning, these rules were not found: " + ", ".join(rules_not_found)
+              + ". They were left out. To update the preset, save it again: save-preset "
+              + f"{arguments.ruleset_file} \"{preset['name']}\" (your own presets only).",
+              file=sys.stderr)
 
 
 def command_show(catalog: RuleCatalog, arguments) -> None:

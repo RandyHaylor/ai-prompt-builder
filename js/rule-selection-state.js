@@ -225,6 +225,17 @@ export class RuleSelectionState {
    * selection. Every category is always shown: those the ruleset does not use follow it,
    * switched off. Does not notify; callers do. */
   loadRuleset(ruleset) {
+    // A ruleset stores settings that point at rules and options in the catalog. Any it
+    // points at that are no longer there are left out, and listed for the caller.
+    this.rulesNotFoundInLastLoadedRuleset = (ruleset.entries || [])
+      .filter((entry) => !this.findOption(entry.categoryId, entry.optionId))
+      .map((entry) => {
+        const category = this.findCategory(entry.categoryId);
+        if (category) return `${category.categoryName} (option “${entry.optionId}”)`;
+        // A deleted built-in rule still has its name in the shipped catalog.
+        const deletedBuiltIn = this.defaultCategories.find((c) => c.categoryId === entry.categoryId);
+        return deletedBuiltIn ? deletedBuiltIn.categoryName : entry.categoryId;
+      });
     this.chosenEntries = (ruleset.entries || [])
       .filter((entry) => this.findOption(entry.categoryId, entry.optionId))
       .map((entry) => ({

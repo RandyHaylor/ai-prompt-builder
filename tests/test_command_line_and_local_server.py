@@ -3,6 +3,7 @@ commands on real ruleset files, and a real server answered over HTTP."""
 
 from __future__ import annotations
 
+import contextlib
 import io
 import json
 import pathlib
@@ -94,6 +95,10 @@ class CommandLineTest(unittest.TestCase):
         self.assertNotIn("prs", [c["categoryId"] for c in json.loads(self.cli("categories", "--json"))])
         self.cli("new", self.ruleset_file, "--preset", "Careful dev manager")   # lists prs
         self.assertNotIn("## Pull requests", self.cli("compose", self.ruleset_file))
+        warning = io.StringIO()
+        with contextlib.redirect_stderr(warning):
+            self.cli("new", self.ruleset_file, "--preset", "Careful dev manager")
+        self.assertIn("warning, these rules were not found: Pull requests", warning.getvalue())
         own = self.cli("add-category", "Deployment").split()[2].rstrip(";")
         self.cli("delete-rule", own)
         self.assertIsNone(next((c for c in json.loads(self.cli("categories", "--json"))

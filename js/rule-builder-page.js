@@ -348,7 +348,26 @@ page.presetMenu.addEventListener("change", () => {
     return;
   }
   state.applyPreset(value);
+  warnAboutRulesTheLoadedPresetPointsAtThatAreGone(value);
 });
+
+/** A preset stores settings that point at rules and options; if any of them have been
+ * deleted, say so — and for the user's own preset, offer to save it without them. */
+async function warnAboutRulesTheLoadedPresetPointsAtThatAreGone(presetName) {
+  const missing = state.rulesNotFoundInLastLoadedRuleset || [];
+  if (!missing.length) return;
+  const list = missing.join(", ");
+  if (!state.presetNameIsTheUsersOwn(presetName)) {
+    alert(`Warning, these rules were not found: ${list}.\n\n`
+      + `They were left out. “${presetName}” is a built-in preset, so it is not changed.`);
+    return;
+  }
+  if (confirm(`Warning, these rules were not found: ${list}.\n\n`
+      + `Save “${presetName}” to update this discrepancy?`)) {
+    await state.saveChosenEntriesAsPreset(presetName);
+    showToast(`Saved “${presetName}” without the missing rules`);
+  }
+}
 
 page.clearRulesButton.addEventListener("click", () => {
   if (confirm("Clear every rule from the list? This cannot be undone (load a preset to start again).")) {
