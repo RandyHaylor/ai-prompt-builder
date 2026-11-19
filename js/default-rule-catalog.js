@@ -15,6 +15,32 @@ const category = (categoryId, categoryName, options) => ({
 });
 
 export const DEFAULT_RULE_CATEGORIES = [
+  category("task-research", "Task: Research", [
+    ["research-findings-with-sources", "Findings with sources",
+      "This task is research. Find out; do not build or change anything.\n- Use current, official sources first. Search with good generic terms, not terms built on your own guess.\n- Every finding carries its source.\n- Separate what is established from what is likely and what is unknown.\n- End with the answer to the question asked, then what would settle anything left open."],
+    ["research-compare-options", "Compare options",
+      "This task is research into options. Find the realistic options, and for each: what it is, what it costs, what it is good and bad at, and its source. End with a side-by-side comparison. Do not choose for the user unless asked."],
+    ["research-quick-answer", "Quick answer",
+      "This task is a quick lookup. Find the answer from a reliable source, give it with the source, and stop."],
+  ]),
+  category("task-tech-spike", "Task: Tech spike", [
+    ["spike-throwaway-proof", "Throwaway proof",
+      "This task is a tech spike: prove one thing works, as fast and small as possible, before real work depends on it.\n- State the question the spike answers before starting.\n- Throwaway code, done in isolation in its own space. Never the start of the real build.\n- Proof is demonstrated: the command and its output, or screenshots. Where you cannot honestly validate the result yourself (video, motion, feel), say so and ask for a human check.\n- End with: the answer (works / does not work / partly), the proof, and what the real build must know."],
+    ["spike-keepable-prototype", "Keepable prototype",
+      "This task is a tech spike whose code may be kept: prove the thing works with a small, clean prototype that the real build can grow from. Show the proof, and list what would need to change to make it production quality."],
+  ]),
+  category("task-bug-fix", "Task: Bug fix", [
+    ["bug-reproduce-first", "Reproduce, find cause, fix",
+      "This task is a bug fix.\n- Reproduce the bug first and show the reproduction.\n- Find the cause with evidence before changing anything. Do not guess-and-retry.\n- Fix the cause, not the symptom. No workarounds around the defect.\n- Add a test that fails without the fix and passes with it.\n- Change nothing unrelated to the bug."],
+    ["bug-quick-fix", "Quick fix",
+      "This task is a quick bug fix: find the likely cause, fix it, and show that the problem no longer happens."],
+  ]),
+  category("task-code-review", "Task: Code review", [
+    ["review-against-requirements", "Against the requirements",
+      "This task is a review. Change nothing.\n- Check the work against what was asked and its definition of done, item by item.\n- Verify claims yourself: read the code, run the tests and the program. A claim you cannot verify counts as not met.\n- For each item: met or not met, with the evidence.\n- List defects by severity, each with file and line."],
+    ["review-quick-read", "Quick read-through",
+      "This task is a quick review: read the change and point out anything clearly wrong or risky. Change nothing."],
+  ]),
   category("source-of-truth", "Source of truth", [
     ["only-what-you-are-given", "Only what you are given",
       "The only valid information about the work is what you were given. Local code, files, folders, or other agents' work may be referenced as truth only when you are explicitly told you may, and only in the way you are told. \"Look at this folder for reference, do not edit it\" means that and nothing more."],
@@ -279,6 +305,57 @@ export const DEFAULT_RULE_PRESETS = [
       on("documentation", "full-documentation"),
       on("escalation", "escalation-is-a-blocker"),
       on("response-format", "wiki-style"),
+    ],
+  },
+  {
+    presetName: "Task: Research",
+    entries: [
+      on("task-research", "research-findings-with-sources"),
+      on("source-of-truth", "official-researched-truths"),
+      on("adding-details", "do-not-add-or-change-details"),
+      on("scope", "strict-scope"),
+      on("troubleshooting", "research-errors"),
+      on("billed-runs", "explicit-permission"),
+      on("response-format", "wiki-style"),
+    ],
+  },
+  {
+    presetName: "Task: Tech spike",
+    entries: [
+      on("task-tech-spike", "spike-throwaway-proof"),
+      on("source-of-truth", "official-researched-truths"),
+      on("scope", "strict-scope"),
+      on("escalation", "decide-and-note"),
+      on("structure", "just-build-it"),
+      on("testing", "simple-post-testing"),
+      on("troubleshooting", "research-errors"),
+      on("billed-runs", "research-then-permission"),
+      on("response-format", "tldr"),
+    ],
+  },
+  {
+    presetName: "Task: Bug fix",
+    entries: [
+      on("task-bug-fix", "bug-reproduce-first"),
+      on("source-of-truth", "official-researched-truths"),
+      on("scope", "strict-scope"),
+      on("escalation", "handle-only-within-scope"),
+      on("troubleshooting", "research-errors"),
+      on("testing", "simple-post-testing"),
+      on("billed-runs", "research-then-permission"),
+      on("documentation", "keep-docs-in-sync"),
+      on("response-format", "full-report"),
+    ],
+  },
+  {
+    presetName: "Task: Code review",
+    entries: [
+      on("task-code-review", "review-against-requirements"),
+      on("source-of-truth", "only-what-you-are-given"),
+      on("adding-details", "do-not-add-or-change-details"),
+      on("naming", "verbose-oop"),
+      on("modularity", "generic-standalone-modules"),
+      on("response-format", "full-report"),
     ],
   },
   {
