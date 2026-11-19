@@ -478,11 +478,32 @@ page.storeDescription.textContent = state.preferenceStore.storeDescription;
 state.onChange(render);
 state.onEntryTextEdit(renderOutput);
 await state.loadSavedCustomizations();
+// The address names the loaded preset (?profile=<name>), so a link opens that preset.
+const PROFILE_ADDRESS_PARAMETER = "profile";
+const profileNamedInAddress = new URLSearchParams(location.search).get(PROFILE_ADDRESS_PARAMETER);
+const presetNamedInAddress = profileNamedInAddress && state.listAllPresets()
+  .find((preset) => preset.presetName.toLowerCase() === profileNamedInAddress.toLowerCase());
+
 if (localServerSessionSettings?.openedRuleset) {
   state.openRuleset(localServerSessionSettings.openedRuleset);
+} else if (presetNamedInAddress) {
+  state.applyPreset(presetNamedInAddress.presetName);
 } else {
+  if (profileNamedInAddress) showToast(`No preset named “${profileNamedInAddress}”`);
   state.applyPreset(shippedCatalog.presetSelectedWhenThePageOpens);
 }
+
+function keepTheAddressNamingTheLoadedPreset() {
+  const address = new URL(location.href);
+  if (state.selectedPresetName) {
+    address.searchParams.set(PROFILE_ADDRESS_PARAMETER, state.selectedPresetName);
+  } else {
+    address.searchParams.delete(PROFILE_ADDRESS_PARAMETER);
+  }
+  if (address.href !== location.href) history.replaceState(null, "", address);
+}
+keepTheAddressNamingTheLoadedPreset();
+state.onChange(keepTheAddressNamingTheLoadedPreset);
 
 // --- Send to local AI agent ----------------------------------------------------------------
 
