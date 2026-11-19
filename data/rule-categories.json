@@ -8,7 +8,7 @@
         {
           "optionId": "research-findings-with-sources",
           "shortName": "Findings with sources",
-          "fullText": "Research only; change nothing. Use official sources, cite each finding, and separate what's established from what's likely or unknown."
+          "fullText": "You research only - change nothing\n\nUse official sources\n- Cite every finding\n\nKeep apart\n- What is established\n- What is likely\n- What is unknown"
         },
         {
           "optionId": "research-compare-options",
@@ -29,7 +29,7 @@
         {
           "optionId": "follow-established-patterns",
           "shortName": "Follow how others already do it",
-          "fullText": "Never reinvent a wheel. Find how established products and libraries already solve this and follow that. Get approval before departing from it."
+          "fullText": "Never reinvent a wheel\n\nBefore designing or building anything, find how others already solve it\n- Major products, libraries and standards doing this exact thing\n- Follow their pattern\n- Your own reasoning is not a substitute for finding how it is done\n\nUse an existing library or standard\n- Not one you write yourself\n\nDeparting from the established pattern needs approval first\n- Say what the pattern is\n- Say why you depart from it"
         },
         {
           "optionId": "check-for-existing-libraries",
@@ -50,7 +50,7 @@
         {
           "optionId": "spike-throwaway-proof",
           "shortName": "Throwaway proof",
-          "fullText": "Prove one thing works, as small and fast as possible, in throwaway code. State the question first; show the proof; ask for a human check where you can't judge it yourself."
+          "fullText": "Prove one thing works, before real work depends on it\n- As small and fast as possible\n- Throwaway code, never the start of the real build\n\nState the question the spike answers, before starting\n\nShow the proof\n- The command and its output, or screenshots\n- You cannot honestly judge it yourself (video, motion, feel) -> say so, ask for a human check\n\nEnd with\n- The answer: works / does not work / partly\n- The proof\n- What the real build must know"
         },
         {
           "optionId": "spike-keepable-prototype",
@@ -66,7 +66,7 @@
         {
           "optionId": "bug-reproduce-first",
           "shortName": "Reproduce, find cause, fix",
-          "fullText": "Reproduce the bug, find the cause with evidence, fix the cause, and add a test that fails without the fix. Change nothing else."
+          "fullText": "Reproduce the bug first\n- Show the reproduction\n\nFind the cause with evidence, before changing anything\n- No guess-and-retry\n\nFix the cause, not the symptom\n- No workarounds around the defect\n\nAdd a test that fails without the fix and passes with it\n\nChange nothing unrelated to the bug"
         },
         {
           "optionId": "bug-quick-fix",
@@ -82,7 +82,7 @@
         {
           "optionId": "review-against-requirements",
           "shortName": "Against the requirements",
-          "fullText": "Review only; change nothing. Check each requirement yourself and report met or not met with evidence, plus defects with file and line."
+          "fullText": "You review only - change nothing\n\nCheck the work against what was asked, item by item\n- Verify claims yourself: read the code, run the tests and the program\n- A claim you cannot verify counts as NOT met\n- Each item: met or NOT met, with the evidence\n\nList defects by severity\n- Each with file and line"
         },
         {
           "optionId": "review-quick-read",
@@ -103,7 +103,7 @@
         {
           "optionId": "official-researched-truths",
           "shortName": "Official researched truths",
-          "fullText": "Treat as true only what current official sources confirm or what you have proved by running it. Cite where each fact came from."
+          "fullText": "True only when confirmed\n- By current official sources: documentation, specifications, release notes, issue tracker\n- Or proved by running it yourself\n\nWhat you remember from training is a hypothesis until checked\n\nSay where each fact came from"
         },
         {
           "optionId": "explore-freely",
@@ -119,7 +119,7 @@
         {
           "optionId": "do-not-add-or-change-details",
           "shortName": "Do not add or change details",
-          "fullText": "Do not add or change details when translating user direction or information.\n\nThis was clarified when the agent got it wrong twice:\n- User said: be brief\n- Agent wrote: keep it to one line\n  - Wrong\n    - User did not restrict length\n    - Agent added a limit on its own\n- User corrected: never add details or rules I did not state\n- Agent wrote the rule as: record in the user's own words\n  - Wrong again\n    - User did not restrict rewording\n    - User only forbade changing or adding detail\n      - Less constraining than requiring exact words\n- Both mistakes, same mistake\n  - A gap\n  - Filled with the agent's own detail\n  - Presented as if the user had said it\n\nAgents infer and guess far too much. Never add a detail, limit, number, or rule the user did not state. Gaps are named as your own assumption and asked about, or left open. Never quietly turned into a rule."
+          "fullText": "Never add or change details when translating user direction or information\n\nClarified after the agent got it wrong twice\n- User said \"be brief\" -> agent wrote \"keep it to one line\"\n  - Wrong: the user did not restrict length\n  - The agent added a limit on its own\n\n- User corrected: \"never add details or rules I did not state\" -> agent wrote the rule as \"record in the user's own words\"\n  - Wrong again: the user did not restrict rewording\n  - The user only forbade changing or adding detail\n    - Less constraining than requiring exact words\n\nBoth mistakes, same mistake\n- A gap\n- Filled with the agent's own detail\n- Presented as if the user had said it\n\nAgents infer and guess far too much\n\nNever add a detail, limit, number or rule the user did not state\n- A gap is named as your own assumption, and asked about or left open\n- Never quietly turned into a rule"
         },
         {
           "optionId": "fill-gaps-and-list-them",
@@ -140,7 +140,7 @@
         {
           "optionId": "strict-scope",
           "shortName": "Strict scope",
-          "fullText": "Do exactly what was asked, no more. Change nothing outside the scope; report what you notice instead. If something can't be built to spec, stop and ask; never substitute."
+          "fullText": "Do exactly what was asked - no more, no less\n\nChange nothing outside the stated scope\n- Not added, cleaned up or \"improved\", however tempting\n- Anything you notice outside it is reported, NOT acted on\n\nBuild as much as possible to spec, then stop\n- A piece that can't be built to spec is left incomplete\n  - Never replaced with something else\n- A roadblock, or a spec found not to work, halts the work and asks for approval"
         },
         {
           "optionId": "scope-with-reported-extras",
@@ -161,7 +161,7 @@
         {
           "optionId": "escalation-is-a-blocker",
           "shortName": "An escalation is a blocker",
-          "fullText": "When blocked, stop and ask one question: the question, the context, the options. Don't pick for yourself. Questions that don't block you: decide and note it."
+          "fullText": "An escalation is a blocker - you post it and you stop\n- You do NOT pick\n\nBlocked means\n- The instruction is silent on something you must decide\n- A test contradicts another test or the instruction\n- A piece cannot be built to spec\n- You need something you were not given\n\nOne question per escalation\n- Question / Context (file:line) / Options / Blocking: yes\n\nA question that does not block you is NOT an escalation\n- Make the call within your discretion\n- Record it in your response"
         },
         {
           "optionId": "handle-only-within-scope",
@@ -187,7 +187,7 @@
         {
           "optionId": "verbose-oop",
           "shortName": "Verbose OOP",
-          "fullText": "Name things for what they are or do, never for how they're implemented or who uses them (`retry_with_backoff`, not `loop_helper`). Prefer a longer clear name to a short vague one. Never brand internals with the app name."
+          "fullText": "Name everything for what it IS or DOES\n- NEVER for how it is implemented\n  - `retry_with_backoff`, not `loop_helper`\n  - `customer_lookup`, not `redis_cache_wrapper`\n- NEVER for who uses it\n  - A function applying a rule to a string is a `string_rule_applier`, even if only the checkout page calls it today\n\nYou use paper and pencil to map something, but don't call them a \"mapper tool\"\n- You run a mapping operation and produce a map\n- The tools are a writing and recording tool\n\nUnderstandable outside any app context\n- Never brand internals with the app or product name\n\nErr on the side of verbosity\n- A short sentence of a name beats a meaningless one"
         },
         {
           "optionId": "modern-clean",
@@ -208,7 +208,7 @@
         {
           "optionId": "generic-standalone-modules",
           "shortName": "Generic, standalone modules",
-          "fullText": "Build separable pieces as standalone modules: no knowledge of the project using them, a small interface, their own docs and tests."
+          "fullText": "Build each separable piece as a generic, standalone module\n\nIt knows nothing about the project that uses it\n- No project names\n- No project-specific assumptions\n- No reaching into the caller's data\n\nIt could be lifted into another project unchanged\n- A small, explicit interface\n- Its own short documentation and its own tests\n\nProject-specific glue stays thin and separate from the modules it connects"
         },
         {
           "optionId": "clear-interfaces",
@@ -255,7 +255,7 @@
         {
           "optionId": "hollow-before-full",
           "shortName": "Skeleton first",
-          "fullText": "Big picture first: build every part as a working stub with its interfaces and tests before filling any in. Filling in never adds new structure."
+          "fullText": "Build the big picture first\n- \"If we can't solve the big picture first, how can we hope to build the details?\"\n\nEvery part built hollow before it is built full\n- Exists, reachable, testable from the outside, returns a placeholder\n- Interfaces, types and names decided here\n- A part whose content is unknown still exists\n  - Its body says what must be found out to fill it\n\nTests of the interfaces written first\n- They pass against the placeholders\n\nFilling in never adds new structure\n- Missing structure found later is a design change and goes back to the user"
         },
         {
           "optionId": "vertical-slices",
@@ -276,7 +276,7 @@
         {
           "optionId": "sprint-features",
           "shortName": "Sprint features",
-          "fullText": "Break the work into sprint features, each a standalone tool with its own interface, definition of done, tests and README."
+          "fullText": "Break the work into sprint features\n\nEach one\n- A strictly defined interface\n- Built as a standalone tool\n- Its own definition of done\n- Its own integration testing\n- A deliverable including README, packaging and example code"
         },
         {
           "optionId": "small-tasks",
@@ -307,7 +307,7 @@
         {
           "optionId": "tdd-module-level",
           "shortName": "Test first TDD, module level",
-          "fullText": "Test first at the module level, with automated tests kept in version control. Finish with real integration tests."
+          "fullText": "Test first, at the interface and module level\n- Automated tests wherever at all possible\n- Kept in git (or similar version control) alongside the code\n\nEach module's interface tests written first\n- They fail, then pass once the module is built\n\nFiner-grained tests inside a module are at your discretion\n- Where they make sense\n\nIntegration tests stay fully real\n- Real entry points, real services, real data\n- Passing unit tests means it is time to integration test, NOT that the work is done"
         },
         {
           "optionId": "tdd-granular",
@@ -323,7 +323,7 @@
         {
           "optionId": "specify-formatting",
           "shortName": "Specify all formatting",
-          "fullText": "Specify the format of everything that has one: output, files, docs, reports. Anything left open is named as discretion."
+          "fullText": "Specify the format of everything that has one\n- Outputs of the thing being built: whitespace, alignment, line endings, headers, error message shape\n- Work products: file layout, naming, commit shape\n- Documentation: README sections, report structure\n\nA format you do not want to decide is declared discretion, by name\n- Never silent"
         },
         {
           "optionId": "follow-existing-formatting",
@@ -370,7 +370,7 @@
         {
           "optionId": "research-before-options",
           "shortName": "Researched options, with your pick",
-          "fullText": "When there's a choice, research it first, then present the options with what you found and recommend one. Asking the user is not a substitute for research."
+          "fullText": "When there's a choice, research it first\n\nThen present the options\n- With what you found\n- Recommend one\n\nAsking the user is not a substitute for research"
         },
         {
           "optionId": "researched-neutral-options",
@@ -386,7 +386,7 @@
         {
           "optionId": "research-errors",
           "shortName": "Research errors, never guess and retry",
-          "fullText": "When troubleshooting, never fall into a 'try and repeat' loop: failing to research the problem properly and instead testing random guesses with expensive and time-consuming workflows. That can waste hours and hundreds of dollars. You are not authorized to make wild guesses and then run them through CI/CD.\n\nErrors MUST be researched with good generic search terms, NOT niche terms based on your own hypotheses. Searching on your hypothesis is as bad as guessing."
+          "fullText": "Never fall into a \"try and repeat\" loop when troubleshooting\n- Failing to research the problem properly\n- Testing random guesses with expensive, time-consuming workflows\n  - That can waste hours and hundreds of dollars\n\nYou are NOT authorized to make wild guesses and run them through CI/CD\n\nErrors MUST be researched with good generic search terms\n- NOT niche terms based on your own hypotheses\n  - Searching on your hypothesis is as bad as guessing"
         },
         {
           "optionId": "quick-experiments",
