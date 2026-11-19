@@ -1,13 +1,7 @@
 {
   "format": "ai-prompt-builder/ruleset@1",
-  "name": "Task: Bug fix",
+  "name": "Bug fix",
   "entries": [
-    {
-      "categoryId": "task-bug-fix",
-      "optionId": "bug-reproduce-first",
-      "enabled": true,
-      "editedText": null
-    },
     {
       "categoryId": "scope",
       "optionId": "strict-scope",
@@ -49,16 +43,10 @@
       "optionId": "keep-docs-in-sync",
       "enabled": false,
       "editedText": null
-    },
-    {
-      "categoryId": "task-code-review",
-      "optionId": "review-against-requirements",
-      "enabled": false,
-      "editedText": null
     }
   ],
   "customText": {
-    "text": "After sign-in, users are sent back to the home page instead of the page they came from. Reported on the mobile site only.",
+    "text": "Fix this bug. Reproduce it first, find the cause with evidence, fix the cause (not the symptom), and add a test that fails without the fix. Change nothing else.\n\nThe bug: after sign-in, users are sent back to the home page instead of the page they came from. Reported on the mobile site only.",
     "placement": "end",
     "enabled": true
   }

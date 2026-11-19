@@ -1,13 +1,7 @@
 {
   "format": "ai-prompt-builder/ruleset@1",
-  "name": "Task: Code review",
+  "name": "Code review",
   "entries": [
-    {
-      "categoryId": "task-code-review",
-      "optionId": "review-against-requirements",
-      "enabled": true,
-      "editedText": null
-    },
     {
       "categoryId": "adding-details",
       "optionId": "do-not-add-or-change-details",
@@ -40,7 +34,7 @@
     }
   ],
   "customText": {
-    "text": "Review the pull request that adds CSV export to the reports page. The requirements are in the linked issue.",
+    "text": "Review this and change nothing. Check each requirement yourself and report met or not met with evidence, then list defects by severity with file and line.\n\nReview the pull request that adds CSV export to the reports page. The requirements are in the linked issue.",
     "placement": "end",
     "enabled": true
   }

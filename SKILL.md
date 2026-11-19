@@ -20,7 +20,7 @@ requirement is silently left to your own assumption:
   `category <id>` for the full text of the options) and make sure each rule that matters
   for this work has an answer from the user.
 - The presets show which rules belong together for a kind of work (`presets --json`):
-  *Careful developer* for building, *Task: Bug fix*, *Task: Research* and so on. Use the
+  *Careful developer* for building, *Bug fix*, *Research*, *Document writer* and so on. Use the
   matching preset as a starting point for what to cover.
 - An answer the user did not give is not yours to fill in: ask, or mark it plainly as an
   open question.

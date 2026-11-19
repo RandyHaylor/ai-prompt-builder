@@ -36,7 +36,7 @@ Every rule is one topic — *Naming*, *Testing*, *Scope adherence*, *When blocke
 | **Careful developer** *(default)* | researches, plans, scaffolds, tests first, documents |
 | **Quick developer** | builds fast, researches only when needed, tests what it made |
 | **Careful dev manager** | plans and delegates: sprint features, parallel work, stacked PRs |
-| **Task: Research** · **Tech spike** · **Bug fix** · **Code review** | one kind of task, with the rules that fit it |
+| **Research** · **Tech spike** · **Bug fix** · **Code review** | one kind of task, with the rules that fit it |
 | **Small one-off** | a tiny, well-defined job |
 | **Document writer** · **Proofreader** · **Policy reviewer** | writing work: draft a document, proofread text, review a policy for gaps and risks |
 

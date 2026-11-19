@@ -3,12 +3,6 @@
   "name": "Proofreader",
   "entries": [
     {
-      "categoryId": "task-proofread",
-      "optionId": "errors-only",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "editing-the-users-text",
       "optionId": "edit-keep-voice",
       "enabled": true,
@@ -34,7 +28,7 @@
     }
   ],
   "customText": {
-    "text": "Proofread the attached cover letter. UK spelling.",
+    "text": "Proofread: fix spelling, grammar, punctuation and consistency (names, terms, numbers). Change nothing else.\n\nProofread the attached cover letter. UK spelling.",
     "placement": "end",
     "enabled": true
   }

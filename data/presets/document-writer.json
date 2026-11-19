@@ -3,12 +3,6 @@
   "name": "Document writer",
   "entries": [
     {
-      "categoryId": "task-write-document",
-      "optionId": "outline-first",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "adding-details",
       "optionId": "do-not-add-or-change-details",
       "enabled": true,
@@ -52,7 +46,7 @@
     }
   ],
   "customText": {
-    "text": "Write a one-page guide for new staff on how to request time off, using the attached HR policy.",
+    "text": "Outline the document first and agree the outline with me, then write the draft.\n\nWrite a one-page guide for new staff on how to request time off, using the attached HR policy.",
     "placement": "end",
     "enabled": true
   }

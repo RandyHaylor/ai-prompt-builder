@@ -85,12 +85,6 @@
       "optionId": "stacked-prs-and-review",
       "enabled": false,
       "editedText": null
-    },
-    {
-      "categoryId": "task-code-review",
-      "optionId": "review-against-requirements",
-      "enabled": false,
-      "editedText": null
     }
   ],
   "customText": {

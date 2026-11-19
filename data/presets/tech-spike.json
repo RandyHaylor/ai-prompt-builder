@@ -1,13 +1,7 @@
 {
   "format": "ai-prompt-builder/ruleset@1",
-  "name": "Task: Tech spike",
+  "name": "Tech spike",
   "entries": [
-    {
-      "categoryId": "task-tech-spike",
-      "optionId": "spike-throwaway-proof",
-      "enabled": true,
-      "editedText": null
-    },
     {
       "categoryId": "requirements-to-gather",
       "optionId": "confirm-what-is-unclear",
@@ -58,7 +52,7 @@
     }
   ],
   "customText": {
-    "text": "Can a three.js scene render 10,000 animated sprites at 60 fps in a mobile browser?",
+    "text": "Tech spike: prove one thing works with the smallest, fastest throwaway code. State the question first, show the proof, and ask me to check anything you can't judge yourself. End with: works / doesn't / partly, the proof, and what the real build must know.\n\nQuestion: can a three.js scene render 10,000 animated sprites at 60 fps in a mobile browser?",
     "placement": "end",
     "enabled": true
   }

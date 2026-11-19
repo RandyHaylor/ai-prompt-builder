@@ -1,13 +1,7 @@
 {
   "format": "ai-prompt-builder/ruleset@1",
-  "name": "Task: Research",
+  "name": "Research",
   "entries": [
-    {
-      "categoryId": "task-research",
-      "optionId": "research-findings-with-sources",
-      "enabled": true,
-      "editedText": null
-    },
     {
       "categoryId": "adding-details",
       "optionId": "do-not-add-or-change-details",
@@ -46,7 +40,7 @@
     }
   ],
   "customText": {
-    "text": "Which open-source libraries can render Markdown to PDF from Python today, and which of them keep code-block syntax highlighting?",
+    "text": "Research this and change nothing. Use official sources, cite every finding, and keep apart what is established, what is likely and what is unknown.\n\nQuestion: which open-source libraries can render Markdown to PDF from Python today, and which of them keep code-block syntax highlighting?",
     "placement": "end",
     "enabled": true
   }
