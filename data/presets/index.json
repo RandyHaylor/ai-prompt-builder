@@ -11,6 +11,7 @@
     "code-review.json",
     "small-one-off.json",
     "document-writer.json",
+    "op-ed-writer.json",
     "proofreader.json",
     "policy-reviewer.json"
   ]
