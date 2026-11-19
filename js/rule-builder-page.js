@@ -3,7 +3,11 @@
  * of that state. All data lives in RuleSelectionState; this module only renders it.
  */
 
-import { DEFAULT_RULE_CATEGORIES, DEFAULT_RULE_PRESETS } from "./default-rule-catalog.js";
+import {
+  DEFAULT_RULE_CATEGORIES,
+  DEFAULT_RULE_PRESETS,
+  PRESET_SELECTED_WHEN_THE_PAGE_OPENS,
+} from "./default-rule-catalog.js";
 import { CurrentSessionPreferenceStore } from "./preference-stores/current-session-preference-store.js";
 import { RuleSelectionState } from "./rule-selection-state.js";
 import { makeListReorderableByDragging } from "./drag-to-reorder-list.js";
@@ -338,4 +342,4 @@ page.storeDescription.textContent = state.preferenceStore.storeDescription;
 state.onChange(render);
 state.onEntryTextEdit(renderOutput);
 await state.loadSavedCustomizations();
-state.applyPreset(DEFAULT_RULE_PRESETS[0].presetName);
+state.applyPreset(PRESET_SELECTED_WHEN_THE_PAGE_OPENS);

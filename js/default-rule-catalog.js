@@ -210,6 +210,9 @@ export const DEFAULT_RULE_CATEGORIES = [
 const on = (categoryId, optionId) => ({ categoryId, optionId, enabled: true });
 const off = (categoryId, optionId) => ({ categoryId, optionId, enabled: false });
 
+/** The preset selected when the page opens. */
+export const PRESET_SELECTED_WHEN_THE_PAGE_OPENS = "Careful developer";
+
 export const DEFAULT_RULE_PRESETS = [
   {
     presetName: "Quick developer",
@@ -251,6 +254,31 @@ export const DEFAULT_RULE_PRESETS = [
       on("documentation", "full-documentation"),
       on("repo", "suggest-a-repo"),
       on("response-format", "full-report"),
+    ],
+  },
+  {
+    presetName: "Careful dev manager",
+    entries: [
+      on("source-of-truth", "official-researched-truths"),
+      on("adding-details", "do-not-add-or-change-details"),
+      on("scope", "strict-scope"),
+      on("questions", "batch-questions"),
+      on("offering-options", "research-before-options"),
+      on("simplicity", "simplicity-above-all"),
+      on("structure", "hollow-before-full"),
+      on("requirement-bands", "three-bands"),
+      on("work-chunks", "sprint-features"),
+      on("formatting", "specify-formatting"),
+      on("naming", "verbose-oop"),
+      on("modularity", "generic-standalone-modules"),
+      on("testing", "tdd-module-level"),
+      on("parallel-work", "suggest-parallel-work"),
+      on("prs", "stacked-prs-and-review"),
+      on("repo", "suggest-a-repo"),
+      on("billed-runs", "research-then-permission"),
+      on("documentation", "full-documentation"),
+      on("escalation", "escalation-is-a-blocker"),
+      on("response-format", "wiki-style"),
     ],
   },
   {
