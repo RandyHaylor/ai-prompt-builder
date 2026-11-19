@@ -378,6 +378,13 @@ document.getElementById("custom-text-field").addEventListener("input", (event) =
   state.changeCustomText({ text: event.target.value });
   fitCustomTextFieldToText();
 });
+document.getElementById("custom-text-clear-button").addEventListener("click", () => {
+  const field = document.getElementById("custom-text-field");
+  field.value = "";
+  state.changeCustomText({ text: "" });
+  fitCustomTextFieldToText();
+  field.focus();
+});
 document.getElementById("custom-text-toggle").addEventListener("change", (event) =>
   state.changeCustomText({ enabled: event.target.checked }));
 document.getElementById("custom-text-placement").addEventListener("change", (event) =>

@@ -56,8 +56,12 @@
             <option value="start">Add at beginning</option>
           </select>
         </div>
-        <textarea id="custom-text-field" class="text-input custom-text-field" rows="1"
-          placeholder="Say what you actually want done. With this filled in, the rules become a specific prompt; leave it empty for a general ruleset."></textarea>
+        <div class="custom-text-row">
+          <textarea id="custom-text-field" class="text-input custom-text-field" rows="1"
+            placeholder="Say what you actually want done. With this filled in, the rules become a specific prompt; leave it empty for a general ruleset."></textarea>
+          <button id="custom-text-clear-button" type="button" class="icon-button custom-text-clear-button"
+            title="Clear the custom text" aria-label="Clear the custom text">✕</button>
+        </div>
       </div>
 
       <ol id="rule-list" class="rule-list"></ol>
