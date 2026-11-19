@@ -487,6 +487,41 @@
           "fullText": "- Warm and conversational\n  - Still clear and exact"
         },
         {
+          "optionId": "op-ed",
+          "shortName": "Op-ed",
+          "fullText": "- Opinion piece\n  - A clear stance, stated early\n  - Argued with evidence\n  - Counterarguments answered\n- Confident, personal voice\n- Ends with a call to think or act"
+        },
+        {
+          "optionId": "professional-policy",
+          "shortName": "Professional policy",
+          "fullText": "- Policy language\n  - Precise and neutral\n  - One meaning per sentence\n- Must / may / must not\n  - Used exactly\n- Defined terms\n  - Defined once, used consistently\n- No persuasion, no hedging"
+        },
+        {
+          "optionId": "internal-formal",
+          "shortName": "Internal formal",
+          "fullText": "- Formal, for colleagues\n  - Professional, not stiff\n  - Shared terms assumed\n- Purpose and ask up front"
+        },
+        {
+          "optionId": "academic",
+          "shortName": "Academic",
+          "fullText": "- Academic register\n  - Claims supported and cited\n  - Hedged where evidence is limited\n- Third person\n- Field terms used correctly"
+        },
+        {
+          "optionId": "technical-documentation",
+          "shortName": "Technical documentation",
+          "fullText": "- Technical documentation\n  - Exact\n  - Task-focused\n  - Second person (\"you\")\n- Steps numbered\n- Terms and names verbatim"
+        },
+        {
+          "optionId": "customer-facing",
+          "shortName": "Customer-facing",
+          "fullText": "- For customers\n  - Clear and courteous\n  - No internal jargon\n- What it means for them, first\n- Next steps spelled out"
+        },
+        {
+          "optionId": "persuasive",
+          "shortName": "Persuasive / marketing",
+          "fullText": "- Persuasive\n  - Benefits before features\n  - Concrete and vivid\n- A clear call to action\n- No claims that can't be backed up"
+        },
+        {
           "optionId": "match-the-source-tone",
           "shortName": "Match the source",
           "fullText": "- Match the tone of the existing text or examples given"
