@@ -27,6 +27,12 @@
       "editedText": null
     },
     {
+      "categoryId": "document-format",
+      "optionId": "markdown",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "tone",
       "optionId": "plain-and-direct",
       "enabled": true,
@@ -41,12 +47,6 @@
     {
       "categoryId": "questions",
       "optionId": "batch-questions",
-      "enabled": false,
-      "editedText": null
-    },
-    {
-      "categoryId": "formatting",
-      "optionId": "specify-formatting",
       "enabled": false,
       "editedText": null
     }

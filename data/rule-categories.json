@@ -285,27 +285,6 @@
       ]
     },
     {
-      "categoryId": "formatting",
-      "categoryName": "Formatting",
-      "options": [
-        {
-          "optionId": "specify-formatting",
-          "shortName": "Specify all formatting",
-          "fullText": "- Specify every format\n- What you build\n  - Whitespace\n  - Alignment\n  - Line endings\n  - Headers\n  - Error messages\n- Work products\n  - File layout\n  - Naming\n  - Commit shape\n- Documentation\n  - README sections\n  - Report structure\n- Undecided format?\n  - Name it as discretion\n  - Never silent"
-        },
-        {
-          "optionId": "follow-existing-formatting",
-          "shortName": "Follow existing conventions",
-          "fullText": "- Format like the project already does"
-        },
-        {
-          "optionId": "formatting-is-discretion",
-          "shortName": "Your discretion",
-          "fullText": "- Formatting is your call"
-        }
-      ]
-    },
-    {
       "categoryId": "testing",
       "categoryName": "Testing",
       "options": [
@@ -464,6 +443,52 @@
           "optionId": "pre-existing-repo",
           "shortName": "Pre-existing",
           "fullText": "- Use the existing repository\n  - Don't create a new one\n  - Follow its branches and commit conventions"
+        }
+      ]
+    },
+    {
+      "categoryId": "document-format",
+      "categoryName": "Document format",
+      "options": [
+        {
+          "optionId": "markdown",
+          "shortName": "Markdown",
+          "fullText": "- Markdown\n  - Headings for sections\n  - Lists for steps and items\n  - Tables for comparisons"
+        },
+        {
+          "optionId": "plain-text",
+          "shortName": "Plain text",
+          "fullText": "- Plain text\n  - No markup\n  - Blank lines between sections"
+        },
+        {
+          "optionId": "word-document",
+          "shortName": "Word document",
+          "fullText": "- Ready to paste into Word or Google Docs\n  - Real headings\n  - Real lists\n  - No markup symbols"
+        },
+        {
+          "optionId": "email",
+          "shortName": "Email",
+          "fullText": "- An email\n  - Subject line\n  - Greeting\n  - The ask or point first\n  - Short paragraphs\n  - Sign-off"
+        },
+        {
+          "optionId": "memo",
+          "shortName": "Memo",
+          "fullText": "- A memo\n  - To / From / Date / Subject\n  - Purpose first\n  - Then background and detail\n  - Actions needed, at the end"
+        },
+        {
+          "optionId": "report",
+          "shortName": "Report",
+          "fullText": "- A report\n  - Summary first\n  - Sections with headings\n  - Conclusions\n  - Recommendations"
+        },
+        {
+          "optionId": "one-pager",
+          "shortName": "One-pager",
+          "fullText": "- One page at most\n  - The point in the first lines\n  - Headings and bullets\n  - Nothing that can be cut"
+        },
+        {
+          "optionId": "faq",
+          "shortName": "FAQ",
+          "fullText": "- Questions and answers\n  - Questions as readers would ask them\n  - Short, direct answers\n  - Most common first"
         }
       ]
     },

@@ -81,12 +81,6 @@
       "editedText": null
     },
     {
-      "categoryId": "formatting",
-      "optionId": "specify-formatting",
-      "enabled": false,
-      "editedText": null
-    },
-    {
       "categoryId": "prs",
       "optionId": "stacked-prs-and-review",
       "enabled": false,
