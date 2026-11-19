@@ -1,5 +1,5 @@
 {
-  "format": "ai-rule-builder/preset-index@1",
+  "format": "ai-prompt-builder/preset-index@1",
   "presetSelectedWhenThePageOpens": "Careful developer",
   "presetFiles": [
     "quick-developer.json",

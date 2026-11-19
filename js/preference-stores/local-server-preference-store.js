@@ -1,7 +1,7 @@
 /**
  * A preference store that keeps the user's customizations on the computer running the
  * page's local server (started by the command-line tool), as JSON files in the user's
- * rule-builder folder. Same interface as every preference store (see
+ * prompt-builder folder. Same interface as every preference store (see
  * current-session-preference-store.js).
  */
 

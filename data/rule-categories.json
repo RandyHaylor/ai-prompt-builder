@@ -1,5 +1,5 @@
 {
-  "format": "ai-rule-builder/rule-categories@1",
+  "format": "ai-prompt-builder/rule-categories@1",
   "categories": [
     {
       "categoryId": "task-research",

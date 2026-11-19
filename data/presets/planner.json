@@ -1,5 +1,5 @@
 {
-  "format": "ai-rule-builder/ruleset@1",
+  "format": "ai-prompt-builder/ruleset@1",
   "name": "Planner",
   "entries": [
     {

@@ -258,7 +258,7 @@ export class RuleSelectionState {
   /** The current selection as a ruleset file's content (the same shape presets use). */
   exportRuleset(name) {
     return {
-      format: "ai-rule-builder/ruleset@1",
+      format: "ai-prompt-builder/ruleset@1",
       name: name || this.selectedPresetName || "Untitled",
       entries: this.chosenEntries
         .filter((entry) => entry.optionId)

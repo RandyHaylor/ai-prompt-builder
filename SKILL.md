@@ -1,9 +1,9 @@
 ---
-name: ai-rule-builder
-description: Build the set of rules an AI agent works by (naming, testing, scope, escalation, research, response format, and more), together with the user, step by step or in a web page, and produce the text to paste into a prompt. Use when the user wants to write a prompt or ruleset for an agent, set up how an agent should work, write instructions for a deployed agent, prepare a handoff document, or mentions "rule builder", "ruleset", "agent rules" or "prompt rules".
+name: ai-prompt-builder
+description: Build a prompt for an AI agent with the user — the rules it works by (naming, testing, scope, escalation, research, response format, and more) plus what is actually to be done — step by step or in a web page, and produce the text to paste. Use when the user wants to write a prompt or ruleset for an agent, set up how an agent should work, write instructions for a deployed agent, prepare a handoff document, or mentions "prompt builder", "ruleset", "agent rules" or "prompt rules".
 ---
 
-# AI Rule Builder
+# AI Prompt Builder
 
 A ruleset is a list of rules, each with an on/off switch and one chosen option, plus
 optional **custom text** that says what is actually to be done. Presets are ready-made
@@ -14,11 +14,11 @@ rulesets. Everything is a JSON file; the tool composes the text to paste.
 Python 3.9 or newer, standard library only, any operating system. From this skill's folder:
 
 ```
-python -m ai_rule_builder <command> ...        (use python3 where python is Python 2)
+python -m ai_prompt_builder <command> ...        (use python3 where python is Python 2)
 ```
 
 From any other folder, run it with this skill's folder as the working directory, or set
-`PYTHONPATH` to it. `python -m ai_rule_builder --help` and `<command> --help` list every
+`PYTHONPATH` to it. `python -m ai_prompt_builder --help` and `<command> --help` list every
 option.
 
 | Command | What it does |
@@ -42,8 +42,8 @@ option.
 | `where` | the folder the user's own options and presets are saved in |
 
 Use `--text-file` for anything multi-line or containing quotes. The user's own options and
-presets are saved under `~/.ai-rule-builder` (or `.ai-rule-builder` in the current project
-if that folder exists, or `$AI_RULE_BUILDER_HOME`).
+presets are saved under `~/.ai-prompt-builder` (or `.ai-prompt-builder` in the current project
+if that folder exists, or `$AI_PROMPT_BUILDER_HOME`).
 
 ## Working with the user
 
@@ -69,7 +69,7 @@ or a one-off prompt for a specific task.
 ## Letting the user edit in the web page
 
 ```
-python -m ai_rule_builder serve --ruleset-file ruleset.json --send-to-agent-file /tmp/ruleset-sent.json
+python -m ai_prompt_builder serve --ruleset-file ruleset.json --send-to-agent-file /tmp/ruleset-sent.json
 ```
 
 - Run it in the background. Its **first line of output is JSON** with the `url`; give that
@@ -83,7 +83,7 @@ python -m ai_rule_builder serve --ruleset-file ruleset.json --send-to-agent-file
   exits):
 
   ```
-  python -m ai_rule_builder wait-for-send /tmp/ruleset-sent.json
+  python -m ai_prompt_builder wait-for-send /tmp/ruleset-sent.json
   ```
 
   It exits as soon as the button is clicked and prints JSON with `composedText` and the
@@ -98,7 +98,7 @@ use, so the two always agree.
 
 ```json
 {
-  "format": "ai-rule-builder/ruleset@1",
+  "format": "ai-prompt-builder/ruleset@1",
   "name": "My ruleset",
   "entries": [
     {"categoryId": "testing", "optionId": "tdd-module-level", "enabled": true, "editedText": null}

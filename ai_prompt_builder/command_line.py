@@ -1,9 +1,9 @@
-"""The command-line version of the rule-builder page. Everything the page does — pick a
+"""The command-line version of the prompt-builder page. Everything the page does — pick a
 preset, switch rules on and off, choose options, edit text, reorder, add custom text,
 add your own options, categories and presets, and produce the text to paste — is a
 command here, working on a ruleset JSON file. `serve` opens the page itself.
 
-Run `python -m ai_rule_builder --help` from the repository folder for the command list.
+Run `python -m ai_prompt_builder --help` from the repository folder for the command list.
 """
 
 from __future__ import annotations
@@ -252,8 +252,8 @@ def command_wait_for_send(catalog: RuleCatalog, arguments) -> None:
 
 def build_argument_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="ai_rule_builder",
-        description="Build the rules you give an AI agent: the command-line version of the rule-builder page.")
+        prog="ai_prompt_builder",
+        description="Build the rules you give an AI agent: the command-line version of the prompt-builder page.")
     parser.add_argument("--user-folder", help="the folder for your own options, categories and presets")
     commands = parser.add_subparsers(dest="command", required=True)
 

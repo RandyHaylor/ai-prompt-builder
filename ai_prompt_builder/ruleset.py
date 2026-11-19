@@ -2,7 +2,7 @@
 rulesets and share one file shape:
 
 {
-  "format": "ai-rule-builder/ruleset@1",
+  "format": "ai-prompt-builder/ruleset@1",
   "name": "...",
   "entries": [                                    # in order
     {"categoryId": "...", "optionId": "...", "enabled": true, "editedText": null}

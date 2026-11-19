@@ -1,11 +1,11 @@
-"""A local web server for one person's session: serves the rule-builder page and a small
+"""A local web server for one person's session: serves the prompt-builder page and a small
 API, bound to this computer only (127.0.0.1), on a free port the operating system picks,
 so any number can run at once (one per agent session).
 
 API (all JSON):
   GET  /api/session-settings   {sendToAgentEnabled, storeFolder, openedRuleset}
   GET  /api/customizations     the user's own categories, options and presets
-  PUT  /api/customizations     replace them (saved to the user's rule-builder folder)
+  PUT  /api/customizations     replace them (saved to the user's prompt-builder folder)
   POST /api/send-to-agent      {ruleset, composedText} -> written to the send file
 """
 

@@ -1,12 +1,12 @@
 """The rule catalog: the shipped categories and presets (the shared JSON files in data/,
 also read by the web page) plus the user's own categories, options and presets, kept as
-JSON files in the user's rule-builder folder.
+JSON files in the user's prompt-builder folder.
 
 The user's folder is, in order of preference:
-  1. the folder named by the AI_RULE_BUILDER_HOME environment variable;
-  2. a `.ai-rule-builder` folder in the current working directory, if it exists
+  1. the folder named by the AI_PROMPT_BUILDER_HOME environment variable;
+  2. a `.ai-prompt-builder` folder in the current working directory, if it exists
      (a team can keep its presets in its project this way);
-  3. `~/.ai-rule-builder`.
+  3. `~/.ai-prompt-builder`.
 
 Inside it:
   customizations.json   {"customCategories": [...], "customOptions": [...]}
@@ -23,17 +23,17 @@ from pathlib import Path
 
 REPOSITORY_FOLDER = Path(__file__).resolve().parent.parent
 SHIPPED_DATA_FOLDER = REPOSITORY_FOLDER / "data"
-RULESET_FORMAT = "ai-rule-builder/ruleset@1"
+RULESET_FORMAT = "ai-prompt-builder/ruleset@1"
 
 
 def resolve_user_rule_builder_folder() -> Path:
-    from_environment = os.environ.get("AI_RULE_BUILDER_HOME")
+    from_environment = os.environ.get("AI_PROMPT_BUILDER_HOME")
     if from_environment:
         return Path(from_environment).expanduser()
-    in_current_project = Path.cwd() / ".ai-rule-builder"
+    in_current_project = Path.cwd() / ".ai-prompt-builder"
     if in_current_project.is_dir():
         return in_current_project
-    return Path.home() / ".ai-rule-builder"
+    return Path.home() / ".ai-prompt-builder"
 
 
 def file_name_for(name: str) -> str:

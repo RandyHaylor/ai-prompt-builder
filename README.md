@@ -1,16 +1,16 @@
 <div align="center">
 
-# AI Rule Builder
+# AI Prompt Builder
 
-**Pick the rules your AI agent works by. Put them in order. Copy the text.**
+**Build the prompt for your AI agent: pick the rules it works by, say what you want done, copy the text.**
 
-[**Open the web tool →**](https://randyhaylor.github.io/ai-rule-builder/)
+[**Open the web tool →**](https://randyhaylor.github.io/ai-prompt-builder/)
 
 Web page · command-line tool · agent skill — one set of rules, one file format
 
 </div>
 
-![The rule builder with the Careful developer preset](docs/overview.png)
+![The prompt builder with the Careful developer preset](docs/overview.png)
 
 ---
 
@@ -57,7 +57,7 @@ Run it through the command-line tool and they're saved as JSON files on your
 computer — see below.
 
 </td>
-<td width="38%"><img src="docs/phone.png" alt="The rule builder on a phone" width="100%"></td>
+<td width="38%"><img src="docs/phone.png" alt="The prompt builder on a phone" width="100%"></td>
 </tr></table>
 
 ---
@@ -72,30 +72,30 @@ rules one at a time, or opens the web page for them, and gets the finished rules
 point your agent at [`SKILL.md`](SKILL.md). Python 3.9+, standard library only, any OS.
 
 ```bash
-git clone https://github.com/RandyHaylor/ai-rule-builder.git
-cd ai-rule-builder
-python -m ai_rule_builder presets
+git clone https://github.com/RandyHaylor/ai-prompt-builder.git
+cd ai-prompt-builder
+python -m ai_prompt_builder presets
 ```
 
 ### The command line is the page, as commands
 
 ```bash
-python -m ai_rule_builder new mine.json --preset "Careful developer"
-python -m ai_rule_builder set mine.json testing --option simple-post-testing
-python -m ai_rule_builder set mine.json prs --off
-python -m ai_rule_builder custom-text mine.json --text "Add CSV export to the reports page."
-python -m ai_rule_builder compose mine.json            # the text to paste
-python -m ai_rule_builder save-preset mine.json "My reviews"
+python -m ai_prompt_builder new mine.json --preset "Careful developer"
+python -m ai_prompt_builder set mine.json testing --option simple-post-testing
+python -m ai_prompt_builder set mine.json prs --off
+python -m ai_prompt_builder custom-text mine.json --text "Add CSV export to the reports page."
+python -m ai_prompt_builder compose mine.json            # the text to paste
+python -m ai_prompt_builder save-preset mine.json "My reviews"
 ```
 
-Run `python -m ai_rule_builder --help` for every command: browsing rules and options,
+Run `python -m ai_prompt_builder --help` for every command: browsing rules and options,
 reordering, editing text, adding your own options and categories, and more.
 
 ### Opening the page from an agent, with "Send to AI agent"
 
 ```bash
-python -m ai_rule_builder serve --ruleset-file mine.json --send-to-agent-file /tmp/sent.json
-python -m ai_rule_builder wait-for-send /tmp/sent.json      # in the background
+python -m ai_prompt_builder serve --ruleset-file mine.json --send-to-agent-file /tmp/sent.json
+python -m ai_prompt_builder wait-for-send /tmp/sent.json      # in the background
 ```
 
 - `serve` prints one line of JSON with the page's address, then keeps running.
@@ -110,7 +110,7 @@ python -m ai_rule_builder wait-for-send /tmp/sent.json      # in the background
 | What | Where |
 |---|---|
 | Shipped rules and presets | [`data/`](data) — read by the page and the tool alike |
-| Your options and presets | `~/.ai-rule-builder/` — or `.ai-rule-builder/` in your project, to share with a team |
+| Your options and presets | `~/.ai-prompt-builder/` — or `.ai-prompt-builder/` in your project, to share with a team |
 | A ruleset | any JSON file you name — [the format is in SKILL.md](SKILL.md#file-format) |
 
 ### Good uses
@@ -126,7 +126,7 @@ team's shared way of working · a one-off prompt for a specific task.
 |---|---|
 | Rules and presets | `data/rule-categories.json`, `data/presets/*.json` |
 | Web page | `index.html`, `css/`, `js/` — plain HTML, CSS and JavaScript modules, no build step |
-| Command-line tool and local server | `ai_rule_builder/` — Python standard library only |
+| Command-line tool and local server | `ai_prompt_builder/` — Python standard library only |
 | Tests | `tests/` — `python -m pytest tests` or `python -m unittest discover tests` |
 
 The page reads and saves your additions through one small interface

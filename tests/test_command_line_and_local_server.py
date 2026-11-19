@@ -17,7 +17,7 @@ from contextlib import redirect_stdout
 REPOSITORY = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPOSITORY))
 
-from ai_rule_builder.command_line import main  # noqa: E402
+from ai_prompt_builder.command_line import main  # noqa: E402
 
 
 def run(*arguments) -> str:
@@ -97,7 +97,7 @@ class LocalServerTest(unittest.TestCase):
 
     def start_server(self, *extra):
         process = subprocess.Popen(
-            [sys.executable, "-m", "ai_rule_builder", "--user-folder", str(self.user_folder),
+            [sys.executable, "-m", "ai_prompt_builder", "--user-folder", str(self.user_folder),
              "serve", "--ruleset-file", str(self.ruleset_file), *extra],
             cwd=REPOSITORY, stdout=subprocess.PIPE, text=True)
         self.addCleanup(process.wait)
@@ -117,8 +117,8 @@ class LocalServerTest(unittest.TestCase):
     def test_two_servers_run_at_once_on_different_free_ports(self):
         first, second = self.start_server(), self.start_server()
         self.assertNotEqual(first, second)
-        self.assertIn(b"AI Rule Builder", self.get(first))
-        self.assertIn(b"AI Rule Builder", self.get(second))
+        self.assertIn(b"AI Prompt Builder", self.get(first))
+        self.assertIn(b"AI Prompt Builder", self.get(second))
 
     def test_the_page_opens_the_ruleset_and_sending_is_off_unless_enabled(self):
         url = self.start_server()
@@ -132,7 +132,7 @@ class LocalServerTest(unittest.TestCase):
         url = self.start_server("--send-to-agent-file", str(self.send_file))
         self.assertTrue(json.loads(self.get(url + "api/session-settings"))["sendToAgentEnabled"])
         waiter = subprocess.Popen(
-            [sys.executable, "-m", "ai_rule_builder", "wait-for-send", str(self.send_file), "--timeout", "20"],
+            [sys.executable, "-m", "ai_prompt_builder", "wait-for-send", str(self.send_file), "--timeout", "20"],
             cwd=REPOSITORY, stdout=subprocess.PIPE, text=True)
         time.sleep(1)
         ruleset = json.loads(self.ruleset_file.read_text())
@@ -159,7 +159,7 @@ class LocalServerTest(unittest.TestCase):
     def test_only_the_pages_own_files_are_served(self):
         url = self.start_server()
         with self.assertRaises(urllib.error.HTTPError):
-            self.get(url + "ai_rule_builder/rule_catalog.py")
+            self.get(url + "ai_prompt_builder/rule_catalog.py")
 
 
 if __name__ == "__main__":
