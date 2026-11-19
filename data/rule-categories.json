@@ -504,6 +504,146 @@
           "optionId": "marketing-copy",
           "shortName": "Marketing copy",
           "fullText": "- Marketing copy\n  - Benefits before features\n  - Concrete and vivid\n  - A clear call to action\n  - No claims that can't be backed up"
+        },
+        {
+          "optionId": "letter",
+          "shortName": "Letter",
+          "fullText": "- A letter\n  - Date and recipient\n  - Greeting\n  - Purpose in the first paragraph\n  - Sign-off and name"
+        },
+        {
+          "optionId": "cover-letter",
+          "shortName": "Cover letter",
+          "fullText": "- A cover letter\n  - The role, named first\n  - Why you fit: two or three specifics\n  - Close with next step\n  - One page"
+        },
+        {
+          "optionId": "resume",
+          "shortName": "Resume / CV",
+          "fullText": "- A resume\n  - Contact details\n  - Short summary\n  - Experience, most recent first\n    - Results, with numbers\n  - Skills\n  - Education"
+        },
+        {
+          "optionId": "proposal",
+          "shortName": "Proposal",
+          "fullText": "- A proposal\n  - The problem\n  - What you propose\n  - Cost and timeline\n  - Why it will work\n  - The decision needed"
+        },
+        {
+          "optionId": "grant-proposal",
+          "shortName": "Grant proposal",
+          "fullText": "- A grant proposal\n  - Need and who benefits\n  - Goals and measurable outcomes\n  - Activities and timeline\n  - Budget\n  - How success is evaluated\n  - The funder's required sections, in their order"
+        },
+        {
+          "optionId": "executive-summary",
+          "shortName": "Executive summary",
+          "fullText": "- An executive summary\n  - The conclusion first\n  - Key findings\n  - Recommendation and decision needed\n  - Readable alone, without the full document"
+        },
+        {
+          "optionId": "business-plan",
+          "shortName": "Business plan",
+          "fullText": "- A business plan\n  - Summary\n  - Problem and market\n  - Product or service\n  - How it makes money\n  - Team\n  - Financials\n  - What's needed"
+        },
+        {
+          "optionId": "case-study",
+          "shortName": "Case study",
+          "fullText": "- A case study\n  - The client and situation\n  - The challenge\n  - What was done\n  - Results, with numbers\n  - A quote, if given"
+        },
+        {
+          "optionId": "white-paper",
+          "shortName": "White paper",
+          "fullText": "- A white paper\n  - The problem, in depth\n  - Evidence and analysis\n  - The approach proposed\n  - Sourced throughout"
+        },
+        {
+          "optionId": "press-release",
+          "shortName": "Press release",
+          "fullText": "- A press release\n  - Headline\n  - Dateline and the news in the first sentence\n  - Who, what, when, where, why\n  - A quote\n  - About the organization\n  - Media contact"
+        },
+        {
+          "optionId": "announcement",
+          "shortName": "Announcement",
+          "fullText": "- An announcement\n  - What's happening, first\n  - When it takes effect\n  - What it means for the reader\n  - What they need to do"
+        },
+        {
+          "optionId": "newsletter",
+          "shortName": "Newsletter",
+          "fullText": "- A newsletter\n  - Short headline items\n  - Most important first\n  - Each item: a line or two and a link"
+        },
+        {
+          "optionId": "blog-post",
+          "shortName": "Blog post / article",
+          "fullText": "- A blog post\n  - A headline that says what it's about\n  - The point in the opening\n  - Subheadings\n  - A closing takeaway"
+        },
+        {
+          "optionId": "social-media-post",
+          "shortName": "Social media post",
+          "fullText": "- A social media post\n  - The point in the first line\n  - Within the platform's length\n  - One call to action"
+        },
+        {
+          "optionId": "speech",
+          "shortName": "Speech / talk",
+          "fullText": "- A speech\n  - Written to be heard\n    - Short sentences\n    - Key points repeated\n  - Opening hook\n  - Three main points at most\n  - Clear close"
+        },
+        {
+          "optionId": "presentation-outline",
+          "shortName": "Presentation outline",
+          "fullText": "- A slide-by-slide outline\n  - One idea per slide\n  - Slide title states the point\n  - Speaker notes under each"
+        },
+        {
+          "optionId": "meeting-agenda",
+          "shortName": "Meeting agenda",
+          "fullText": "- A meeting agenda\n  - Purpose of the meeting\n  - Items in order, each with time and owner\n  - Decisions needed, marked"
+        },
+        {
+          "optionId": "meeting-minutes",
+          "shortName": "Meeting minutes",
+          "fullText": "- Meeting minutes\n  - Date and attendees\n  - Decisions made\n  - Actions: owner and due date\n  - Open questions"
+        },
+        {
+          "optionId": "standard-operating-procedure",
+          "shortName": "Standard operating procedure",
+          "fullText": "- A standard operating procedure\n  - Purpose and scope\n  - Who does it\n  - Numbered steps\n  - Checks and records\n  - Version and review date"
+        },
+        {
+          "optionId": "training-material",
+          "shortName": "Training material",
+          "fullText": "- Training material\n  - Learning goals first\n  - Explain, then show an example, then practice\n  - A short check at the end"
+        },
+        {
+          "optionId": "job-description",
+          "shortName": "Job description",
+          "fullText": "- A job description\n  - Role summary\n  - Responsibilities\n  - Required and preferred qualifications, separate\n  - Pay and location, if given\n  - How to apply"
+        },
+        {
+          "optionId": "product-requirements",
+          "shortName": "Product requirements (PRD)",
+          "fullText": "- A product requirements document\n  - Problem and users\n  - Goals and non-goals\n  - Requirements, each testable\n  - Success measures\n  - Open questions"
+        },
+        {
+          "optionId": "release-notes",
+          "shortName": "Release notes",
+          "fullText": "- Release notes\n  - Version and date\n  - New\n  - Changed\n  - Fixed\n  - Anything users must do"
+        },
+        {
+          "optionId": "incident-report",
+          "shortName": "Incident report / postmortem",
+          "fullText": "- An incident report\n  - What happened, in a timeline\n  - Impact\n  - Root cause\n  - What fixed it\n  - Actions to prevent it, with owners\n  - Blameless"
+        },
+        {
+          "optionId": "survey",
+          "shortName": "Survey / questionnaire",
+          "fullText": "- A survey\n  - Purpose stated to respondents\n  - One idea per question\n  - Neutral wording\n  - Answer choices that cover every case"
+        },
+        {
+          "optionId": "literature-review",
+          "shortName": "Literature review",
+          "fullText": "- A literature review\n  - Scope and how sources were chosen\n  - Grouped by theme\n  - Agreements, disagreements, gaps\n  - Every source cited"
+        },
+        {
+          "optionId": "product-description",
+          "shortName": "Product description",
+          "fullText": "- A product description\n  - What it is and who it's for\n  - Key benefits\n  - Specifications\n  - Within the length the channel allows"
+        },
+        {
+          "optionId": "faq-style-help-article",
+          "shortName": "Help-center article",
+          "fullText": "- A help-center article\n  - Title phrased as the reader's question\n  - The answer first\n  - Steps if needed\n  - Related articles"
         }
       ]
     },
