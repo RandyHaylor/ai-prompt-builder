@@ -703,14 +703,35 @@
           "fullText": "- Persuasive\n  - A clear position\n  - Confident\n  - Aimed at a decision or action"
         },
         {
-          "optionId": "non-partisan",
-          "shortName": "Non-partisan",
-          "fullText": "- No political opinions\n  - Express none\n  - Imply none\n- Don't support or oppose\n  - Candidates\n  - Parties\n  - Legislation or ballot measures\n- Political topics, when unavoidable\n  - Facts only, sourced\n  - Each side described fairly, in its own terms\n- For organizations that must stay non-partisan\n  - Charities and nonprofits\n  - Public bodies\n  - Employers with a neutrality policy"
+          "optionId": "technical",
+          "shortName": "Technical",
+          "fullText": "- Technical\n  - Exact terms\n  - No simplifying that loses accuracy\n  - Assumes a knowledgeable reader"
+        },
+        {
+          "optionId": "casual",
+          "shortName": "Casual",
+          "fullText": "- Casual\n  - Relaxed, everyday language\n  - Contractions are fine\n  - Still accurate"
         },
         {
           "optionId": "match-the-source-tone",
           "shortName": "Match the source",
           "fullText": "- Match the tone of the existing text or examples given"
+        }
+      ]
+    },
+    {
+      "categoryId": "politics",
+      "categoryName": "Politics",
+      "options": [
+        {
+          "optionId": "non-partisan",
+          "shortName": "Non-partisan",
+          "fullText": "- No political opinions\n  - Express none\n  - Imply none\n- Don't support or oppose\n  - Candidates\n  - Parties\n  - Legislation or ballot measures\n- Political topics, when unavoidable\n  - Facts only, sourced\n  - Each side described fairly, in its own terms\n- For organizations that must stay non-partisan\n  - Charities and nonprofits\n  - Public bodies\n  - Employers with a neutrality policy"
+        },
+        {
+          "optionId": "no-political-restriction",
+          "shortName": "No restriction",
+          "fullText": "- No restriction on political content"
         }
       ]
     },
