@@ -38,7 +38,7 @@ option.
 | `add-category "Name"` | the user's own rule |
 | `save-preset <file> "Name"` | keep a ruleset as the user's preset |
 | `serve [...]` | open the web page (see below) |
-| `wait-for-send <send file>` | wait for the page's Send to AI agent button |
+| `wait-for-send <send file>` | wait for the page's Send to local AI agent button |
 | `where` | the folder the user's own options and presets are saved in |
 
 Use `--text-file` for anything multi-line or containing quotes. The user's own options and
@@ -91,7 +91,7 @@ python -m ai_prompt_builder serve --ruleset-file ruleset.json --send-to-agent-fi
   URL to the user. It binds to this computer only, on a free port the system chooses, so
   several can run at once — one per session.
 - `--ruleset-file` opens that ruleset in the page. Without it, the default preset opens.
-- `--send-to-agent-file` turns on the page's **Send to AI agent** button. Pick a path in
+- `--send-to-agent-file` turns on the page's **Send to local AI agent** button. Pick a path in
   your session's temporary folder. Clicking the button writes the ruleset and its composed
   text to that file, and also saves the ruleset back to `--ruleset-file`.
 - To be told when the user clicks it, run (in the background, so you are notified when it

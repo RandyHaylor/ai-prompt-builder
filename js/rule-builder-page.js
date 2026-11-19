@@ -21,7 +21,7 @@ const NEW_CATEGORY_MENU_VALUE = "__new-category__";
 /**
  * Launched by the command-line tool, the page is served together with a small API that
  * reports this session's settings. On GitHub Pages (or any plain host) there is no API:
- * customizations last for the session and "Send to AI agent" stays disabled.
+ * customizations last for the session and "Send to local AI agent" stays disabled.
  */
 async function readLocalServerSessionSettings() {
   // The tool's server only ever runs on this computer; anywhere else, do not ask.
@@ -431,7 +431,63 @@ if (localServerSessionSettings?.openedRuleset) {
   state.applyPreset(shippedCatalog.presetSelectedWhenThePageOpens);
 }
 
-// --- Send to AI agent ----------------------------------------------------------------
+// --- Send to online AI ---------------------------------------------------------------
+// Opens the assistant's site in a new tab with the prompt filled in, the usual way web
+// "send to" buttons do it: a ?q= address. The prompt is also put on the clipboard, so a
+// site that does not fill it in (or a prompt too long for an address) is one paste away.
+
+const ONLINE_ASSISTANTS = {
+  claude: { name: "Claude", newChatAddress: "https://claude.ai/new", promptParameter: "q" },
+  chatgpt: { name: "ChatGPT", newChatAddress: "https://chatgpt.com/", promptParameter: "q" },
+  grok: { name: "Grok", newChatAddress: "https://grok.com/", promptParameter: "q" },
+  gemini: { name: "Gemini", newChatAddress: "https://gemini.google.com/app", promptParameter: null },
+};
+const LONGEST_PROMPT_SENT_IN_AN_ADDRESS = 6000;
+
+async function copyPromptToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function sendPromptToOnlineAssistant(assistantId) {
+  const assistant = ONLINE_ASSISTANTS[assistantId];
+  const text = state.composePromptText();
+  const copied = await copyPromptToClipboard(text);
+  const address = new URL(assistant.newChatAddress);
+  const fillsInThePrompt = assistant.promptParameter && text.length <= LONGEST_PROMPT_SENT_IN_AN_ADDRESS;
+  if (fillsInThePrompt) address.searchParams.set(assistant.promptParameter, text);
+  window.open(address.toString(), "_blank", "noopener");
+  showToast(fillsInThePrompt
+    ? `Opened ${assistant.name} with your prompt`
+    : copied ? `Opened ${assistant.name} — paste your prompt (it's copied)` : `Opened ${assistant.name}`);
+}
+
+const sendOnlineButton = document.getElementById("send-online-button");
+const sendOnlineMenu = document.getElementById("send-online-menu");
+const setSendOnlineMenuOpen = (open) => {
+  sendOnlineMenu.hidden = !open;
+  sendOnlineButton.setAttribute("aria-expanded", String(open));
+};
+sendOnlineButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  setSendOnlineMenuOpen(sendOnlineMenu.hidden);
+});
+sendOnlineMenu.addEventListener("click", (event) => {
+  const item = event.target.closest("[data-online-assistant]");
+  if (!item) return;
+  setSendOnlineMenuOpen(false);
+  sendPromptToOnlineAssistant(item.dataset.onlineAssistant);
+});
+document.addEventListener("click", () => setSendOnlineMenuOpen(false));
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setSendOnlineMenuOpen(false);
+});
+
+// --- Send to local AI agent ----------------------------------------------------------------
 
 const sendButton = document.getElementById("send-to-agent-button");
 if (localServerSessionSettings?.sendToAgentEnabled) {

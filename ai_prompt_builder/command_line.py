@@ -229,7 +229,7 @@ def command_serve(catalog: RuleCatalog, arguments) -> None:
 
 
 def command_wait_for_send(catalog: RuleCatalog, arguments) -> None:
-    """Block until the Send to AI agent button writes the send file (newer than when this
+    """Block until the Send to local AI agent button writes the send file (newer than when this
     command started), then print what was sent and exit."""
     send_file = Path(arguments.send_to_agent_file)
     started = time.time()
@@ -240,7 +240,7 @@ def command_wait_for_send(catalog: RuleCatalog, arguments) -> None:
             if (previous is None and modified >= started - 1) or (previous is not None and modified > previous):
                 break
         if arguments.timeout and time.time() - started > arguments.timeout:
-            sys.exit("timed out waiting for Send to AI agent")
+            sys.exit("timed out waiting for Send to local AI agent")
         time.sleep(0.5)
     time.sleep(0.2)  # let the write finish
     sent = read_json(send_file)
@@ -340,11 +340,11 @@ def build_argument_parser() -> argparse.ArgumentParser:
                   "open the web page on a free local port; prints one JSON line with the URL first")
     command.add_argument("--ruleset-file", help="open this ruleset in the page")
     command.add_argument("--send-to-agent-file",
-                         help="enable the Send to AI agent button; clicking it writes here")
+                         help="enable the Send to local AI agent button; clicking it writes here")
     command.add_argument("--port", type=int, default=0, help="0 (default) = any free port")
 
     command = add("wait-for-send", command_wait_for_send,
-                  "wait until the person clicks Send to AI agent, then print what was sent")
+                  "wait until the person clicks Send to local AI agent, then print what was sent")
     command.add_argument("send_to_agent_file")
     command.add_argument("--timeout", type=float, default=0, help="seconds; 0 = wait forever")
     return parser

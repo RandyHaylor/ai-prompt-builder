@@ -26,6 +26,7 @@ Every rule is one topic — *Naming*, *Testing*, *Scope adherence*, *When blocke
 - **Custom text** turns a general ruleset into a specific prompt: say what you actually want done, at the end or the beginning.
 - **Presets** for common jobs, and your own presets saved by name.
 - **Copy** the finished text, ready to paste.
+- **Send to online AI** — Claude, ChatGPT, Grok or Gemini open in a new tab with your prompt filled in (or copied, ready to paste, when it's too long for that site's address or the site doesn't take one).
 
 ## Presets
 
@@ -72,7 +73,7 @@ about every time instead of forgotten.
 
 Or skip all that: pick a preset like *Careful developer*, and the agent only asks what you
 want to change and what the actual task is. Rather click than chat? It opens the web page
-for you, you flip switches, hit **Send to AI agent**, and it gets your finished prompt back.
+for you, you flip switches, hit **Send to local AI agent**, and it gets your finished prompt back.
 
 At the end it offers to save your answers as a preset, so next time it's one click.
 
@@ -103,7 +104,7 @@ python -m ai_prompt_builder save-preset mine.json "My reviews"
 Run `python -m ai_prompt_builder --help` for every command: browsing rules and options,
 reordering, editing text, adding your own options and categories, and more.
 
-### Opening the page from an agent, with "Send to AI agent"
+### Opening the page from an agent, with "Send to local AI agent"
 
 ```bash
 python -m ai_prompt_builder serve --ruleset-file mine.json --send-to-agent-file /tmp/sent.json
@@ -112,7 +113,7 @@ python -m ai_prompt_builder wait-for-send /tmp/sent.json      # in the backgroun
 
 - `serve` prints one line of JSON with the page's address, then keeps running.
 - Each server takes its own free port, so every agent session can have its own.
-- The **Send to AI agent** button is enabled only in a page started this way. On the
+- The **Send to local AI agent** button is enabled only in a page started this way. On the
   public web tool it's shown but disabled.
 - Clicking it saves the ruleset and its text to the send file. `wait-for-send` exits at
   that moment and prints what was sent.

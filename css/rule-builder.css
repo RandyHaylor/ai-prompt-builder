@@ -113,6 +113,23 @@ h1, h2, h3 { margin: 0; line-height: 1.25; }
 .button-send:not(:disabled) { background: #059669; border-color: #059669; color: #fff; }
 .button-send:not(:disabled):hover { background: #047857; color: #fff; }
 .button-send:disabled { pointer-events: auto; cursor: help; }
+.send-online { position: relative; }
+.send-online-menu {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 10;
+  min-width: 190px; padding: 6px;
+  background: var(--panel-background); border: 1px solid var(--border);
+  border-radius: 10px; box-shadow: 0 12px 32px rgba(16, 24, 40, .18);
+  display: grid; gap: 2px;
+}
+.send-online-menu[hidden] { display: none; }
+.send-online-menu button {
+  font: inherit; font-size: 14px; text-align: left; color: var(--text);
+  background: transparent; border: 0; border-radius: 7px;
+  padding: 8px 10px; cursor: pointer;
+}
+.send-online-menu button:hover, .send-online-menu button:focus-visible {
+  background: var(--accent-soft); color: var(--accent); outline: none;
+}
 
 .select, .text-input {
   width: 100%;

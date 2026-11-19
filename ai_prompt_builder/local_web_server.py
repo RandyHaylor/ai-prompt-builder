@@ -25,7 +25,7 @@ FILES_THE_PAGE_NEEDS = ("index.html", "css/", "js/", "data/", "docs/")
 
 class RuleBuilderSession:
     """What one running server serves: the catalog, the ruleset to open, and where
-    (if anywhere) the Send to AI agent button writes."""
+    (if anywhere) the Send to local AI agent button writes."""
 
     def __init__(self, catalog: RuleCatalog, opened_ruleset_path: "Path | None",
                  send_to_agent_file: "Path | None"):
