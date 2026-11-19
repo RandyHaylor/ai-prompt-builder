@@ -12,6 +12,7 @@
     "small-one-off.json",
     "document-writer.json",
     "op-ed-writer.json",
+    "speech-writer.json",
     "proofreader.json",
     "policy-reviewer.json"
   ]

@@ -38,7 +38,7 @@ Every rule is one topic — *Naming*, *Testing*, *Scope adherence*, *When blocke
 | **Careful dev manager** | plans and delegates: sprint features, parallel work, stacked PRs |
 | **Research** · **Tech spike** · **Bug fix** · **Code review** | one kind of task, with the rules that fit it |
 | **Small one-off** | a tiny, well-defined job |
-| **Document writer** · **Op-Ed Writer** · **Proofreader** · **Policy reviewer** | writing work: draft a document, proofread text, review a policy for gaps and risks |
+| **Document writer** · **Op-Ed Writer** · **Speech writer** · **Proofreader** · **Policy reviewer** | writing work: draft a document, proofread text, review a policy for gaps and risks |
 
 Each preset comes with example custom text showing how it becomes a real request.
 

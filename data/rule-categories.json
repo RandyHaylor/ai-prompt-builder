@@ -37,6 +37,11 @@
           "fullText": "- Before writing, ask or confirm with the user\n  - Never assume any of these\n- Purpose\n  - What the document must achieve\n- Audience\n  - Who reads it\n  - What they already know\n- Shape\n  - Length\n  - Format\n  - Required sections\n- Tone\n- Sources\n  - What to draw on\n  - What to cite\n- Deadline\n- These are examples, not the full list\n  - Ask about anything else it depends on"
         },
         {
+          "optionId": "ask-for-detailed-speech-requirements",
+          "shortName": "Ask for detailed speech requirements",
+          "fullText": "- Before writing, ask or confirm\n  - Never assume any of these\n- The speaker\n  - Background and views\n  - How they talk\n  - Words to avoid\n  - Past speeches to learn from\n- The occasion\n  - Event and venue\n  - Their slot in the program\n- The audience\n  - Who they are\n  - What they know and care about\n- Speaking time\n- The one thing the audience must remember\n- Sensitivities\n  - Topics to avoid\n  - Anything legal or confidential\n- These are examples, not the full list"
+        },
+        {
           "optionId": "confirm-what-is-unclear",
           "shortName": "Confirm only what's unclear",
           "fullText": "- Ask only about what's unclear\n  - Goal, audience, stage, scale, technology, constraints, what done looks like\n- State what you assumed for the rest"
@@ -66,6 +71,22 @@
           "optionId": "explore-freely",
           "shortName": "Explore freely",
           "fullText": "- Use anything that helps\n  - In the project\n  - In the environment"
+        }
+      ]
+    },
+    {
+      "categoryId": "fact-checking",
+      "categoryName": "Fact-checking",
+      "options": [
+        {
+          "optionId": "check-every-claim",
+          "shortName": "Check every claim",
+          "fullText": "- Check every factual claim\n  - Names\n  - Numbers\n  - Dates\n  - Quotes\n- Against a reliable source\n- List the sources at the end\n- Can't confirm a claim?\n  - Flag it\n  - Don't leave it in silently"
+        },
+        {
+          "optionId": "flag-claims-to-check",
+          "shortName": "Flag claims to check",
+          "fullText": "- Don't check claims yourself\n- Mark every factual claim\n  - For someone to check"
         }
       ]
     },
@@ -660,7 +681,7 @@
         {
           "optionId": "speech",
           "shortName": "Speech / talk",
-          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Published speeches of the same kind\n    - Toastmasters International resources\n- A speech\n  - Written to be heard\n    - Short sentences\n    - Key points repeated\n  - Opening hook\n  - Three main points at most\n  - Clear close"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Published speeches of the same kind\n    - Toastmasters International resources\n- A speech\n  - Written to be heard\n    - Read it aloud and edit by ear\n    - Short sentences\n    - Key points repeated\n  - Opening hook\n  - Three main points at most\n  - Key lines built to be remembered\n    - Rule of three\n    - Parallel phrasing\n    - Repetition at the start of lines (anaphora)\n  - Clear close"
         },
         {
           "optionId": "presentation-outline",
@@ -747,6 +768,53 @@
           "optionId": "word-document",
           "shortName": "Word document",
           "fullText": "- Ready to paste into Word or Google Docs\n  - Real headings\n  - Real lists\n  - No markup symbols"
+        },
+        {
+          "optionId": "speaking-script",
+          "shortName": "Speaking script",
+          "fullText": "- A script to read aloud\n  - Short paragraphs, one idea each\n  - [PAUSE] marked where it helps\n  - Key words to stress, marked\n  - Hard names spelled out phonetically"
+        }
+      ]
+    },
+    {
+      "categoryId": "speakers-voice",
+      "categoryName": "Speaker's voice",
+      "options": [
+        {
+          "optionId": "match-the-speakers-voice",
+          "shortName": "Match the speaker's voice",
+          "fullText": "- Write in the speaker's own voice\n- Study how they really talk\n  - Past speeches\n  - Interviews and recordings\n  - Their writing\n- Learn\n  - Their background and views\n  - Phrases they use\n  - Words they dislike\n  - Sounds they stumble on\n- Nothing they wouldn't say themselves"
+        },
+        {
+          "optionId": "neutral-voice",
+          "shortName": "Neutral voice",
+          "fullText": "- A clear, neutral voice\n  - Not tied to any one speaker"
+        }
+      ]
+    },
+    {
+      "categoryId": "length",
+      "categoryName": "Length",
+      "options": [
+        {
+          "optionId": "speaking-time",
+          "shortName": "Speaking time",
+          "fullText": "- Fit [N] minutes of speaking\n- Plan on 125–150 words a minute\n  - 135 is a common drafting figure\n- Calibrate to the speaker\n  - Time them reading a sample aloud"
+        },
+        {
+          "optionId": "word-count",
+          "shortName": "Word count",
+          "fullText": "- About [N] words"
+        },
+        {
+          "optionId": "one-page",
+          "shortName": "One page",
+          "fullText": "- One page at most"
+        },
+        {
+          "optionId": "as-short-as-possible",
+          "shortName": "As short as possible",
+          "fullText": "- As short as it can be\n  - Without losing anything that matters"
         }
       ]
     },
