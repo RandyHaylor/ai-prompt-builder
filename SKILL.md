@@ -1,6 +1,6 @@
 ---
 name: ai-prompt-builder
-description: Build a prompt for an AI agent with the user — the rules it works by (naming, testing, scope, escalation, research, response format, and more) plus what is actually to be done — step by step or in a web page, and produce the text to paste. Use when the user wants to write a prompt or ruleset for an agent, set up how an agent should work, write instructions for a deployed agent, prepare a handoff document, or mentions "prompt builder", "ruleset", "agent rules" or "prompt rules".
+description: Build a prompt for an AI agent with the user — the rules it works by (naming, testing, scope, escalation, research, documentation, response format, and more) plus what is actually to be done — step by step or in a web page, and produce the text to paste. Its rule catalog and presets double as a checklist of the requirements to gather from a user before any piece of work, so none (testing, documentation, research, scope, paid runs...) is left out. Use when the user wants to write a prompt or ruleset for an agent, set up how an agent should work, write instructions for a deployed agent, prepare a handoff document, gather the requirements for a task, or mentions "prompt builder", "ruleset", "agent rules" or "prompt rules".
 ---
 
 # AI Prompt Builder
@@ -8,6 +8,22 @@ description: Build a prompt for an AI agent with the user — the rules it works
 A ruleset is a list of rules, each with an on/off switch and one chosen option, plus
 optional **custom text** that says what is actually to be done. Presets are ready-made
 rulesets. Everything is a JSON file; the tool composes the text to paste.
+
+## The rules are your checklist
+
+The rule catalog is a list of the requirements a piece of work needs settled — testing,
+documentation, research, scope, naming, escalation, paid runs, response format and more —
+each with the realistic choices. **Use it as your guide for what to ask the user**, so no
+requirement is silently left to your own assumption:
+
+- Before gathering requirements for any task, read the catalog (`categories`, and
+  `category <id>` for the full text of the options) and make sure each rule that matters
+  for this work has an answer from the user.
+- The presets show which rules belong together for a kind of work (`presets --json`):
+  *Careful developer* for building, *Task: Bug fix*, *Task: Research* and so on. Use the
+  matching preset as a starting point for what to cover.
+- An answer the user did not give is not yours to fill in: ask, or mark it plainly as an
+  open question.
 
 ## Running the tool
 
