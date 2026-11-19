@@ -69,6 +69,12 @@
       "editedText": null
     },
     {
+      "categoryId": "billed-runs",
+      "optionId": "research-then-permission",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "response-format",
       "optionId": "wiki-style",
       "enabled": true,
@@ -83,12 +89,6 @@
     {
       "categoryId": "prs",
       "optionId": "stacked-prs-and-review",
-      "enabled": false,
-      "editedText": null
-    },
-    {
-      "categoryId": "billed-runs",
-      "optionId": "research-then-permission",
       "enabled": false,
       "editedText": null
     },

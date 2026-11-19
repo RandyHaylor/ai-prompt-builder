@@ -27,6 +27,12 @@
       "editedText": null
     },
     {
+      "categoryId": "billed-runs",
+      "optionId": "explicit-permission",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "response-format",
       "optionId": "tldr",
       "enabled": true,

@@ -75,6 +75,12 @@
       "editedText": null
     },
     {
+      "categoryId": "billed-runs",
+      "optionId": "research-then-permission",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "response-format",
       "optionId": "full-report",
       "enabled": true,
@@ -89,12 +95,6 @@
     {
       "categoryId": "offering-options",
       "optionId": "research-before-options",
-      "enabled": false,
-      "editedText": null
-    },
-    {
-      "categoryId": "billed-runs",
-      "optionId": "research-then-permission",
       "enabled": false,
       "editedText": null
     },

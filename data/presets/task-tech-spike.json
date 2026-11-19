@@ -39,6 +39,12 @@
       "editedText": null
     },
     {
+      "categoryId": "billed-runs",
+      "optionId": "research-then-permission",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "response-format",
       "optionId": "tldr",
       "enabled": true,
@@ -47,12 +53,6 @@
     {
       "categoryId": "source-of-truth",
       "optionId": "official-researched-truths",
-      "enabled": false,
-      "editedText": null
-    },
-    {
-      "categoryId": "billed-runs",
-      "optionId": "research-then-permission",
       "enabled": false,
       "editedText": null
     }
