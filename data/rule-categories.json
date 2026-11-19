@@ -906,7 +906,7 @@
     },
     {
       "categoryId": "speakers-tone",
-      "categoryName": "Speaker's tone",
+      "categoryName": "Document tone",
       "options": [
         {
           "optionId": "conversational",
@@ -951,7 +951,7 @@
         {
           "optionId": "passionate-empathetic",
           "shortName": "Passionate, empathetic",
-          "fullText": "- Speak to the audience's feelings first\n  - Name their concerns\n  - Validate them before arguing\n- Share the speaker's own feelings\n  - How they felt, in a real moment\n- Real stories, specific details\n- Conviction\n  - Say the hard truths plainly\n  - Repetition and parallel lines for emphasis\n- Sincere, never performed\n  - Show the feeling, don't just label it\n- Warm and conversational\n  - As if to one listener"
+          "fullText": "- Speak to the audience's feelings first\n  - Name their concerns\n  - Validate them before arguing\n- Share the author's own feelings\n  - How they felt, in a real moment\n- Real stories, specific details\n- Conviction\n  - Say the hard truths plainly\n  - Repetition and parallel lines for emphasis\n- Sincere, never performed\n  - Show the feeling, don't just label it\n- Warm and conversational\n  - As if to one listener"
         }
       ]
     },
