@@ -1,58 +1,136 @@
+<div align="center">
+
 # AI Rule Builder
 
-A small web page for assembling the rules you give an AI agent, in the order you want,
-and copying them into a prompt.
+**Pick the rules your AI agent works by. Put them in order. Copy the text.**
 
-**Live:** https://randyhaylor.github.io/ai-rule-builder/
+[**Open the web tool →**](https://randyhaylor.github.io/ai-rule-builder/)
+
+Web page · command-line tool · agent skill — one set of rules, one file format
+
+</div>
+
+![The rule builder with the Careful developer preset](docs/overview.png)
+
+---
 
 ## What it does
 
-- Each rule belongs to a **category** (Naming convention, Testing, When blocked, …) and
-  is one **option** within it. The menu shows the option's short name; the page and the
-  copied text use its full text.
-- **Presets** load a named, ordered set of rules. Several ship with the page.
-- **Drag to reorder** by the handle (mouse or touch), or focus the handle and use the
-  arrow keys.
-- **Add your own** option to any category ("＋ New option…"), your own category, and
-  save the current list as your own preset.
-- **Suggested topics** offers the categories not yet in your list.
-- **Copy** puts the composed text on the clipboard: each rule under its category heading.
+Every rule is one topic — *Naming*, *Testing*, *Scope adherence*, *When blocked*,
+*Paid runs*, *Response format* and more — with a few real alternatives to choose from.
 
-Your own additions currently last only until the tab is closed. Saving them to your
-account (Google sign-in, stored in your Google Drive) is planned.
+- **Switch rules on and off.** Nothing is ever hidden: a rule that's off stays in its place, greyed out.
+- **Choose an option** for each rule, or write your own.
+- **Edit any rule's text** right where it is. Reset it, or save your edit as a new option.
+- **Drag to reorder** — mouse, touch, or arrow keys.
+- **Custom text** turns a general ruleset into a specific prompt: say what you actually want done, at the end or the beginning.
+- **Presets** for common jobs, and your own presets saved by name.
+- **Copy** the finished text, ready to paste.
 
-## How it is built
+## Presets
 
-Plain HTML, CSS and JavaScript modules. No build step, no dependencies.
-
-| File | What it is |
+| Preset | For |
 |---|---|
-| `js/default-rule-catalog.js` | The shipped categories, options and presets. Pure data. |
-| `js/rule-selection-state.js` | The chosen rules, the available catalog (shipped + your additions) and the presets. Knows nothing about the page. |
-| `js/preference-stores/current-session-preference-store.js` | Where your additions are kept. Defines the store interface. |
-| `js/drag-to-reorder-list.js` | Pointer-based drag reordering for any list. Generic. |
-| `js/rule-builder-page.js` | Draws the state and turns clicks into state changes. |
+| **Careful developer** *(default)* | researches, plans, scaffolds, tests first, documents |
+| **Quick developer** | builds fast, researches only when needed, tests what it made |
+| **Careful dev manager** | plans and delegates: sprint features, parallel work, stacked PRs |
+| **Task: Research** · **Tech spike** · **Bug fix** · **Code review** | one kind of task, with the rules that fit it |
+| **Worker** · **Planner** · **Small one-off** | an agent's role in a larger system, or a tiny job |
 
-### Where saved preferences will come from
+Each preset comes with example custom text showing how it becomes a real request.
 
-The page talks to its preference store only through three members:
+<img src="docs/editing-a-rule.png" alt="A rule expanded for editing" width="100%">
 
-```js
-storeDescription                      // shown to the user
-async loadCustomizations()            // -> {customCategories, customOptions, customPresets}
-async saveCustomizations(customizations)
+<table><tr>
+<td width="62%" valign="top">
+
+### On a phone
+
+The same tool, one column. Rules stay collapsed to a single line until you open one.
+
+### Where your additions go
+
+On the web tool, your own options and presets last for the session.
+Saving them to your Google account is planned.
+
+Run it through the command-line tool and they're saved as JSON files on your
+computer — see below.
+
+</td>
+<td width="38%"><img src="docs/phone.png" alt="The rule builder on a phone" width="100%"></td>
+</tr></table>
+
+---
+
+## For AI agents: the skill and the command-line tool
+
+The repository is also an **agent skill** that works with any harness — Claude Code,
+Codex, OpenAI agents, anything that can run a command. The agent walks the user through the
+rules one at a time, or opens the web page for them, and gets the finished ruleset back.
+
+**Install:** clone this repository into your harness's skills folder (or anywhere), and
+point your agent at [`SKILL.md`](SKILL.md). Python 3.9+, standard library only, any OS.
+
+```bash
+git clone https://github.com/RandyHaylor/ai-rule-builder.git
+cd ai-rule-builder
+python -m ai_rule_builder presets
 ```
 
-Google sign-in adds a second store with the same three members (for example, one that
-reads and writes a single JSON file in the app's folder of the user's Drive), and the
-page picks that store once the user is signed in. Nothing else changes.
+### The command line is the page, as commands
 
-## Running it locally
-
-Any static file server, from this folder:
-
+```bash
+python -m ai_rule_builder new mine.json --preset "Careful developer"
+python -m ai_rule_builder set mine.json testing --option simple-post-testing
+python -m ai_rule_builder set mine.json prs --off
+python -m ai_rule_builder custom-text mine.json --text "Add CSV export to the reports page."
+python -m ai_rule_builder compose mine.json            # the text to paste
+python -m ai_rule_builder save-preset mine.json "My reviews"
 ```
-python3 -m http.server 8000
+
+Run `python -m ai_rule_builder --help` for every command: browsing rules and options,
+reordering, editing text, adding your own options and categories, and more.
+
+### Opening the page from an agent, with "Send to AI agent"
+
+```bash
+python -m ai_rule_builder serve --ruleset-file mine.json --send-to-agent-file /tmp/sent.json
+python -m ai_rule_builder wait-for-send /tmp/sent.json      # in the background
 ```
 
-then open http://localhost:8000.
+- `serve` prints one line of JSON with the page's address, then keeps running.
+- Each server takes its own free port, so every agent session can have its own.
+- The **Send to AI agent** button is enabled only in a page started this way. On the
+  public web tool it's shown but disabled.
+- Clicking it saves the ruleset and its text to the send file. `wait-for-send` exits at
+  that moment and prints what was sent.
+
+### Where things are kept
+
+| What | Where |
+|---|---|
+| Shipped rules and presets | [`data/`](data) — read by the page and the tool alike |
+| Your options and presets | `~/.ai-rule-builder/` — or `.ai-rule-builder/` in your project, to share with a team |
+| A ruleset | any JSON file you name — [the format is in SKILL.md](SKILL.md#file-format) |
+
+### Good uses
+
+Standing instructions for a deployed agent · the rules section of a handoff document · a
+team's shared way of working · a one-off prompt for a specific task.
+
+---
+
+## Inside
+
+| Part | Files |
+|---|---|
+| Rules and presets | `data/rule-categories.json`, `data/presets/*.json` |
+| Web page | `index.html`, `css/`, `js/` — plain HTML, CSS and JavaScript modules, no build step |
+| Command-line tool and local server | `ai_rule_builder/` — Python standard library only |
+| Tests | `tests/` — `python -m pytest tests` or `python -m unittest discover tests` |
+
+The page reads and saves your additions through one small interface
+(`js/preference-stores/`): one store for the session, one for the local server, and a
+Google Drive store to come.
+
+To run the page locally without the tool: `python -m http.server` in this folder.

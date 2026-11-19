@@ -1,0 +1,16 @@
+{
+  "format": "ai-rule-builder/preset-index@1",
+  "presetSelectedWhenThePageOpens": "Careful developer",
+  "presetFiles": [
+    "quick-developer.json",
+    "careful-developer.json",
+    "careful-dev-manager.json",
+    "task-research.json",
+    "task-tech-spike.json",
+    "task-bug-fix.json",
+    "task-code-review.json",
+    "worker.json",
+    "planner.json",
+    "small-one-off.json"
+  ]
+}

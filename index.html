@@ -29,6 +29,8 @@
           <button id="clear-rules-button" type="button" class="button button-quiet">Clear</button>
         </div>
         <div class="toolbar-buttons toolbar-right">
+          <button id="send-to-agent-button" type="button" class="button button-send" disabled
+            title="Feature available when launched by an AI agent using the skill">Send to AI agent</button>
           <button id="check-all-button" type="button" class="button">Check all</button>
           <button id="uncheck-all-button" type="button" class="button">Uncheck all</button>
           <button id="reset-all-text-button" type="button" class="button">Reset all text</button>
@@ -39,13 +41,13 @@
       <div id="custom-text-block" class="custom-text-block">
         <div class="custom-text-header">
           <input id="custom-text-toggle" type="checkbox" class="toggle-switch" aria-label="Custom text on or off" checked>
-          <label for="custom-text-field" class="custom-text-label">Custom text <span class="optional-tag">optional</span></label>
+          <label for="custom-text-field" class="custom-text-label"
+            title="Say what you actually want done here to make this a specific prompt. Leave it empty or switch it off for a general ruleset. The presets show an example.">Custom text <span class="optional-tag">optional</span></label>
           <select id="custom-text-placement" class="select select-small" aria-label="Where the custom text goes">
             <option value="end">Add at end</option>
             <option value="start">Add at beginning</option>
           </select>
         </div>
-        <p class="custom-text-hint">Say what you actually want done here to make this a specific prompt. Leave it empty or switch it off for a general ruleset. The presets show an example.</p>
         <textarea id="custom-text-field" class="text-input custom-text-field" rows="1"
           placeholder="Say what you actually want done. With this filled in, the rules become a specific prompt; leave it empty for a general ruleset."></textarea>
       </div>

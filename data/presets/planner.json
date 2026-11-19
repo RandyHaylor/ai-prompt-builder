@@ -1,0 +1,89 @@
+{
+  "format": "ai-rule-builder/ruleset@1",
+  "name": "Planner",
+  "entries": [
+    {
+      "categoryId": "source-of-truth",
+      "optionId": "official-researched-truths",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "adding-details",
+      "optionId": "do-not-add-or-change-details",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "design-patterns",
+      "optionId": "research-industry-standard",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "structure",
+      "optionId": "hollow-before-full",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "requirement-bands",
+      "optionId": "three-bands",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "work-chunks",
+      "optionId": "sprint-features",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "formatting",
+      "optionId": "specify-formatting",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "questions",
+      "optionId": "batch-questions",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "offering-options",
+      "optionId": "research-before-options",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "parallel-work",
+      "optionId": "suggest-parallel-work",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "prs",
+      "optionId": "stacked-prs-and-review",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "repo",
+      "optionId": "suggest-a-repo",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "response-format",
+      "optionId": "wiki-style",
+      "enabled": true,
+      "editedText": null
+    }
+  ],
+  "customText": {
+    "text": "Plan: a small web app where a team can post and vote on lunch options. Work through it with me before anything is built.",
+    "placement": "end",
+    "enabled": true
+  }
+}

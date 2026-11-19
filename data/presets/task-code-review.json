@@ -1,0 +1,47 @@
+{
+  "format": "ai-rule-builder/ruleset@1",
+  "name": "Task: Code review",
+  "entries": [
+    {
+      "categoryId": "task-code-review",
+      "optionId": "review-against-requirements",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "source-of-truth",
+      "optionId": "only-what-you-are-given",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "adding-details",
+      "optionId": "do-not-add-or-change-details",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "naming",
+      "optionId": "verbose-oop",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "modularity",
+      "optionId": "generic-standalone-modules",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "response-format",
+      "optionId": "full-report",
+      "enabled": true,
+      "editedText": null
+    }
+  ],
+  "customText": {
+    "text": "Review: the pull request that adds CSV export to the reports page. The requirements are in the linked issue.",
+    "placement": "end",
+    "enabled": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "format": "ai-rule-builder/ruleset@1",
+  "name": "Quick developer",
+  "entries": [
+    {
+      "categoryId": "source-of-truth",
+      "optionId": "explore-freely",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "adding-details",
+      "optionId": "fill-gaps-and-list-them",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "scope",
+      "optionId": "strict-scope",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "escalation",
+      "optionId": "decide-and-note",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "naming",
+      "optionId": "modern-clean",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "modularity",
+      "optionId": "abstract-on-second-use",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "structure",
+      "optionId": "just-build-it",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "testing",
+      "optionId": "simple-post-testing",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "troubleshooting",
+      "optionId": "quick-experiments",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "offering-options",
+      "optionId": "options-early",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "billed-runs",
+      "optionId": "explicit-permission",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "documentation",
+      "optionId": "keep-docs-in-sync",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "response-format",
+      "optionId": "tldr",
+      "enabled": true,
+      "editedText": null
+    }
+  ],
+  "customText": {
+    "text": "Task: add a \"copy to clipboard\" button next to each code block on the docs page.",
+    "placement": "end",
+    "enabled": true
+  }
+}

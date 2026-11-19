@@ -1,0 +1,83 @@
+{
+  "format": "ai-rule-builder/ruleset@1",
+  "name": "Worker",
+  "entries": [
+    {
+      "categoryId": "source-of-truth",
+      "optionId": "only-what-you-are-given",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "adding-details",
+      "optionId": "do-not-add-or-change-details",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "scope",
+      "optionId": "strict-scope",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "escalation",
+      "optionId": "escalation-is-a-blocker",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "naming",
+      "optionId": "verbose-oop",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "modularity",
+      "optionId": "generic-standalone-modules",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "testing",
+      "optionId": "tdd-module-level",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "troubleshooting",
+      "optionId": "research-errors",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "billed-runs",
+      "optionId": "research-then-permission",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "documentation",
+      "optionId": "readme-for-what-you-build",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "response-format",
+      "optionId": "full-report",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "prs",
+      "optionId": "stacked-prs-and-review",
+      "enabled": false,
+      "editedText": null
+    }
+  ],
+  "customText": {
+    "text": "Your task: implement the parser module described in the plan, against the interface and tests already in the skeleton.",
+    "placement": "end",
+    "enabled": true
+  }
+}

@@ -216,25 +216,60 @@ export class RuleSelectionState {
   applyPreset(presetName) {
     const preset = this.listAllPresets().find((candidate) => candidate.presetName === presetName);
     if (!preset) return;
-    this.chosenEntries = preset.entries
+    this.loadRuleset(preset);
+    this.selectedPresetName = presetName;
+    this.notifyChange();
+  }
+
+  /** Make a ruleset (a preset or a saved instance: {entries, customText}) the current
+   * selection. Every category is always shown: those the ruleset does not use follow it,
+   * switched off. Does not notify; callers do. */
+  loadRuleset(ruleset) {
+    this.chosenEntries = (ruleset.entries || [])
       .filter((entry) => this.findOption(entry.categoryId, entry.optionId))
-      .map((entry) => ({ entryId: newEntryId(), enabled: true, editedText: null, ...entry }));
-    // Every category is always shown: those the preset does not use follow it, switched off.
-    const categoryIdsInPreset = new Set(this.chosenEntries.map((entry) => entry.categoryId));
+      .map((entry) => ({
+        entryId: newEntryId(),
+        categoryId: entry.categoryId,
+        optionId: entry.optionId,
+        enabled: entry.enabled !== false,
+        editedText: entry.editedText ?? null,
+      }));
+    const categoryIdsInRuleset = new Set(this.chosenEntries.map((entry) => entry.categoryId));
     for (const category of this.listAllCategories()) {
-      if (categoryIdsInPreset.has(category.categoryId) || !category.options.length) continue;
+      if (categoryIdsInRuleset.has(category.categoryId) || !category.options.length) continue;
       this.chosenEntries.push({
         entryId: newEntryId(), categoryId: category.categoryId,
         optionId: category.options[0].optionId, enabled: false, editedText: null,
       });
     }
     this.customText = {
-      text: preset.customText?.text ?? "",
-      placement: preset.customText?.placement ?? "end",
-      enabled: preset.customText?.enabled ?? true,
+      text: ruleset.customText?.text ?? "",
+      placement: ruleset.customText?.placement ?? "end",
+      enabled: ruleset.customText?.enabled ?? true,
     };
-    this.selectedPresetName = presetName;
+    this.selectedPresetName = null;
+  }
+
+  openRuleset(ruleset) {
+    this.loadRuleset(ruleset);
     this.notifyChange();
+  }
+
+  /** The current selection as a ruleset file's content (the same shape presets use). */
+  exportRuleset(name) {
+    return {
+      format: "ai-rule-builder/ruleset@1",
+      name: name || this.selectedPresetName || "Untitled",
+      entries: this.chosenEntries
+        .filter((entry) => entry.optionId)
+        .map((entry) => ({
+          categoryId: entry.categoryId,
+          optionId: entry.optionId,
+          enabled: entry.enabled !== false,
+          editedText: this.entryTextIsEdited(entry) ? entry.editedText : null,
+        })),
+      customText: { ...this.customText },
+    };
   }
 
   // --- the user's own additions ------------------------------------------------------

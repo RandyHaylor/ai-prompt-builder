@@ -3,12 +3,9 @@
  * of that state. All data lives in RuleSelectionState; this module only renders it.
  */
 
-import {
-  DEFAULT_RULE_CATEGORIES,
-  DEFAULT_RULE_PRESETS,
-  PRESET_SELECTED_WHEN_THE_PAGE_OPENS,
-} from "./default-rule-catalog.js";
+import { loadShippedCatalog } from "./shipped-catalog-loader.js";
 import { CurrentSessionPreferenceStore } from "./preference-stores/current-session-preference-store.js";
+import { LocalServerPreferenceStore } from "./preference-stores/local-server-preference-store.js";
 import { RuleSelectionState } from "./rule-selection-state.js";
 import { makeListReorderableByDragging } from "./drag-to-reorder-list.js";
 
@@ -20,10 +17,30 @@ const TRASH_CAN_ICON =
   '<path d="M10 11v6M14 11v6"/></svg>';
 const NEW_CATEGORY_MENU_VALUE = "__new-category__";
 
+/**
+ * Launched by the command-line tool, the page is served together with a small API that
+ * reports this session's settings. On GitHub Pages (or any plain host) there is no API:
+ * customizations last for the session and "Send to AI agent" stays disabled.
+ */
+async function readLocalServerSessionSettings() {
+  try {
+    const response = await fetch("api/session-settings");
+    if (!response.ok) return null;
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
+
+const shippedCatalog = await loadShippedCatalog();
+const localServerSessionSettings = await readLocalServerSessionSettings();
+
 const state = new RuleSelectionState({
-  defaultCategories: DEFAULT_RULE_CATEGORIES,
-  defaultPresets: DEFAULT_RULE_PRESETS,
-  preferenceStore: new CurrentSessionPreferenceStore(),
+  defaultCategories: shippedCatalog.categories,
+  defaultPresets: shippedCatalog.presets,
+  preferenceStore: localServerSessionSettings
+    ? new LocalServerPreferenceStore(localServerSessionSettings.storeFolder)
+    : new CurrentSessionPreferenceStore(),
 });
 
 const page = {
@@ -381,4 +398,27 @@ page.storeDescription.textContent = state.preferenceStore.storeDescription;
 state.onChange(render);
 state.onEntryTextEdit(renderOutput);
 await state.loadSavedCustomizations();
-state.applyPreset(PRESET_SELECTED_WHEN_THE_PAGE_OPENS);
+if (localServerSessionSettings?.openedRuleset) {
+  state.openRuleset(localServerSessionSettings.openedRuleset);
+} else {
+  state.applyPreset(shippedCatalog.presetSelectedWhenThePageOpens);
+}
+
+// --- Send to AI agent ----------------------------------------------------------------
+
+const sendButton = document.getElementById("send-to-agent-button");
+if (localServerSessionSettings?.sendToAgentEnabled) {
+  sendButton.disabled = false;
+  sendButton.title = "Save this ruleset and hand it to the AI agent that opened this page";
+  sendButton.addEventListener("click", async () => {
+    const response = await fetch("api/send-to-agent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ruleset: state.exportRuleset(),
+        composedText: state.composePromptText(),
+      }),
+    });
+    showToast(response.ok ? "Sent to the AI agent" : "Sending failed");
+  });
+}

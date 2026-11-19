@@ -1,0 +1,53 @@
+{
+  "format": "ai-rule-builder/ruleset@1",
+  "name": "Task: Research",
+  "entries": [
+    {
+      "categoryId": "task-research",
+      "optionId": "research-findings-with-sources",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "source-of-truth",
+      "optionId": "official-researched-truths",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "adding-details",
+      "optionId": "do-not-add-or-change-details",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "scope",
+      "optionId": "strict-scope",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "troubleshooting",
+      "optionId": "research-errors",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "billed-runs",
+      "optionId": "explicit-permission",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "response-format",
+      "optionId": "wiki-style",
+      "enabled": true,
+      "editedText": null
+    }
+  ],
+  "customText": {
+    "text": "Question: which open-source libraries can render Markdown to PDF from Python today, and which of them keep code-block syntax highlighting?",
+    "placement": "end",
+    "enabled": true
+  }
+}

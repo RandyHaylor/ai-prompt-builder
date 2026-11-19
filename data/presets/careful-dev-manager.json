@@ -1,0 +1,131 @@
+{
+  "format": "ai-rule-builder/ruleset@1",
+  "name": "Careful dev manager",
+  "entries": [
+    {
+      "categoryId": "source-of-truth",
+      "optionId": "official-researched-truths",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "adding-details",
+      "optionId": "do-not-add-or-change-details",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "scope",
+      "optionId": "strict-scope",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "questions",
+      "optionId": "batch-questions",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "offering-options",
+      "optionId": "research-before-options",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "design-patterns",
+      "optionId": "research-industry-standard",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "structure",
+      "optionId": "hollow-before-full",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "requirement-bands",
+      "optionId": "three-bands",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "work-chunks",
+      "optionId": "sprint-features",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "formatting",
+      "optionId": "specify-formatting",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "naming",
+      "optionId": "verbose-oop",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "modularity",
+      "optionId": "generic-standalone-modules",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "testing",
+      "optionId": "tdd-module-level",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "parallel-work",
+      "optionId": "suggest-parallel-work",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "prs",
+      "optionId": "stacked-prs-and-review",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "repo",
+      "optionId": "suggest-a-repo",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "billed-runs",
+      "optionId": "research-then-permission",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "documentation",
+      "optionId": "full-documentation",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "escalation",
+      "optionId": "escalation-is-a-blocker",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "response-format",
+      "optionId": "wiki-style",
+      "enabled": true,
+      "editedText": null
+    }
+  ],
+  "customText": {
+    "text": "Goal: plan and run the work to add user accounts (sign up, sign in, password reset) to the existing web app. Break it into sprint features, propose the plan to me before any building starts, and suggest what can run in parallel.",
+    "placement": "end",
+    "enabled": true
+  }
+}
