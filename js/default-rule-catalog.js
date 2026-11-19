@@ -212,6 +212,48 @@ const off = (categoryId, optionId) => ({ categoryId, optionId, enabled: false })
 
 export const DEFAULT_RULE_PRESETS = [
   {
+    presetName: "Quick developer",
+    entries: [
+      on("source-of-truth", "explore-freely"),
+      on("adding-details", "fill-gaps-and-list-them"),
+      on("scope", "strict-scope"),
+      on("escalation", "decide-and-note"),
+      on("naming", "modern-clean"),
+      on("modularity", "abstract-on-second-use"),
+      on("structure", "just-build-it"),
+      on("testing", "simple-post-testing"),
+      on("troubleshooting", "quick-experiments"),
+      on("offering-options", "options-early"),
+      on("billed-runs", "explicit-permission"),
+      on("documentation", "keep-docs-in-sync"),
+      on("response-format", "tldr"),
+    ],
+  },
+  {
+    presetName: "Careful developer",
+    entries: [
+      on("source-of-truth", "official-researched-truths"),
+      on("adding-details", "do-not-add-or-change-details"),
+      on("scope", "strict-scope"),
+      on("escalation", "escalation-is-a-blocker"),
+      on("questions", "batch-questions"),
+      on("offering-options", "research-before-options"),
+      on("simplicity", "simplicity-above-all"),
+      on("structure", "hollow-before-full"),
+      on("requirement-bands", "three-bands"),
+      on("work-chunks", "sprint-features"),
+      on("naming", "verbose-oop"),
+      on("modularity", "generic-standalone-modules"),
+      on("formatting", "specify-formatting"),
+      on("testing", "tdd-module-level"),
+      on("troubleshooting", "research-errors"),
+      on("billed-runs", "research-then-permission"),
+      on("documentation", "full-documentation"),
+      on("repo", "suggest-a-repo"),
+      on("response-format", "full-report"),
+    ],
+  },
+  {
     presetName: "Worker",
     entries: [
       on("source-of-truth", "only-what-you-are-given"),
