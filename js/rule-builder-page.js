@@ -94,8 +94,13 @@ function showToast(message) {
 
 // --- rendering ----------------------------------------------------------------------
 
+/** A copy of the list sorted alphabetically by the given name, ignoring case. */
+function sortedByName(items, nameOf) {
+  return [...items].sort((a, b) => nameOf(a).localeCompare(nameOf(b), undefined, { sensitivity: "base" }));
+}
+
 function renderPresetMenu() {
-  const presets = state.listAllPresets();
+  const presets = sortedByName(state.listAllPresets(), (preset) => preset.presetName);
   const option = (value, label) => createElement("option", { value, textContent: label });
   const shipped = createElement("optgroup", { label: "Presets" },
     presets.filter((preset) => !preset.isCustom).map((preset) => option(preset.presetName, preset.presetName)));
@@ -152,7 +157,7 @@ function renderEntry(entry, index) {
   const option = state.findOption(entry.categoryId, entry.optionId);
 
   const optionMenu = createElement("select", { className: "select", ariaLabel: `${category.categoryName} option` }, [
-    ...category.options.map((candidate) =>
+    ...sortedByName(category.options, (candidate) => candidate.shortName).map((candidate) =>
       createElement("option", { value: candidate.optionId,
         textContent: candidate.isCustom ? `${candidate.shortName} (yours)` : candidate.shortName })),
     createElement("option", { value: NEW_OPTION_MENU_VALUE, textContent: "＋ New option…" }),
@@ -287,7 +292,7 @@ async function confirmAndDeleteRuleForGood(category) {
 function renderAddRuleMenu() {
   page.addRuleMenu.replaceChildren(
     createElement("option", { value: "", textContent: "＋ Add a rule" }),
-    ...state.listAllCategories().map((category) =>
+    ...sortedByName(state.listAllCategories(), (category) => category.categoryName).map((category) =>
       createElement("option", { value: category.categoryId, textContent: category.categoryName })),
     createElement("option", { value: NEW_CATEGORY_MENU_VALUE, textContent: "＋ New category…" }),
   );
