@@ -8,17 +8,17 @@
         {
           "optionId": "research-findings-with-sources",
           "shortName": "Findings with sources",
-          "fullText": "This task is research. Find out; do not build or change anything.\n- Use current, official sources first. Search with good generic terms, not terms built on your own guess.\n- Every finding carries its source.\n- Separate what is established from what is likely and what is unknown.\n- End with the answer to the question asked, then what would settle anything left open."
+          "fullText": "Research only; change nothing. Use official sources, cite each finding, and separate what's established from what's likely or unknown."
         },
         {
           "optionId": "research-compare-options",
           "shortName": "Compare options",
-          "fullText": "This task is research into options. Find the realistic options, and for each: what it is, what it costs, what it is good and bad at, and its source. End with a side-by-side comparison. Do not choose for the user unless asked."
+          "fullText": "Research the realistic options and compare them side by side, with sources. Don't choose unless asked."
         },
         {
           "optionId": "research-quick-answer",
           "shortName": "Quick answer",
-          "fullText": "This task is a quick lookup. Find the answer from a reliable source, give it with the source, and stop."
+          "fullText": "Find the answer from a reliable source, cite it, and stop."
         }
       ]
     },
@@ -29,17 +29,17 @@
         {
           "optionId": "follow-established-patterns",
           "shortName": "Follow how others already do it",
-          "fullText": "Never reinvent a wheel. Before designing or building anything, research how established products, libraries and standards already solve the same problem, and follow that pattern.\n- Look first for the major players doing this exact thing, and how they do it.\n- Use an existing library or standard rather than writing your own.\n- Your own reasoning about how it should work is not a substitute for finding how it is done.\n- If you depart from the established pattern, say what it is, why you departed, and get approval first."
+          "fullText": "Never reinvent a wheel. Find how established products and libraries already solve this and follow that. Get approval before departing from it."
         },
         {
           "optionId": "check-for-existing-libraries",
           "shortName": "Check for existing libraries",
-          "fullText": "Before writing something general-purpose, check whether a well-maintained library already does it, and use it if it fits."
+          "fullText": "Check for a well-maintained library before writing something general-purpose."
         },
         {
           "optionId": "build-from-scratch",
           "shortName": "Build it yourself",
-          "fullText": "Build what is needed directly; no need to look for existing solutions first."
+          "fullText": "Build what is needed directly."
         }
       ]
     },
@@ -50,12 +50,12 @@
         {
           "optionId": "spike-throwaway-proof",
           "shortName": "Throwaway proof",
-          "fullText": "This task is a tech spike: prove one thing works, as fast and small as possible, before real work depends on it.\n- State the question the spike answers before starting.\n- Throwaway code, done in isolation in its own space. Never the start of the real build.\n- Proof is demonstrated: the command and its output, or screenshots. Where you cannot honestly validate the result yourself (video, motion, feel), say so and ask for a human check.\n- End with: the answer (works / does not work / partly), the proof, and what the real build must know."
+          "fullText": "Prove one thing works, as small and fast as possible, in throwaway code. State the question first; show the proof; ask for a human check where you can't judge it yourself."
         },
         {
           "optionId": "spike-keepable-prototype",
           "shortName": "Keepable prototype",
-          "fullText": "This task is a tech spike whose code may be kept: prove the thing works with a small, clean prototype that the real build can grow from. Show the proof, and list what would need to change to make it production quality."
+          "fullText": "Prove it works with a small clean prototype the real build can grow from."
         }
       ]
     },
@@ -66,12 +66,12 @@
         {
           "optionId": "bug-reproduce-first",
           "shortName": "Reproduce, find cause, fix",
-          "fullText": "This task is a bug fix.\n- Reproduce the bug first and show the reproduction.\n- Find the cause with evidence before changing anything. Do not guess-and-retry.\n- Fix the cause, not the symptom. No workarounds around the defect.\n- Add a test that fails without the fix and passes with it.\n- Change nothing unrelated to the bug."
+          "fullText": "Reproduce the bug, find the cause with evidence, fix the cause, and add a test that fails without the fix. Change nothing else."
         },
         {
           "optionId": "bug-quick-fix",
           "shortName": "Quick fix",
-          "fullText": "This task is a quick bug fix: find the likely cause, fix it, and show that the problem no longer happens."
+          "fullText": "Find the likely cause, fix it, and show the problem is gone."
         }
       ]
     },
@@ -82,12 +82,12 @@
         {
           "optionId": "review-against-requirements",
           "shortName": "Against the requirements",
-          "fullText": "This task is a review. Change nothing.\n- Check the work against what was asked and its definition of done, item by item.\n- Verify claims yourself: read the code, run the tests and the program. A claim you cannot verify counts as not met.\n- For each item: met or not met, with the evidence.\n- List defects by severity, each with file and line."
+          "fullText": "Review only; change nothing. Check each requirement yourself and report met or not met with evidence, plus defects with file and line."
         },
         {
           "optionId": "review-quick-read",
           "shortName": "Quick read-through",
-          "fullText": "This task is a quick review: read the change and point out anything clearly wrong or risky. Change nothing."
+          "fullText": "Read the change and point out anything wrong or risky. Change nothing."
         }
       ]
     },
@@ -98,17 +98,17 @@
         {
           "optionId": "only-what-you-are-given",
           "shortName": "Only what you are given",
-          "fullText": "The only valid information about the work is what you were given. Local code, files, folders, or other agents' work may be referenced as truth only when you are explicitly told you may, and only in the way you are told. \"Look at this folder for reference, do not edit it\" means that and nothing more."
+          "fullText": "Treat only what you were given as true. Use other files or work only when told you may, and only as told."
         },
         {
           "optionId": "official-researched-truths",
           "shortName": "Official researched truths",
-          "fullText": "Treat as true only what you have confirmed from current official sources — the official documentation, specifications, release notes or issue tracker of the thing in question — or proved by running it yourself. What you remember from training is a hypothesis until checked. Say where each fact came from."
+          "fullText": "Treat as true only what current official sources confirm or what you have proved by running it. Cite where each fact came from."
         },
         {
           "optionId": "explore-freely",
           "shortName": "Explore freely",
-          "fullText": "Read anything in the project or environment that helps."
+          "fullText": "Use anything in the project or environment that helps."
         }
       ]
     },
@@ -124,12 +124,12 @@
         {
           "optionId": "fill-gaps-and-list-them",
           "shortName": "Fill gaps, list assumptions",
-          "fullText": "Fill small gaps with sensible choices. List every assumption you made at the end."
+          "fullText": "Fill small gaps sensibly and list every assumption at the end."
         },
         {
           "optionId": "use-judgement",
           "shortName": "Use your judgement",
-          "fullText": "Where the instructions are silent, decide for yourself and keep going."
+          "fullText": "Where the instructions are silent, decide for yourself."
         }
       ]
     },
@@ -140,17 +140,17 @@
         {
           "optionId": "strict-scope",
           "shortName": "Strict scope",
-          "fullText": "Do exactly what was asked — no more, no less.\n- Nothing outside the stated scope is changed, added, cleaned up or \"improved\", however tempting.\n- Build as much as possible to spec, then stop. A piece that can't be built to spec is left incomplete, never replaced with something else.\n- A roadblock, or a spec found not to work, halts the work and asks for approval.\n- Anything you notice outside the scope is reported, not acted on."
+          "fullText": "Do exactly what was asked, no more. Change nothing outside the scope; report what you notice instead. If something can't be built to spec, stop and ask; never substitute."
         },
         {
           "optionId": "scope-with-reported-extras",
           "shortName": "Scope, plus small fixes reported",
-          "fullText": "Stay within the stated scope. Small, clearly related fixes you come across may be made, and each one is listed in your response."
+          "fullText": "Stay in scope. Small related fixes are fine if you list each one."
         },
         {
           "optionId": "closest-working-version",
           "shortName": "Closest working version",
-          "fullText": "If something cannot be built as specified, build the closest working version and say what differs."
+          "fullText": "If something can't be built as specified, build the closest working version and say what differs."
         }
       ]
     },
@@ -161,22 +161,22 @@
         {
           "optionId": "escalation-is-a-blocker",
           "shortName": "An escalation is a blocker",
-          "fullText": "An escalation is a blocker. You post it and you stop. You do not pick.\n- Blocked means: the instruction is silent on something you must decide; a test contradicts another test or the instruction; a piece cannot be built to spec; you need something you were not given.\n- One question per escalation: Question / Context (file:line) / Options / Blocking: yes.\n- A question that does not block you is not an escalation. Make the call within your discretion and record it in your response."
+          "fullText": "When blocked, stop and ask one question: the question, the context, the options. Don't pick for yourself. Questions that don't block you: decide and note it."
         },
         {
           "optionId": "handle-only-within-scope",
           "shortName": "Handle it only if in scope",
-          "fullText": "When something blocks you, resolve it yourself only if you can do so while staying strictly within the stated scope. If resolving it would mean changing anything outside the scope, or deciding something the instructions leave open, stop and ask."
+          "fullText": "Resolve a blocker yourself only if you can stay strictly in scope; otherwise stop and ask."
         },
         {
           "optionId": "decide-and-note",
           "shortName": "Decide and note it",
-          "fullText": "When unsure, make the call, keep going, and list the calls you made in your response."
+          "fullText": "When unsure, decide, keep going, and list your decisions at the end."
         },
         {
           "optionId": "ask-freely",
           "shortName": "Ask whenever unsure",
-          "fullText": "Ask whenever you are unsure, and wait for the answer."
+          "fullText": "Ask whenever you're unsure."
         }
       ]
     },
@@ -187,17 +187,17 @@
         {
           "optionId": "verbose-oop",
           "shortName": "Verbose OOP",
-          "fullText": "Name everything for what it IS or what it DOES — NEVER for how it is implemented and never for where it happens to be used.\n- Name for role, not implementation: `retry_with_backoff`, not `loop_helper`; `customer_lookup`, not `redis_cache_wrapper`.\n- Name for what it is, not who uses it: a function that applies a rule to a string is a `string_rule_applier`, even if today only the checkout page calls it.\n- You use paper and pencil to map something, but you don't call them a \"mapper tool\". You run a mapping operation and produce a map — the tools are a writing and recording tool.\n- Understandable outside of any app context. Never brand internals with the app or product name.\n- Err on the side of verbosity: a short sentence of a name beats a meaningless one."
+          "fullText": "Name things for what they are or do, never for how they're implemented or who uses them (`retry_with_backoff`, not `loop_helper`). Prefer a longer clear name to a short vague one. Never brand internals with the app name."
         },
         {
           "optionId": "modern-clean",
           "shortName": "Modern clean",
-          "fullText": "Short, clean, idiomatic names in the style of the language and framework in use."
+          "fullText": "Short, idiomatic names in the style of the language and framework."
         },
         {
           "optionId": "match-the-codebase",
           "shortName": "Match the codebase",
-          "fullText": "Name things the way the existing codebase already does."
+          "fullText": "Name things the way the codebase already does."
         }
       ]
     },
@@ -208,17 +208,17 @@
         {
           "optionId": "generic-standalone-modules",
           "shortName": "Generic, standalone modules",
-          "fullText": "Build each separable piece as a generic, standalone module.\n- It knows nothing about the project that uses it: no project names, no project-specific assumptions, no reaching into the caller's data.\n- It has a small, explicit interface, and could be lifted into another project unchanged.\n- It has its own short documentation and its own tests.\n- Keep project-specific glue thin and separate from the modules it connects."
+          "fullText": "Build separable pieces as standalone modules: no knowledge of the project using them, a small interface, their own docs and tests."
         },
         {
           "optionId": "clear-interfaces",
           "shortName": "Clear interfaces only",
-          "fullText": "Split the work into parts with small, explicit interfaces. Parts may know about the project; they must not reach into each other's internals."
+          "fullText": "Split the work into parts with small, explicit interfaces."
         },
         {
           "optionId": "abstract-on-second-use",
           "shortName": "Abstract on second use",
-          "fullText": "Abstract only when there is a second use. Keep code close to where it is used."
+          "fullText": "Abstract only when there's a second use."
         }
       ]
     },
@@ -229,59 +229,43 @@
         {
           "optionId": "object-oriented",
           "shortName": "OOP",
-          "fullText": "Object-oriented design: small classes with one clear responsibility each, behaviour kept with the data it acts on, composition preferred over inheritance, and dependencies passed in rather than reached for."
+          "fullText": "Object-oriented: small single-purpose classes, composition over inheritance."
         },
         {
           "optionId": "functional",
           "shortName": "Functional",
-          "fullText": "Functional style: pure functions where possible, data that is not mutated in place, side effects kept at the edges, and behaviour built by composing small functions."
+          "fullText": "Functional: pure functions, no mutation, side effects at the edges."
         },
         {
           "optionId": "research-industry-standard",
           "shortName": "Research industry standard",
-          "fullText": "Before designing, research the established, current industry-standard patterns for this kind of problem in this language and framework, from official or widely recognised sources. Use them, and say which you chose and where they come from."
+          "fullText": "Research the current industry-standard patterns for this problem and use them; say which and why."
         },
         {
           "optionId": "match-the-codebase-patterns",
           "shortName": "Match the codebase",
-          "fullText": "Use the design patterns the existing codebase already uses."
+          "fullText": "Use the patterns the codebase already uses."
         }
       ]
     },
     {
       "categoryId": "structure",
-      "categoryName": "Structure first",
+      "categoryName": "Build skeleton first",
       "options": [
         {
           "optionId": "hollow-before-full",
-          "shortName": "Hollow before full",
-          "fullText": "\"If we can't solve the big picture first, how can we hope to build the details?\"\n- Build every part hollow before building it full: it exists, is reachable, is testable from the outside, and returns a placeholder.\n- Interfaces, types and names are decided in the hollow version. A part whose content is unknown still exists; it says what must be found out to fill it.\n- Tests of the interfaces are written first and pass against the placeholders.\n- Filling in never adds new structure. Missing structure found later is a design change and goes back to the user."
+          "shortName": "Skeleton first",
+          "fullText": "Big picture first: build every part as a working stub with its interfaces and tests before filling any in. Filling in never adds new structure."
         },
         {
           "optionId": "vertical-slices",
           "shortName": "Thin working slices",
-          "fullText": "Build one thin slice that works end to end, then extend it."
+          "fullText": "Build one thin slice end to end, then extend it."
         },
         {
           "optionId": "just-build-it",
           "shortName": "Just build it",
-          "fullText": "Build it in whatever order makes sense to you."
-        }
-      ]
-    },
-    {
-      "categoryId": "requirement-bands",
-      "categoryName": "Requirement bands",
-      "options": [
-        {
-          "optionId": "three-bands",
-          "shortName": "Firm / design notes / discretion",
-          "fullText": "Sort requirements into three bands:\n- Firm up front: interfaces, types, contracts, modules, names.\n- Design notes: less consequential details, recorded but not binding.\n- Your discretion: decided inside a part, within the firm band."
-        },
-        {
-          "optionId": "all-firm",
-          "shortName": "Everything is firm",
-          "fullText": "Every requirement given is firm."
+          "fullText": "Build it in whatever order makes sense."
         }
       ]
     },
@@ -292,17 +276,17 @@
         {
           "optionId": "sprint-features",
           "shortName": "Sprint features",
-          "fullText": "Break the work into sprint features. Each one: a strictly defined interface, built as a standalone tool, its own definition of done, its own integration testing, and a deliverable including README, packaging, and example code."
+          "fullText": "Break the work into sprint features, each a standalone tool with its own interface, definition of done, tests and README."
         },
         {
           "optionId": "small-tasks",
           "shortName": "Small tasks",
-          "fullText": "Break the work into small tasks, each finishable in one sitting."
+          "fullText": "Break the work into small tasks, each done in one sitting."
         },
         {
           "optionId": "one-piece",
           "shortName": "One piece",
-          "fullText": "Do the work as one piece; do not break it down."
+          "fullText": "Do the work as one piece."
         }
       ]
     },
@@ -313,22 +297,22 @@
         {
           "optionId": "no-testing",
           "shortName": "No testing",
-          "fullText": "Do not write tests."
+          "fullText": "No tests."
         },
         {
           "optionId": "simple-post-testing",
           "shortName": "Simple post testing",
-          "fullText": "Test what you've made to ensure it works: run it the way it will actually be used and check the result."
+          "fullText": "Test what you've made to ensure it works."
         },
         {
           "optionId": "tdd-module-level",
           "shortName": "Test first TDD, module level",
-          "fullText": "Test-first, at the interface and module level, using automated tests wherever at all possible, kept in a git repository (or similar version control) alongside the code.\n- The tests for each module's interface are written first, fail, then pass once the module is built.\n- Finer-grained tests inside a module are at your discretion, where they make sense.\n- Integration tests stay fully real: real entry points, real services, real data. Passing unit tests means it is time to integration test, not that the work is done."
+          "fullText": "Test first at the module level, with automated tests kept in version control. Finish with real integration tests."
         },
         {
           "optionId": "tdd-granular",
           "shortName": "Test first TDD, granular",
-          "fullText": "Strict test-first TDD at every level, using automated tests wherever at all possible, kept in a git repository (or similar version control) alongside the code: one failing test per behaviour, make it pass, refactor, commit."
+          "fullText": "Strict test-first TDD for every behaviour, with automated tests kept in version control."
         }
       ]
     },
@@ -339,7 +323,7 @@
         {
           "optionId": "specify-formatting",
           "shortName": "Specify all formatting",
-          "fullText": "Specify formatting for everything that has a form.\n- Outputs of the thing being built: whitespace, alignment, line endings, headers, error message shape.\n- Work products: file layout, naming, commit shape.\n- Documentation: README sections, report structure.\n- A format you do not want to decide is declared discretion, by name. Never silent."
+          "fullText": "Specify the format of everything that has one: output, files, docs, reports. Anything left open is named as discretion."
         },
         {
           "optionId": "follow-existing-formatting",
@@ -349,7 +333,7 @@
         {
           "optionId": "formatting-is-discretion",
           "shortName": "Your discretion",
-          "fullText": "Formatting is at your discretion."
+          "fullText": "Formatting is your call."
         }
       ]
     },
@@ -360,7 +344,7 @@
         {
           "optionId": "batch-questions",
           "shortName": "Batch questions",
-          "fullText": "Do not work in a pattern of asking the user a question, working, asking a question, working. It is very inefficient.\n\nCollect all of your questions through the research and planning you can do, then ask them all in quick succession (one at a time, with any needed conversation). Then, if needed, do another round of research and construct another list of questions."
+          "fullText": "Don't alternate asking and working. Research first, then ask all your questions together, one at a time."
         },
         {
           "optionId": "ask-as-they-come",
@@ -371,17 +355,27 @@
     },
     {
       "categoryId": "offering-options",
-      "categoryName": "Offering options",
+      "categoryName": "Choices",
       "options": [
         {
-          "optionId": "research-before-options",
-          "shortName": "Research before offering options",
-          "fullText": "Research before offering the user options. Asking the user a question is not a substitute for research."
+          "optionId": "decide-without-asking",
+          "shortName": "Decide yourself",
+          "fullText": "When there's a choice, make it yourself and say what you chose."
         },
         {
-          "optionId": "options-early",
-          "shortName": "Offer options early",
-          "fullText": "Offer options early; research the one the user picks."
+          "optionId": "quick-options",
+          "shortName": "Quick options, with your pick",
+          "fullText": "When there's a choice, briefly list the options you can see and say which you'd pick."
+        },
+        {
+          "optionId": "research-before-options",
+          "shortName": "Researched options, with your pick",
+          "fullText": "When there's a choice, research it first, then present the options with what you found and recommend one. Asking the user is not a substitute for research."
+        },
+        {
+          "optionId": "researched-neutral-options",
+          "shortName": "Researched options, no pick",
+          "fullText": "When there's a choice, research it first, then present the options and trade-offs without recommending one."
         }
       ]
     },
@@ -397,7 +391,7 @@
         {
           "optionId": "quick-experiments",
           "shortName": "Quick experiments first",
-          "fullText": "Try quick, cheap experiments to narrow the problem down. Research if they do not settle it."
+          "fullText": "Try quick, cheap experiments first; research if they don't settle it."
         }
       ]
     },
@@ -408,27 +402,27 @@
         {
           "optionId": "explicit-permission",
           "shortName": "Explicit permission",
-          "fullText": "Never start anything that costs money per use (paid API calls, cloud builds, paid CI minutes, model usage) without the user's explicit permission for that specific run."
+          "fullText": "Get explicit permission before anything that costs money per use."
         },
         {
           "optionId": "research-first",
           "shortName": "Research first",
-          "fullText": "Research and proof of current, accurate references are required for fixes before triggering any testing or building that consumes resources that bill per use."
+          "fullText": "Research and prove a fix before any run that costs money per use."
         },
         {
           "optionId": "research-then-permission",
           "shortName": "Research, then permission",
-          "fullText": "Before anything that costs money per use: research and prove the fix against current references first, then present what you will run and why, and wait for the user's permission."
+          "fullText": "Research and prove a fix, then ask permission before any run that costs money per use."
         },
         {
           "optionId": "judgement-within-limit",
           "shortName": "Best judgement within a limit",
-          "fullText": "Use your best judgement on paid runs, within this limit: [time / usage / cost limit]. Stop and ask before going past it."
+          "fullText": "Use your judgement on paid runs within this limit: [time / usage / cost limit]."
         },
         {
           "optionId": "no-billed-run-limits",
           "shortName": "No restriction",
-          "fullText": "No restriction on runs that cost money per use."
+          "fullText": "No limits on paid runs."
         }
       ]
     },
@@ -439,22 +433,22 @@
         {
           "optionId": "no-documentation",
           "shortName": "None",
-          "fullText": "Do not write documentation."
+          "fullText": "No documentation."
         },
         {
           "optionId": "keep-docs-in-sync",
           "shortName": "Keep existing docs in sync",
-          "fullText": "Write no new documents, but update any existing documentation your change makes wrong, in the same change."
+          "fullText": "Update existing docs your change makes wrong."
         },
         {
           "optionId": "readme-for-what-you-build",
           "shortName": "README for what you build",
-          "fullText": "Everything you build gets a README: what it is, how to run or use it, and a short example. Keep existing docs in sync with your changes."
+          "fullText": "Give everything you build a README: what it is, how to use it, an example."
         },
         {
           "optionId": "full-documentation",
           "shortName": "Full documentation",
-          "fullText": "Document as you build:\n- A README for each part: what it is, how to use it, examples.\n- Its interface: inputs, outputs, errors.\n- The decisions made and why, where someone changing it later would look.\n- Existing docs updated in the same change that makes them wrong."
+          "fullText": "Document each part: README, interface, and the decisions made and why."
         }
       ]
     },
@@ -465,32 +459,32 @@
         {
           "optionId": "full-report",
           "shortName": "Full report",
-          "fullText": "Respond with: Status / Built / Tests (exact commands and the test runner's summary line verbatim) / Deviations / Discretion calls / Open items."
+          "fullText": "End with: Status / Built / Tests (commands and results) / Deviations / Decisions / Open items."
         },
         {
           "optionId": "wiki-style",
           "shortName": "Wiki style",
-          "fullText": "Respond wiki style: a short title, then headings, each followed by terse indented bullets. Each level reads on its own; deeper levels add detail. No prose paragraphs."
+          "fullText": "Respond with headings and short indented bullets. No prose paragraphs."
         },
         {
           "optionId": "slides-style",
           "shortName": "Slide style",
-          "fullText": "Respond like a slide deck: a few short sections, each with a title line and three to five bullets of a few words each."
+          "fullText": "Respond like slides: short titled sections of 3–5 bullets."
         },
         {
           "optionId": "tldr",
           "shortName": "TL;DR",
-          "fullText": "Start with a TL;DR of one or two sentences. Then the detail, kept short."
+          "fullText": "Start with a one- or two-sentence TL;DR."
         },
         {
           "optionId": "takeaway-only",
           "shortName": "Takeaway only",
-          "fullText": "Give only the takeaway: the answer or result, in one or two sentences. No explanation unless asked."
+          "fullText": "Give only the answer or result."
         },
         {
           "optionId": "condensed",
           "shortName": "Condensed",
-          "fullText": "Condensed format: nested fragments, zero filler, zero facts lost. Higher levels tell the story with outcomes, not bare topics. Bullets and headers in the destination's normal syntax. Blank lines between groups. Over three top-level items: open with a one or two sentence lead."
+          "fullText": "Condensed: nested fragments, no filler, no lost facts."
         }
       ]
     },
@@ -501,17 +495,17 @@
         {
           "optionId": "stacked-prs-and-review",
           "shortName": "Stacked PRs and review",
-          "fullText": "Use stacked PRs where appropriate. Do not stop and wait for a PR to be merged when you could keep working on the branch or stack follow-up PRs.\nBuild PR review requirements into tasks where appropriate. The reviewer is first a newly spawned agent. Worst case, spawn a fork of yourself, or a similar approach."
+          "fullText": "Use stacked PRs; keep working instead of waiting on merges. Have a separate agent review each PR."
         },
         {
           "optionId": "single-pr",
           "shortName": "One PR at the end",
-          "fullText": "Open one pull request when the work is finished."
+          "fullText": "One pull request at the end."
         },
         {
           "optionId": "commit-directly",
           "shortName": "Commit directly",
-          "fullText": "Commit directly to the working branch; no pull requests."
+          "fullText": "Commit directly; no pull requests."
         }
       ]
     },
@@ -522,12 +516,12 @@
         {
           "optionId": "suggest-parallel-work",
           "shortName": "Suggest parallel work",
-          "fullText": "Suggest parallel work to the user wherever it is possible."
+          "fullText": "Suggest work that can run in parallel."
         },
         {
           "optionId": "sequential",
           "shortName": "One thing at a time",
-          "fullText": "Do the work in sequence, one thing at a time."
+          "fullText": "One thing at a time."
         }
       ]
     },
@@ -538,7 +532,7 @@
         {
           "optionId": "suggest-a-repo",
           "shortName": "Suggest a repo",
-          "fullText": "Only if nothing is in place: if the work has no repo, suggest one. If one is not wanted, suggest the benefits of at least a local one."
+          "fullText": "If there's no repo, suggest one (at least a local one)."
         },
         {
           "optionId": "no-repo",

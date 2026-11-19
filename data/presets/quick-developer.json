@@ -58,7 +58,7 @@
     },
     {
       "categoryId": "offering-options",
-      "optionId": "options-early",
+      "optionId": "quick-options",
       "enabled": true,
       "editedText": null
     },

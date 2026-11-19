@@ -57,12 +57,6 @@
       "editedText": null
     },
     {
-      "categoryId": "requirement-bands",
-      "optionId": "three-bands",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "work-chunks",
       "optionId": "sprint-features",
       "enabled": true,

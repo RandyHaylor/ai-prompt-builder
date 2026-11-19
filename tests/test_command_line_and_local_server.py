@@ -86,7 +86,7 @@ class CommandLineTest(unittest.TestCase):
         self.cli("new", self.ruleset_file, "--preset", "Small one-off")
         self.assertNotIn("## Design patterns", self.cli("compose", self.ruleset_file))
         self.cli("set", self.ruleset_file, "design-patterns", "--option", "functional")
-        self.assertIn("## Design patterns\n\nFunctional style", self.cli("compose", self.ruleset_file))
+        self.assertIn("## Design patterns\n\nFunctional:", self.cli("compose", self.ruleset_file))
         self.cli("remove", self.ruleset_file, "design-patterns")
         self.assertIn("Design patterns (design-patterns)", self.cli("show", self.ruleset_file))
 
@@ -103,6 +103,13 @@ class CommandLineTest(unittest.TestCase):
         self.cli("delete-rule", own)
         self.assertIsNone(next((c for c in json.loads(self.cli("categories", "--json"))
                                 if c["categoryId"] == own), None))
+
+    def test_every_shipped_preset_points_only_at_rules_and_options_that_exist(self):
+        for preset in json.loads(self.cli("presets", "--json")):
+            warning = io.StringIO()
+            with contextlib.redirect_stderr(warning):
+                self.cli("new", self.ruleset_file, "--preset", preset["name"])
+            self.assertEqual(warning.getvalue(), "", preset["name"])
 
     def test_a_built_in_preset_name_cannot_be_overwritten(self):
         self.cli("new", self.ruleset_file)
