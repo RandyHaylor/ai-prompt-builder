@@ -21,7 +21,7 @@
       "editedText": null
     },
     {
-      "categoryId": "speakers-tone",
+      "categoryId": "tone",
       "optionId": "passionate-empathetic",
       "enabled": true,
       "editedText": null
@@ -42,12 +42,6 @@
       "categoryId": "adding-details",
       "optionId": "do-not-add-or-change-details",
       "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "tone",
-      "optionId": "persuasive",
-      "enabled": false,
       "editedText": null
     },
     {

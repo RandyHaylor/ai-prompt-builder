@@ -974,57 +974,6 @@
       ]
     },
     {
-      "categoryId": "speakers-tone",
-      "categoryName": "Document tone",
-      "options": [
-        {
-          "optionId": "conversational",
-          "shortName": "Conversational",
-          "fullText": "- Natural, direct, low key\n  - Casual, never overly familiar\n  - Talking with the room, not lecturing\n- Sentences of 8–16 words\n- Plain words, no jargon\n  - Would a smart non-expert get it first time?\n- Contractions and concrete nouns\n- One real story at the centre\n  - Problem, action, outcome"
-        },
-        {
-          "optionId": "formal-oratorical",
-          "shortName": "Formal, oratorical",
-          "fullText": "- For a large audience or a formal occasion\n- More formal wording\n  - Still clear, never ornate\n- Classical devices\n  - Parallelism\n  - Antithesis\n  - Anaphora\n  - Triads, not overused\n- Cadence and imagery\n  - One metaphor at a time"
-        },
-        {
-          "optionId": "inspirational",
-          "shortName": "Inspirational",
-          "fullText": "- For commencements, launches, kick-offs\n- Inspire, don't lecture\n  - No policy detail unless needed\n- Vivid imagery\n- Repetition with variation\n- Close on a line that carries\n  - A shared future, stated with confidence\n  - Never \"thanks for your time\""
-        },
-        {
-          "optionId": "solemn-commemorative",
-          "shortName": "Solemn, commemorative",
-          "fullText": "- For memorials, eulogies, remembrance days\n- Somber, and hopeful\n- Restrained emotion\n  - From sincerity, not heightened rhetoric\n- Service and sacrifice honoured\n- Exact wording matters\n  - Written to be read as scripted\n- Pauses marked"
-        },
-        {
-          "optionId": "apology-crisis",
-          "shortName": "Apology, crisis",
-          "fullText": "- Apologise at the very start\n  - Not after the explanation\n  - No apology sandwich\n- Own it\n  - Name the impact\n  - No minimising\n  - No deflecting blame\n- One steady tone\n  - No swings in emotion\n  - Not scripted-sounding\n- Say what happens next\n- Slow pace, key pauses marked\n- Flag wording that may admit legal liability\n  - For legal review"
-        },
-        {
-          "optionId": "rallying-supporters",
-          "shortName": "Rallying supporters",
-          "fullText": "- For an audience already on side\n  - Party gathering, team rally\n- Strong, energising language\n- Contrast: our way or nothing\n- Short, rhythmic lines for applause\n- Never for a mixed or non-partisan audience"
-        },
-        {
-          "optionId": "persuading-the-unconvinced",
-          "shortName": "Persuading the unconvinced",
-          "fullText": "- For an audience that disagrees or is unsure\n- Goodwill first\n  - \"A drop of honey catches more flies than a gallon of gall\"\n- Appeal to shared values\n  - More than to data\n- Attention, problem, solution\n- Three main points at most\n  - Signposted\n  - Statistics used sparingly"
-        },
-        {
-          "optionId": "light-celebratory",
-          "shortName": "Light, celebratory",
-          "fullText": "- For dinners, awards, toasts, retirements\n- Warm, entertaining\n- Gentle, self-deprecating humour\n  - Never about personal lives, religion or ethnicity\n- Anecdotes like spices\n  - Few, and on point\n- After dinner: very short"
-        },
-        {
-          "optionId": "passionate-empathetic",
-          "shortName": "Passionate, empathetic",
-          "fullText": "- Speak to the audience's feelings first\n  - Name their concerns\n  - Validate them before arguing\n- Share the author's own feelings\n  - How they felt, in a real moment\n- Real stories, specific details\n- Conviction\n  - Say the hard truths plainly\n  - Repetition and parallel lines for emphasis\n- Sincere, never performed\n  - Show the feeling, don't just label it\n- Warm and conversational\n  - As if to one listener"
-        }
-      ]
-    },
-    {
       "categoryId": "length",
       "categoryName": "Length",
       "options": [
@@ -1098,6 +1047,51 @@
           "optionId": "match-the-source-tone",
           "shortName": "Match the source",
           "fullText": "- Match the tone of the existing text or examples given"
+        },
+        {
+          "optionId": "conversational",
+          "shortName": "Conversational",
+          "fullText": "- Natural, direct, low key\n  - Casual, never overly familiar\n  - Talking with the room, not lecturing\n- Sentences of 8–16 words\n- Plain words, no jargon\n  - Would a smart non-expert get it first time?\n- Contractions and concrete nouns\n- One real story at the centre\n  - Problem, action, outcome"
+        },
+        {
+          "optionId": "formal-oratorical",
+          "shortName": "Formal, oratorical",
+          "fullText": "- For a large audience or a formal occasion\n- More formal wording\n  - Still clear, never ornate\n- Classical devices\n  - Parallelism\n  - Antithesis\n  - Anaphora\n  - Triads, not overused\n- Cadence and imagery\n  - One metaphor at a time"
+        },
+        {
+          "optionId": "inspirational",
+          "shortName": "Inspirational",
+          "fullText": "- For commencements, launches, kick-offs\n- Inspire, don't lecture\n  - No policy detail unless needed\n- Vivid imagery\n- Repetition with variation\n- Close on a line that carries\n  - A shared future, stated with confidence\n  - Never \"thanks for your time\""
+        },
+        {
+          "optionId": "solemn-commemorative",
+          "shortName": "Solemn, commemorative",
+          "fullText": "- For memorials, eulogies, remembrance days\n- Somber, and hopeful\n- Restrained emotion\n  - From sincerity, not heightened rhetoric\n- Service and sacrifice honoured\n- Exact wording matters\n  - Written to be read as scripted\n- Pauses marked"
+        },
+        {
+          "optionId": "apology-crisis",
+          "shortName": "Apology, crisis",
+          "fullText": "- Apologise at the very start\n  - Not after the explanation\n  - No apology sandwich\n- Own it\n  - Name the impact\n  - No minimising\n  - No deflecting blame\n- One steady tone\n  - No swings in emotion\n  - Not scripted-sounding\n- Say what happens next\n- Slow pace, key pauses marked\n- Flag wording that may admit legal liability\n  - For legal review"
+        },
+        {
+          "optionId": "rallying-supporters",
+          "shortName": "Rallying supporters",
+          "fullText": "- For an audience already on side\n  - Party gathering, team rally\n- Strong, energising language\n- Contrast: our way or nothing\n- Short, rhythmic lines for applause\n- Never for a mixed or non-partisan audience"
+        },
+        {
+          "optionId": "persuading-the-unconvinced",
+          "shortName": "Persuading the unconvinced",
+          "fullText": "- For an audience that disagrees or is unsure\n- Goodwill first\n  - \"A drop of honey catches more flies than a gallon of gall\"\n- Appeal to shared values\n  - More than to data\n- Attention, problem, solution\n- Three main points at most\n  - Signposted\n  - Statistics used sparingly"
+        },
+        {
+          "optionId": "light-celebratory",
+          "shortName": "Light, celebratory",
+          "fullText": "- For dinners, awards, toasts, retirements\n- Warm, entertaining\n- Gentle, self-deprecating humour\n  - Never about personal lives, religion or ethnicity\n- Anecdotes like spices\n  - Few, and on point\n- After dinner: very short"
+        },
+        {
+          "optionId": "passionate-empathetic",
+          "shortName": "Passionate, empathetic",
+          "fullText": "- Speak to the audience's feelings first\n  - Name their concerns\n  - Validate them before arguing\n- Share the author's own feelings\n  - How they felt, in a real moment\n- Real stories, specific details\n- Conviction\n  - Say the hard truths plainly\n  - Repetition and parallel lines for emphasis\n- Sincere, never performed\n  - Show the feeling, don't just label it\n- Warm and conversational\n  - As if to one listener"
         }
       ]
     },
