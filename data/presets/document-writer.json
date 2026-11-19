@@ -45,12 +45,6 @@
       "editedText": null
     },
     {
-      "categoryId": "response-format",
-      "optionId": "full-report",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "questions",
       "optionId": "batch-questions",
       "enabled": false,
