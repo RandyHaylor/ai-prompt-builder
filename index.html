@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Rule Builder</title>
+  <meta name="description" content="Choose and order the rules you give an AI agent, and copy them into your prompt.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/rule-builder.css">
+  <script type="module" src="js/rule-builder-page.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <div>
+          <h1>AI Rule Builder</h1>
+          <p class="tagline">Choose the rules your agent works by. Copy them into your prompt.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel rules-panel" aria-labelledby="rules-heading">
+      <div class="panel-header">
+        <h2 id="rules-heading">Rules</h2>
+        <span id="rule-count" class="count-badge">0 rules</span>
+      </div>
+
+      <div class="toolbar">
+        <select id="preset-menu" class="select select-strong" aria-label="Preset"></select>
+        <div class="toolbar-buttons">
+          <button id="save-preset-button" type="button" class="button">Save as preset</button>
+          <button id="clear-rules-button" type="button" class="button button-quiet">Clear</button>
+        </div>
+      </div>
+
+      <ol id="rule-list" class="rule-list"></ol>
+      <p id="empty-list-note" class="empty-note" hidden>No rules yet. Choose a preset or add a rule below.</p>
+
+      <select id="add-rule-menu" class="select add-rule-menu" aria-label="Add a rule"></select>
+      <div id="suggested-topics" class="suggested-topics" hidden>
+        <p class="suggested-topics-label">Suggested topics</p>
+        <div id="suggested-topic-chips" class="chip-row"></div>
+      </div>
+      <p class="fine-print"><span id="store-description"></span>. Saving to your account comes later.</p>
+    </section>
+
+    <section class="panel output-panel" aria-labelledby="output-heading">
+      <div class="panel-header">
+        <h2 id="output-heading">Prompt text</h2>
+        <button id="copy-button" type="button" class="button button-primary">Copy</button>
+      </div>
+      <pre id="prompt-text" class="prompt-text"></pre>
+    </section>
+  </main>
+
+  <dialog id="save-preset-dialog" class="dialog">
+    <form id="save-preset-form" method="dialog">
+      <h3>Save as preset</h3>
+      <p class="dialog-text">Saves the rules above, in this order, under a name.</p>
+      <input id="preset-name-input" class="text-input" placeholder="Preset name" maxlength="60" autocomplete="off">
+      <p id="preset-name-note" class="field-note"></p>
+      <div class="form-actions">
+        <button value="cancel" class="button button-quiet" formnovalidate>Cancel</button>
+        <button value="save" class="button button-primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="new-category-dialog" class="dialog">
+    <form id="new-category-form" method="dialog">
+      <h3>New category</h3>
+      <p class="dialog-text">A kind of rule, such as “Documentation” or “Error handling”. You add its first option next.</p>
+      <input id="new-category-name-input" class="text-input" placeholder="Category name" maxlength="60" autocomplete="off">
+      <div class="form-actions">
+        <button value="cancel" class="button button-quiet" formnovalidate>Cancel</button>
+        <button value="add" class="button button-primary">Add category</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
