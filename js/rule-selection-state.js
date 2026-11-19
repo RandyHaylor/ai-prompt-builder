@@ -26,8 +26,8 @@ export class RuleSelectionState {
     this.customText = { text: "", placement: "end", enabled: true };
     /** The preset last loaded (or saved), kept while the user edits it. */
     this.selectedPresetName = null;
-    /** True once anything has changed since that preset was loaded or saved. */
-    this.presetHasUnsavedEdits = false;
+    /** The selection as it was when that preset was loaded or saved, to compare with. */
+    this.selectionAsSaved = null;
     this.changeListeners = new Set();
     this.textEditListeners = new Set();
   }
@@ -100,7 +100,6 @@ export class RuleSelectionState {
    * placement and on/off do. */
   changeCustomText(changes) {
     Object.assign(this.customText, changes);
-    this.presetHasUnsavedEdits = true;
     if ("text" in changes) {
       for (const listener of this.textEditListeners) listener(null);
     } else {
@@ -141,7 +140,6 @@ export class RuleSelectionState {
     const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
     if (!entry) return;
     entry.editedText = text;
-    this.presetHasUnsavedEdits = true;
     for (const listener of this.textEditListeners) listener(entry);
   }
 
@@ -153,19 +151,16 @@ export class RuleSelectionState {
     const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
     if (!entry) return;
     entry.enabled = enabled;
-    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
   setAllEntriesEnabled(enabled) {
     for (const entry of this.chosenEntries) entry.enabled = enabled;
-    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
   resetAllEntryTexts() {
     for (const entry of this.chosenEntries) entry.editedText = null;
-    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
@@ -173,7 +168,6 @@ export class RuleSelectionState {
     const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
     if (!entry) return;
     entry.editedText = null;
-    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
@@ -187,13 +181,11 @@ export class RuleSelectionState {
       enabled: true,
       editedText: null,
     });
-    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
   removeEntry(entryId) {
     this.chosenEntries = this.chosenEntries.filter((entry) => entry.entryId !== entryId);
-    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
@@ -202,7 +194,6 @@ export class RuleSelectionState {
     if (!entry) return;
     entry.optionId = optionId;
     entry.editedText = null;
-    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
@@ -210,13 +201,11 @@ export class RuleSelectionState {
     if (fromIndex === toIndex) return;
     const [moved] = this.chosenEntries.splice(fromIndex, 1);
     this.chosenEntries.splice(toIndex, 0, moved);
-    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
   clearEntries() {
     this.chosenEntries = [];
-    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
@@ -225,7 +214,7 @@ export class RuleSelectionState {
     if (!preset) return;
     this.loadRuleset(preset);
     this.selectedPresetName = presetName;
-    this.presetHasUnsavedEdits = false;
+    this.rememberSelectionAsSaved();
     this.notifyChange();
   }
 
@@ -256,7 +245,7 @@ export class RuleSelectionState {
       enabled: ruleset.customText?.enabled ?? true,
     };
     this.selectedPresetName = null;
-    this.presetHasUnsavedEdits = false;
+    this.rememberSelectionAsSaved();
   }
 
   openRuleset(ruleset) {
@@ -322,10 +311,28 @@ export class RuleSelectionState {
       ...this.customizations.customPresets.filter((preset) => preset.presetName !== presetName),
       { presetName, entries, customText: { ...this.customText } },
     ];
-    this.presetHasUnsavedEdits = false;
+    this.rememberSelectionAsSaved();
     this.selectedPresetName = presetName;
     await this.saveCustomizations();
     this.notifyChange();
+  }
+
+  /** What is compared to tell whether the loaded preset has been changed: every rule's
+   * order, option, on/off and edited text, and the custom text. */
+  describeSelectionForComparison() {
+    const { entries, customText } = this.exportRuleset();
+    return JSON.stringify({ entries, customText });
+  }
+
+  rememberSelectionAsSaved() {
+    this.selectionAsSaved = this.describeSelectionForComparison();
+  }
+
+  /** True when the selection differs from the preset as it was loaded or last saved —
+   * so undoing a change makes it false again. */
+  get presetHasUnsavedEdits() {
+    return Boolean(this.selectedPresetName)
+      && this.describeSelectionForComparison() !== this.selectionAsSaved;
   }
 
   presetNameIsTheUsersOwn(presetName) {
