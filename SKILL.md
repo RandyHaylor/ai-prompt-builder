@@ -62,6 +62,21 @@ if that folder exists, or `$AI_PROMPT_BUILDER_HOME`).
 6. Never add rules, options or text the user did not choose. Their own words go in as they
    gave them.
 
+## Putting the finished prompt to use
+
+Offer the user these ways to apply it, and let them choose:
+
+- **This task, now:** follow it yourself for the work at hand.
+- **A spawned agent:** pass the composed text as that agent's instructions.
+- **Standing rules in this harness:** most harnesses have places for instructions that are
+  loaded automatically — for this project or session, or for every session (globally).
+  Do not assume where or how: **research it for the harness you are running in**, from its
+  current official documentation (for example, the project and user instruction files and
+  settings it reads at start-up, and how they combine). Then tell the user what you found —
+  the options, where each file lives, and what each one affects — and offer to add the rules
+  there, at the level they pick. Show the exact change before writing it, add to existing
+  instructions rather than replacing them, and mention how to undo it.
+
 Things a ruleset is good for, to suggest when it fits: the standing instructions of a
 deployed agent, the rules section of a handoff document, a team's shared way of working,
 or a one-off prompt for a specific task.
