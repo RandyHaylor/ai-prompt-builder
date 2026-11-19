@@ -158,6 +158,12 @@ function renderEntry(entry, index) {
       toggle,
       createElement("span", { className: "rule-category", textContent: category.categoryName }),
       optionMenu,
+      // Removing is offered only on an expanded rule, so it is never hit by accident.
+      ...(isExpanded ? [createElement("button", {
+        type: "button", className: "icon-button delete-button", title: "Delete this rule",
+        ariaLabel: "Delete this rule", innerHTML: TRASH_CAN_ICON,
+        onclick: () => state.removeEntry(entry.entryId),
+      })] : []),
       createElement("button", {
         type: "button", className: "icon-button expand-button",
         title: isExpanded ? "Hide the text" : "Show and edit the text",
@@ -170,12 +176,6 @@ function renderEntry(entry, index) {
           render();
         },
       }),
-      // Removing is offered only on an expanded rule, so it is never hit by accident.
-      ...(isExpanded ? [createElement("button", {
-        type: "button", className: "icon-button delete-button", title: "Delete this rule",
-        ariaLabel: "Delete this rule", innerHTML: TRASH_CAN_ICON,
-        onclick: () => state.removeEntry(entry.entryId),
-      })] : []),
     ]),
     ...(formIsOpen ? [renderNewOptionForm(entry)] : isExpanded ? [renderEditableRuleText(entry)] : []),
   ]);
