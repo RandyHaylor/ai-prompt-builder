@@ -440,7 +440,6 @@ const ONLINE_ASSISTANTS = {
   claude: { name: "Claude", newChatAddress: "https://claude.ai/new", promptParameter: "q" },
   chatgpt: { name: "ChatGPT", newChatAddress: "https://chatgpt.com/", promptParameter: "q" },
   grok: { name: "Grok", newChatAddress: "https://grok.com/", promptParameter: "q" },
-  gemini: { name: "Gemini", newChatAddress: "https://gemini.google.com/app", promptParameter: null },
 };
 const LONGEST_PROMPT_SENT_IN_AN_ADDRESS = 6000;
 

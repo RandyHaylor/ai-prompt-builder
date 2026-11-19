@@ -26,7 +26,7 @@ Every rule is one topic — *Naming*, *Testing*, *Scope adherence*, *When blocke
 - **Custom text** turns a general ruleset into a specific prompt: say what you actually want done, at the end or the beginning.
 - **Presets** for common jobs, and your own presets saved by name.
 - **Copy** the finished text, ready to paste.
-- **Send to online AI** — Claude, ChatGPT, Grok or Gemini open in a new tab with your prompt filled in (or copied, ready to paste, when it's too long for that site's address or the site doesn't take one).
+- **Send to online AI** — Claude, ChatGPT or Grok open in a new tab with your prompt filled in (or copied, ready to paste, when it's too long to fill in).
 
 ## Presets
 
