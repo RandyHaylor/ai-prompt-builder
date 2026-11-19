@@ -1,6 +1,6 @@
 <div align="center">
 
-# AI Prompt Builder
+# AI Prompt Builder -- Standalone Tool OR Integrated Agent Skill
 
 **Build the prompt for your AI agent: pick the rules it works by, say what you want done, copy the text.**
 
