@@ -388,6 +388,27 @@
       ]
     },
     {
+      "categoryId": "review-depth",
+      "categoryName": "Review depth",
+      "options": [
+        {
+          "optionId": "real-issues-in-the-diff-only",
+          "shortName": "Diff only, real issues",
+          "fullText": "- Review only the diff\n  - Code outside it: only where the diff breaks it\n- Only real, immediate issues\n  - Bugs\n  - Security holes\n  - Data loss\n  - Broken behaviour or contracts\n  - Missed requirements\n- No nitpicks\n  - Style\n  - Naming\n  - Formatting\n  - Personal preference\n  - \"Could be cleaner\"\n- Nothing real found?\n  - Say so in one line\n  - Don't invent findings"
+        },
+        {
+          "optionId": "balanced-review",
+          "shortName": "Balanced",
+          "fullText": "- Review the diff and the code it touches\n- Real issues first\n- Then maintainability problems that matter\n- Nitpicks only if few\n  - Marked \"Nit:\""
+        },
+        {
+          "optionId": "comprehensive-review",
+          "shortName": "Comprehensive",
+          "fullText": "- Review the whole change and its surroundings\n  - Correctness\n  - Security\n  - Performance\n  - Error handling\n  - Tests\n  - Design and structure\n  - Readability and naming\n  - Documentation\n- Every finding ranked by severity\n  - Nitpicks marked \"Nit:\""
+        }
+      ]
+    },
+    {
       "categoryId": "testing",
       "categoryName": "Testing",
       "options": [

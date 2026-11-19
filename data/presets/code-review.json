@@ -1,7 +1,13 @@
 {
   "format": "ai-prompt-builder/ruleset@1",
-  "name": "Code review",
+  "name": "Comprehensive code review",
   "entries": [
+    {
+      "categoryId": "review-depth",
+      "optionId": "comprehensive-review",
+      "enabled": true,
+      "editedText": null
+    },
     {
       "categoryId": "adding-details",
       "optionId": "do-not-add-or-change-details",
