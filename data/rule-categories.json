@@ -186,17 +186,17 @@
         {
           "optionId": "outline-and-agree",
           "shortName": "Outline, agree, then do",
-          "fullText": "- Outline first\n  - The parts\n  - The point of each\n- Agree the outline with the user\n- Then do the work"
+          "fullText": "- Outline first\n  - The parts\n  - The point of each\n- Agree the outline with the user\n- Then do the work\n- Outline in the order the Document layout sets, if one is set"
         },
         {
           "optionId": "outline-then-proceed",
           "shortName": "Outline, then proceed",
-          "fullText": "- Outline first\n  - Show it\n- Then do the work\n  - Without waiting for approval"
+          "fullText": "- Outline first\n  - Show it\n- Then do the work\n  - Without waiting for approval\n- Outline in the order the Document layout sets, if one is set"
         },
         {
           "optionId": "brief-first",
           "shortName": "Brief first",
-          "fullText": "- Write a short brief first\n  - Purpose\n  - Audience\n  - The one key message\n- Agree it with the user\n- Then outline, then draft"
+          "fullText": "- Write a short brief first\n  - Purpose\n  - Audience\n  - The one key message\n- Agree it with the user\n- Then outline, then draft\n- Outline in the order the Document layout sets, if one is set"
         },
         {
           "optionId": "pyramid-principle",
@@ -211,12 +211,53 @@
         {
           "optionId": "headline-outline",
           "shortName": "Headline outline",
-          "fullText": "- Outline as headlines\n  - Every heading is a full statement of its point\n  - The argument must make sense from the headings alone\n- Agree it with the user\n- Then fill in each section"
+          "fullText": "- Outline as headlines\n  - Every heading is a full statement of its point\n  - The argument must make sense from the headings alone\n- Agree it with the user\n- Then fill in each section\n- Outline in the order the Document layout sets, if one is set"
         },
         {
           "optionId": "straight-to-a-draft",
           "shortName": "Straight to a first version",
           "fullText": "- Go straight to a complete first version\n- List what you assumed\n  - Audience\n  - Length\n  - Structure"
+        }
+      ]
+    },
+    {
+      "categoryId": "document-layout",
+      "categoryName": "Document layout",
+      "options": [
+        {
+          "optionId": "bottom-line-up-front",
+          "shortName": "Bottom line up front (BLUF)",
+          "fullText": "- The bottom line first\n  - The conclusion, recommendation or ask\n- Then the support\n- Source: US Army writing standard (AR 25-50)\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+        },
+        {
+          "optionId": "inverted-pyramid",
+          "shortName": "Inverted pyramid",
+          "fullText": "- Most important first\n- Then details, in falling importance\n  - It can be cut from the bottom\n- Source: news writing (Purdue OWL)\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+        },
+        {
+          "optionId": "situation-complication-resolution",
+          "shortName": "Situation, complication, resolution (SCR)",
+          "fullText": "- Situation\n  - What the reader already accepts\n- Complication\n  - What changed or went wrong\n- Resolution\n  - The main point\n- Source: Barbara Minto, The Pyramid Principle\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+        },
+        {
+          "optionId": "problem-then-solution",
+          "shortName": "Problem, then solution",
+          "fullText": "- The problem\n  - Causes\n  - Scope\n  - Consequences\n- Then the solution\n- Source: university writing-center organization patterns\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+        },
+        {
+          "optionId": "chronological",
+          "shortName": "Chronological",
+          "fullText": "- In time order\n  - Events, or steps in a process\n- Source: university writing-center organization patterns\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+        },
+        {
+          "optionId": "compare-and-contrast",
+          "shortName": "Compare and contrast",
+          "fullText": "- Options side by side\n  - Similarities\n  - Differences\n- Then a verdict, if asked for\n- Source: university writing-center organization patterns\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+        },
+        {
+          "optionId": "cause-and-effect",
+          "shortName": "Cause and effect",
+          "fullText": "- Causes\n- Then their effects\n  - Or each cause paired with its effect\n- Source: university writing-center organization patterns\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
         }
       ]
     },

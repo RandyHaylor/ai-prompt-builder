@@ -9,6 +9,12 @@
       "editedText": null
     },
     {
+      "categoryId": "document-layout",
+      "optionId": "bottom-line-up-front",
+      "enabled": false,
+      "editedText": null
+    },
+    {
       "categoryId": "adding-details",
       "optionId": "do-not-add-or-change-details",
       "enabled": true,
