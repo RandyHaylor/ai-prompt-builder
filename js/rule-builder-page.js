@@ -43,6 +43,9 @@ const page = {
 /** The entry whose "new option" form is open, if any (survives re-rendering). */
 let entryIdWithNewOptionFormOpen = null;
 
+/** Entries the user expanded to see and edit their text (all are collapsed by default). */
+const expandedEntryIds = new Set();
+
 const createElement = (tagName, properties = {}, children = []) => {
   const element = Object.assign(document.createElement(tagName), properties);
   element.append(...children);
@@ -126,6 +129,8 @@ function renderEntry(entry, index) {
   });
 
   const formIsOpen = entryIdWithNewOptionFormOpen === entry.entryId || !category.options.length;
+  // Collapsed by default; an entry whose text was edited stays open so the edit is visible.
+  const isExpanded = expandedEntryIds.has(entry.entryId) || state.entryTextIsEdited(entry);
 
   return createElement("li", { className: "rule-card" }, [
     createElement("div", { className: "rule-card-header" }, [
@@ -134,15 +139,25 @@ function renderEntry(entry, index) {
         ariaLabel: `Move rule ${index + 1}, ${category.categoryName}`, innerHTML: "<span></span><span></span><span></span>",
       }),
       createElement("span", { className: "rule-category", textContent: category.categoryName }),
+      optionMenu,
+      createElement("button", {
+        type: "button", className: "icon-button expand-button",
+        title: isExpanded ? "Hide the text" : "Show and edit the text",
+        ariaLabel: isExpanded ? "Hide the text" : "Show and edit the text",
+        ariaExpanded: String(isExpanded),
+        textContent: isExpanded ? "▴" : "▾",
+        onclick: () => {
+          if (isExpanded) expandedEntryIds.delete(entry.entryId);
+          else expandedEntryIds.add(entry.entryId);
+          render();
+        },
+      }),
       createElement("button", {
         type: "button", className: "icon-button", title: "Remove this rule", ariaLabel: "Remove this rule",
         textContent: "✕", onclick: () => state.removeEntry(entry.entryId),
       }),
     ]),
-    optionMenu,
-    formIsOpen
-      ? renderNewOptionForm(entry)
-      : renderEditableRuleText(entry),
+    ...(formIsOpen ? [renderNewOptionForm(entry)] : isExpanded ? [renderEditableRuleText(entry)] : []),
   ]);
 }
 

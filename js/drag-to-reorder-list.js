@@ -1,19 +1,35 @@
 /**
- * Drag-to-reorder for any list of elements, with mouse, touch and pen alike (pointer
- * events, so it works on phones where HTML drag-and-drop does not).
+ * Drag-to-reorder for any list of elements laid out in rows or in a grid, with mouse,
+ * touch and pen alike (pointer events, so it works on phones where HTML drag-and-drop
+ * does not).
  *
  * makeListReorderableByDragging(listElement, {itemSelector, handleSelector, onMove})
- *   - an item is dragged by its handle;
- *   - while dragging, the item follows the pointer and the others make room;
+ *   - an item is dragged by its handle and follows the pointer;
+ *   - the item nearest the pointer is marked as the drop target ("is-drop-target");
  *   - on release, onMove(fromIndex, toIndex) is called. The caller changes its data and
  *     re-renders; this module does not keep the moved order itself.
- * Keyboard: a focused handle moves its item with ArrowUp / ArrowDown.
+ * Keyboard: a focused handle moves its item with the arrow keys.
  */
 
 export function makeListReorderableByDragging(listElement, { itemSelector, handleSelector, onMove }) {
   let drag = null;
 
   const items = () => [...listElement.querySelectorAll(itemSelector)];
+
+  const indexOfItemNearest = (x, y) => {
+    let nearestIndex = drag.fromIndex;
+    let nearestDistance = Infinity;
+    drag.itemRects.forEach((rect, index) => {
+      const dx = x - (rect.left + rect.width / 2);
+      const dy = y - (rect.top + rect.height / 2);
+      const distance = dx * dx + dy * dy;
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestIndex = index;
+      }
+    });
+    return nearestIndex;
+  };
 
   listElement.addEventListener("pointerdown", (event) => {
     const handle = event.target.closest(handleSelector);
@@ -28,10 +44,10 @@ export function makeListReorderableByDragging(listElement, { itemSelector, handl
     }
     drag = {
       item,
-      handle,
       pointerId: event.pointerId,
       fromIndex: allItems.indexOf(item),
       toIndex: allItems.indexOf(item),
+      startX: event.clientX,
       startY: event.clientY,
       itemRects: allItems.map((element) => element.getBoundingClientRect()),
     };
@@ -41,26 +57,11 @@ export function makeListReorderableByDragging(listElement, { itemSelector, handl
 
   listElement.addEventListener("pointermove", (event) => {
     if (!drag || event.pointerId !== drag.pointerId) return;
-    const offsetY = event.clientY - drag.startY;
-    drag.item.style.transform = `translateY(${offsetY}px)`;
-
-    const draggedRect = drag.itemRects[drag.fromIndex];
-    const draggedCentre = draggedRect.top + draggedRect.height / 2 + offsetY;
-    let toIndex = drag.fromIndex;
-    drag.itemRects.forEach((rect, index) => {
-      const centre = rect.top + rect.height / 2;
-      if (index < drag.fromIndex && draggedCentre < centre) toIndex = Math.min(toIndex, index);
-      if (index > drag.fromIndex && draggedCentre > centre) toIndex = Math.max(toIndex, index);
-    });
-    drag.toIndex = toIndex;
-
-    const gap = draggedRect.height + 10;
+    drag.item.style.transform =
+      `translate(${event.clientX - drag.startX}px, ${event.clientY - drag.startY}px)`;
+    drag.toIndex = indexOfItemNearest(event.clientX, event.clientY);
     items().forEach((element, index) => {
-      if (element === drag.item) return;
-      let shift = 0;
-      if (index > drag.fromIndex && index <= toIndex) shift = -gap;
-      if (index < drag.fromIndex && index >= toIndex) shift = gap;
-      element.style.transform = shift ? `translateY(${shift}px)` : "";
+      element.classList.toggle("is-drop-target", index === drag.toIndex && index !== drag.fromIndex);
     });
   });
 
@@ -69,6 +70,7 @@ export function makeListReorderableByDragging(listElement, { itemSelector, handl
     const { fromIndex, toIndex } = drag;
     items().forEach((element) => {
       element.style.transform = "";
+      element.classList.remove("is-drop-target");
     });
     drag.item.classList.remove("is-being-dragged");
     listElement.classList.remove("is-reordering");
@@ -80,10 +82,11 @@ export function makeListReorderableByDragging(listElement, { itemSelector, handl
 
   listElement.addEventListener("keydown", (event) => {
     const handle = event.target.closest(handleSelector);
-    if (!handle || (event.key !== "ArrowUp" && event.key !== "ArrowDown")) return;
+    const step = { ArrowUp: -1, ArrowLeft: -1, ArrowDown: 1, ArrowRight: 1 }[event.key];
+    if (!handle || !step) return;
     const allItems = items();
     const fromIndex = allItems.indexOf(handle.closest(itemSelector));
-    const toIndex = fromIndex + (event.key === "ArrowUp" ? -1 : 1);
+    const toIndex = fromIndex + step;
     if (toIndex < 0 || toIndex >= allItems.length) return;
     event.preventDefault();
     onMove(fromIndex, toIndex);
