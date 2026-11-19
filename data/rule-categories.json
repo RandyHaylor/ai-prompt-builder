@@ -28,7 +28,7 @@
       "options": [
         {
           "optionId": "must-ask-before-starting",
-          "shortName": "Must ask before starting",
+          "shortName": "Ask for detailed technical requirements",
           "fullText": "- Before starting, ask or confirm with the user\n  - Never assume any of these\n- What it's for\n  - The goal\n  - Who it's for: the target audience or users\n- Stage of the work, for example\n  - Tech spike\n  - Prototype\n  - Class project\n  - Alpha\n  - Beta\n  - Production\n- Scale\n  - How many users, how much data, how long it must last\n- Technology\n  - Language\n  - Stack and frameworks\n  - Where it runs or deploys\n- Constraints\n  - Deadline\n  - Budget, including paid services\n  - Anything it must work with\n- What done looks like\n- These are examples, not the full list\n  - Ask about anything else the work depends on"
         },
         {
