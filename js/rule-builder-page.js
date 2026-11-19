@@ -374,7 +374,7 @@ async function warnAboutRulesTheLoadedPresetPointsAtThatAreGone(presetName) {
 }
 
 page.clearRulesButton.addEventListener("click", () => {
-  if (confirm("Clear every rule from the list? This cannot be undone (load a preset to start again).")) {
+  if (confirm("Clear every rule and the custom text? This cannot be undone (load a preset to start again).")) {
     state.clearEntries();
   }
 });

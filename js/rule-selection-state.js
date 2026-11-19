@@ -211,6 +211,7 @@ export class RuleSelectionState {
    * not an edit of that preset. */
   clearEntries() {
     this.chosenEntries = [];
+    this.customText = { ...this.customText, text: "" };
     this.selectedPresetName = null;
     this.rememberSelectionAsSaved();
     this.notifyChange();
