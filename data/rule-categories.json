@@ -24,21 +24,21 @@
     },
     {
       "categoryId": "existing-solutions",
-      "categoryName": "Existing solutions",
+      "categoryName": "Reinvent wheels",
       "options": [
         {
           "optionId": "follow-established-patterns",
-          "shortName": "Follow how others already do it",
-          "fullText": "- Never reinvent a wheel\n- First, find how others solve it\n  - Major products\n  - Libraries\n  - Standards\n- Follow their pattern\n  - Your own reasoning is no substitute\n- Use existing libraries and standards\n  - Not your own versions\n- Departing from the pattern\n  - Approval first\n  - Say what the pattern is\n  - Say why you depart"
+          "shortName": "Never",
+          "fullText": "- Never reinvent a wheel\n- Prioritize\n  - Industry standards\n  - Proven patterns\n  - How major products and libraries already do it\n- Find them with good, broad research\n  - Generic search terms\n  - NOT searches built on your own guesses\n- Your own reasoning is no substitute\n- Departing from the standard pattern\n  - Approval first\n  - Say what the pattern is\n  - Say why you depart"
         },
         {
           "optionId": "check-for-existing-libraries",
-          "shortName": "Check for existing libraries",
+          "shortName": "Check for libraries first",
           "fullText": "- Before writing general-purpose code\n  - Check for a maintained library"
         },
         {
           "optionId": "build-from-scratch",
-          "shortName": "Build it yourself",
+          "shortName": "Fine to build your own",
           "fullText": "- Build what's needed directly"
         }
       ]
