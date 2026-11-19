@@ -33,7 +33,7 @@
         },
         {
           "optionId": "must-ask-before-writing",
-          "shortName": "Must ask before writing",
+          "shortName": "Ask for detailed requirements",
           "fullText": "- Before writing, ask or confirm with the user\n  - Never assume any of these\n- Purpose\n  - What the document must achieve\n- Audience\n  - Who reads it\n  - What they already know\n- Shape\n  - Length\n  - Format\n  - Required sections\n- Tone\n- Sources\n  - What to draw on\n  - What to cite\n- Deadline\n- These are examples, not the full list\n  - Ask about anything else it depends on"
         },
         {
