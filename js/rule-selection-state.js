@@ -184,6 +184,15 @@ export class RuleSelectionState {
     this.chosenEntries = preset.entries
       .filter((entry) => this.findOption(entry.categoryId, entry.optionId))
       .map((entry) => ({ entryId: newEntryId(), enabled: true, editedText: null, ...entry }));
+    // Every category is always shown: those the preset does not use follow it, switched off.
+    const categoryIdsInPreset = new Set(this.chosenEntries.map((entry) => entry.categoryId));
+    for (const category of this.listAllCategories()) {
+      if (categoryIdsInPreset.has(category.categoryId) || !category.options.length) continue;
+      this.chosenEntries.push({
+        entryId: newEntryId(), categoryId: category.categoryId,
+        optionId: category.options[0].optionId, enabled: false, editedText: null,
+      });
+    }
     this.selectedPresetName = presetName;
     this.notifyChange();
   }
