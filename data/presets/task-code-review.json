@@ -40,7 +40,7 @@
     }
   ],
   "customText": {
-    "text": "Review: the pull request that adds CSV export to the reports page. The requirements are in the linked issue.",
+    "text": "Review the pull request that adds CSV export to the reports page. The requirements are in the linked issue.",
     "placement": "end",
     "enabled": true
   }

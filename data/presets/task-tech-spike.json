@@ -64,7 +64,7 @@
     }
   ],
   "customText": {
-    "text": "Spike question: can a three.js scene render 10,000 animated sprites at 60 fps in a mobile browser?",
+    "text": "Can a three.js scene render 10,000 animated sprites at 60 fps in a mobile browser?",
     "placement": "end",
     "enabled": true
   }

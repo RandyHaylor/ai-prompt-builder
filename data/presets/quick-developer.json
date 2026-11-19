@@ -82,7 +82,7 @@
     }
   ],
   "customText": {
-    "text": "Task: add a \"copy to clipboard\" button next to each code block on the docs page.",
+    "text": "Add a \"copy to clipboard\" button next to each code block on the docs page.",
     "placement": "end",
     "enabled": true
   }

@@ -58,7 +58,7 @@
     }
   ],
   "customText": {
-    "text": "Bug: after sign-in, users are sent back to the home page instead of the page they came from. Reported on the mobile site only.",
+    "text": "After sign-in, users are sent back to the home page instead of the page they came from. Reported on the mobile site only.",
     "placement": "end",
     "enabled": true
   }

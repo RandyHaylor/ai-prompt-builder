@@ -76,7 +76,7 @@
     }
   ],
   "customText": {
-    "text": "Your task: implement the parser module described in the plan, against the interface and tests already in the skeleton.",
+    "text": "Implement the parser module described in the plan, against the interface and tests already in the skeleton.",
     "placement": "end",
     "enabled": true
   }

@@ -46,7 +46,7 @@
     }
   ],
   "customText": {
-    "text": "Question: which open-source libraries can render Markdown to PDF from Python today, and which of them keep code-block syntax highlighting?",
+    "text": "Which open-source libraries can render Markdown to PDF from Python today, and which of them keep code-block syntax highlighting?",
     "placement": "end",
     "enabled": true
   }

@@ -124,7 +124,7 @@
     }
   ],
   "customText": {
-    "text": "Task: build a command-line tool that takes a folder of CSV files and merges them into one, matching columns by header name. It must handle files with missing columns and report rows it could not merge.",
+    "text": "Build a command-line tool that takes a folder of CSV files and merges them into one, matching columns by header name. It must handle files with missing columns and report rows it could not merge.",
     "placement": "end",
     "enabled": true
   }

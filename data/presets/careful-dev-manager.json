@@ -130,7 +130,7 @@
     }
   ],
   "customText": {
-    "text": "Goal: plan and run the work to add user accounts (sign up, sign in, password reset) to the existing web app. Break it into sprint features, propose the plan to me before any building starts, and suggest what can run in parallel.",
+    "text": "Plan and run the work to add user accounts (sign up, sign in, password reset) to the existing web app. Break it into sprint features, propose the plan to me before any building starts, and suggest what can run in parallel.",
     "placement": "end",
     "enabled": true
   }

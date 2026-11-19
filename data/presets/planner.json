@@ -88,7 +88,7 @@
     }
   ],
   "customText": {
-    "text": "Plan: a small web app where a team can post and vote on lunch options. Work through it with me before anything is built.",
+    "text": "Plan a small web app where a team can post and vote on lunch options. Work through it with me before anything is built.",
     "placement": "end",
     "enabled": true
   }
