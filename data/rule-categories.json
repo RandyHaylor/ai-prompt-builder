@@ -194,6 +194,26 @@
           "fullText": "- Outline first\n  - Show it\n- Then do the work\n  - Without waiting for approval"
         },
         {
+          "optionId": "brief-first",
+          "shortName": "Brief first",
+          "fullText": "- Write a short brief first\n  - Purpose\n  - Audience\n  - The one key message\n- Agree it with the user\n- Then outline, then draft"
+        },
+        {
+          "optionId": "pyramid-principle",
+          "shortName": "Pyramid principle (Minto)",
+          "fullText": "- Plan the pyramid before drafting\n  - The main conclusion, at the top\n  - Supporting points grouped beneath it\n  - Evidence under each point\n- Agree it with the user\n- Then write it top-down\n  - Conclusion first"
+        },
+        {
+          "optionId": "working-backwards",
+          "shortName": "Working backwards (PR/FAQ)",
+          "fullText": "- Start from the finished result\n  - A one-page press release, as if it has launched\n  - An FAQ: the questions readers will ask, answered\n- Agree them with the user\n- Then write the full document from them"
+        },
+        {
+          "optionId": "headline-outline",
+          "shortName": "Headline outline",
+          "fullText": "- Outline as headlines\n  - Every heading is a full statement of its point\n  - The argument must make sense from the headings alone\n- Agree it with the user\n- Then fill in each section"
+        },
+        {
           "optionId": "straight-to-a-draft",
           "shortName": "Straight to a first version",
           "fullText": "- Go straight to a complete first version\n- List what you assumed\n  - Audience\n  - Length\n  - Structure"
