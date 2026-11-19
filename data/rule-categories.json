@@ -365,7 +365,7 @@
         {
           "optionId": "batch-questions",
           "shortName": "Batch questions",
-          "fullText": "- Don't alternate asking and working\n- Research first\n- Then ask all questions together\n  - One at a time\n- Need more?\n  - Another round of research\n  - Another list of questions"
+          "fullText": "- Don't alternate asking and working\n- Research first\n- Then ask all questions together\n  - One at a time\n- Answers raise new questions?\n  - Research again\n  - Then ask the new ones together"
         },
         {
           "optionId": "ask-as-they-come",
