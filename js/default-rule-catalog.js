@@ -157,14 +157,20 @@ export const DEFAULT_RULE_CATEGORIES = [
       "No restriction on runs that cost money per use."],
   ]),
 
-  category("hand-off", "Hand-off notes", [
-    ["hand-off-notes", "Leave notes for later work",
-      "When you finish, list anything that someone continuing this work later would need to know and could not easily find: decisions made and why, things that did not work, gotchas, where things are. Put the list at the end of your response."],
+  category("documentation", "Documentation", [
+    ["no-documentation", "None",
+      "Do not write documentation."],
+    ["keep-docs-in-sync", "Keep existing docs in sync",
+      "Write no new documents, but update any existing documentation your change makes wrong, in the same change."],
+    ["readme-for-what-you-build", "README for what you build",
+      "Everything you build gets a README: what it is, how to run or use it, and a short example. Keep existing docs in sync with your changes."],
+    ["full-documentation", "Full documentation",
+      "Document as you build:\n- A README for each part: what it is, how to use it, examples.\n- Its interface: inputs, outputs, errors.\n- The decisions made and why, where someone changing it later would look.\n- Existing docs updated in the same change that makes them wrong."],
   ]),
 
   category("response-format", "Response format", [
     ["full-report", "Full report",
-      "Respond with: Status / Built / Tests (exact commands and the test runner's summary line verbatim) / Deviations / Discretion calls / Open items / Hand-off."],
+      "Respond with: Status / Built / Tests (exact commands and the test runner's summary line verbatim) / Deviations / Discretion calls / Open items."],
     ["wiki-style", "Wiki style",
       "Respond wiki style: a short title, then headings, each followed by terse indented bullets. Each level reads on its own; deeper levels add detail. No prose paragraphs."],
     ["slides-style", "Slide style",
@@ -217,7 +223,7 @@ export const DEFAULT_RULE_PRESETS = [
       on("testing", "tdd-module-level"),
       on("troubleshooting", "research-errors"),
       on("billed-runs", "research-then-permission"),
-      on("hand-off", "hand-off-notes"),
+      on("documentation", "readme-for-what-you-build"),
       on("response-format", "full-report"),
       off("prs", "stacked-prs-and-review"),
     ],
