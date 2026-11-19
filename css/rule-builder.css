@@ -179,6 +179,17 @@ textarea.text-input { resize: vertical; min-height: 96px; line-height: 1.5; }
 }
 .icon-button:hover { background: var(--accent-soft); color: var(--danger); }
 
+.rule-text-block { display: grid; gap: 8px; }
+.rule-text-field {
+  font-size: 14px; line-height: 1.55; color: var(--text);
+  min-height: 60px; resize: vertical; overflow: hidden;
+  background: var(--panel-background);
+}
+.edited-text-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.edited-text-actions[hidden] { display: none; }
+.edited-note { font-size: 12px; font-weight: 600; color: var(--accent); margin-right: auto; }
+.short-name-input { flex: 1 1 180px; min-height: 34px; padding: 6px 10px; font-size: 13.5px; }
+.button-small { min-height: 34px; padding: 0 12px; font-size: 13px; }
 .rule-full-text { margin: 0; color: var(--text-muted); font-size: 14px; white-space: pre-wrap; }
 
 .new-option-form { display: grid; gap: 8px; }

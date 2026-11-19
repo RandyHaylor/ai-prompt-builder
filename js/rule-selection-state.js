@@ -3,8 +3,9 @@
  * shipped catalog plus the user's own additions), the ordered list of chosen rules, and
  * the presets. Holds no knowledge of the page; the page subscribes to changes.
  *
- * A chosen rule ("entry") is {entryId, categoryId, optionId}. The same category may be
- * chosen more than once.
+ * A chosen rule ("entry") is {entryId, categoryId, optionId, editedText}. editedText is
+ * null until the user changes the rule's text on the page; then that text is used in
+ * place of the option's.
  */
 
 let lastEntryNumber = 0;
@@ -22,6 +23,7 @@ export class RuleSelectionState {
     this.chosenEntries = [];
     this.selectedPresetName = null;
     this.changeListeners = new Set();
+    this.textEditListeners = new Set();
   }
 
   async loadSavedCustomizations() {
@@ -81,15 +83,47 @@ export class RuleSelectionState {
     return this.chosenEntries
       .map((entry) => {
         const category = this.findCategory(entry.categoryId);
-        const option = this.findOption(entry.categoryId, entry.optionId);
-        if (!category || !option) return null;
-        return `## ${category.categoryName}\n\n${option.fullText}`;
+        const text = this.textOfEntry(entry);
+        if (!category || text === null) return null;
+        return `## ${category.categoryName}\n\n${text}`;
       })
       .filter(Boolean)
       .join("\n\n");
   }
 
+  /** The text an entry contributes: the user's edit, else its option's text. */
+  textOfEntry(entry) {
+    if (entry.editedText !== null && entry.editedText !== undefined) return entry.editedText;
+    return this.findOption(entry.categoryId, entry.optionId)?.fullText ?? null;
+  }
+
+  entryTextIsEdited(entry) {
+    const option = this.findOption(entry.categoryId, entry.optionId);
+    return entry.editedText !== null && entry.editedText !== undefined
+      && entry.editedText !== option?.fullText;
+  }
+
   // --- changing the chosen rules -----------------------------------------------------
+
+  /** Change an entry's text while the user types. Listeners are told with the entry id so
+   * the page can update the output without redrawing the field being typed in. */
+  editEntryText(entryId, text) {
+    const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
+    if (!entry) return;
+    entry.editedText = text;
+    for (const listener of this.textEditListeners) listener(entry);
+  }
+
+  onEntryTextEdit(listener) {
+    this.textEditListeners.add(listener);
+  }
+
+  resetEntryText(entryId) {
+    const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
+    if (!entry) return;
+    entry.editedText = null;
+    this.notifyChange();
+  }
 
   addEntry(categoryId) {
     const category = this.findCategory(categoryId);
@@ -98,6 +132,7 @@ export class RuleSelectionState {
       entryId: newEntryId(),
       categoryId,
       optionId: category.options[0]?.optionId ?? null,
+      editedText: null,
     });
     this.selectedPresetName = null;
     this.notifyChange();
@@ -113,6 +148,7 @@ export class RuleSelectionState {
     const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
     if (!entry) return;
     entry.optionId = optionId;
+    entry.editedText = null;
     this.selectedPresetName = null;
     this.notifyChange();
   }
@@ -136,7 +172,7 @@ export class RuleSelectionState {
     if (!preset) return;
     this.chosenEntries = preset.entries
       .filter((entry) => this.findOption(entry.categoryId, entry.optionId))
-      .map((entry) => ({ entryId: newEntryId(), ...entry }));
+      .map((entry) => ({ entryId: newEntryId(), editedText: null, ...entry }));
     this.selectedPresetName = presetName;
     this.notifyChange();
   }
@@ -172,7 +208,11 @@ export class RuleSelectionState {
   async saveChosenEntriesAsPreset(presetName) {
     const entries = this.chosenEntries
       .filter((entry) => entry.optionId)
-      .map(({ categoryId, optionId }) => ({ categoryId, optionId }));
+      .map((entry) => ({
+        categoryId: entry.categoryId,
+        optionId: entry.optionId,
+        editedText: this.entryTextIsEdited(entry) ? entry.editedText : null,
+      }));
     this.customizations.customPresets = [
       ...this.customizations.customPresets.filter((preset) => preset.presetName !== presetName),
       { presetName, entries },

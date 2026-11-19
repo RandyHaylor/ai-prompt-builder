@@ -142,8 +142,56 @@ function renderEntry(entry, index) {
     optionMenu,
     formIsOpen
       ? renderNewOptionForm(entry)
-      : createElement("p", { className: "rule-full-text", textContent: option?.fullText ?? "" }),
+      : renderEditableRuleText(entry),
   ]);
+}
+
+/** The rule's text in an editable field. Once changed: Reset, or save it as a new option. */
+function renderEditableRuleText(entry) {
+  const field = createElement("textarea", {
+    className: "text-input rule-text-field", value: state.textOfEntry(entry) ?? "",
+    ariaLabel: "Rule text (editable)", spellcheck: false,
+  });
+  const fitHeightToText = () => {
+    field.style.height = "auto";
+    field.style.height = `${field.scrollHeight + 2}px`;
+  };
+  queueMicrotask(fitHeightToText);
+
+  const shortNameInput = createElement("input", {
+    className: "text-input short-name-input", placeholder: "Name for the new option", maxLength: 60,
+  });
+  const actions = createElement("div", { className: "edited-text-actions" }, [
+    createElement("span", { className: "edited-note", textContent: "Edited" }),
+    createElement("button", { type: "button", className: "button button-small button-quiet",
+      textContent: "Reset", onclick: () => state.resetEntryText(entry.entryId) }),
+    shortNameInput,
+    createElement("button", { type: "button", className: "button button-small",
+      textContent: "Save as new option",
+      onclick: async () => {
+        const shortName = shortNameInput.value.trim();
+        if (!shortName) { shortNameInput.focus(); return; }
+        const optionId = await state.addCustomOption(entry.categoryId, shortName, field.value);
+        state.chooseOption(entry.entryId, optionId);
+        showToast(`Saved “${shortName}”`);
+      } }),
+  ]);
+  const showActionsWhenEdited = () => { actions.hidden = !state.entryTextIsEdited(entry); };
+  showActionsWhenEdited();
+
+  field.addEventListener("input", () => {
+    state.editEntryText(entry.entryId, field.value);
+    fitHeightToText();
+    showActionsWhenEdited();
+  });
+  return createElement("div", { className: "rule-text-block" }, [field, actions]);
+}
+
+function renderOutput() {
+  const text = state.composePromptText();
+  page.promptText.textContent = text || "Nothing yet.";
+  page.promptText.classList.toggle("is-empty", !text);
+  page.copyButton.disabled = !text;
 }
 
 function renderAddRuleMenu() {
@@ -263,5 +311,6 @@ makeListReorderableByDragging(page.ruleList, {
 
 page.storeDescription.textContent = state.preferenceStore.storeDescription;
 state.onChange(render);
+state.onEntryTextEdit(renderOutput);
 await state.loadSavedCustomizations();
 state.applyPreset(DEFAULT_RULE_PRESETS[0].presetName);

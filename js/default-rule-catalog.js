@@ -301,6 +301,130 @@ export const DEFAULT_RULE_CATEGORIES = [
   },
 ];
 
+/**
+ * Distinct alternatives for each category, beside the author's own rule, so a category is
+ * a real choice. Kept apart from the categories above so his texts stay untouched.
+ */
+const ALTERNATIVE_OPTIONS_BY_CATEGORY = {
+  naming: [
+    { optionId: "match-the-codebase", shortName: "Match the codebase",
+      fullText: "Name things the way the existing codebase already does." },
+  ],
+  "adding-details": [
+    { optionId: "fill-gaps-and-list-them", shortName: "Fill gaps, list assumptions",
+      fullText: "Fill small gaps with sensible choices. List every assumption you made at the end." },
+    { optionId: "use-judgement", shortName: "Use your judgement",
+      fullText: "Where the instructions are silent, decide for yourself and keep going." },
+  ],
+  "source-of-truth": [
+    { optionId: "explore-freely", shortName: "Explore freely",
+      fullText: "Read anything in the repo or environment that helps." },
+  ],
+  simplicity: [
+    { optionId: "conventional-patterns", shortName: "Conventional patterns",
+      fullText: "Use the established patterns and frameworks for this kind of project, even when they are heavier." },
+  ],
+  "big-picture-first": [
+    { optionId: "vertical-slices", shortName: "Thin working slices",
+      fullText: "Build one thin slice that works end to end, then extend it." },
+    { optionId: "just-build-it", shortName: "Just build it",
+      fullText: "Build it in whatever order makes sense to you." },
+  ],
+  "requirement-bands": [
+    { optionId: "all-firm", shortName: "Everything is firm",
+      fullText: "Every requirement in the spec is firm." },
+  ],
+  "work-chunks": [
+    { optionId: "small-tasks", shortName: "Small tasks",
+      fullText: "Break the work into small tasks, each finishable in one sitting." },
+    { optionId: "one-piece", shortName: "One piece",
+      fullText: "Do the work as one piece; do not break it down." },
+  ],
+  abstraction: [
+    { optionId: "abstract-on-second-use", shortName: "Abstract on second use",
+      fullText: "Abstract only when there is a second use. Keep code close to where it is used." },
+  ],
+  formatting: [
+    { optionId: "follow-existing-formatting", shortName: "Follow existing conventions",
+      fullText: "Format things the way the project already does." },
+    { optionId: "formatting-is-discretion", shortName: "Your discretion",
+      fullText: "Formatting is at your discretion." },
+  ],
+  "build-to-spec": [
+    { optionId: "closest-working-version", shortName: "Closest working version",
+      fullText: "If something cannot be built as specified, build the closest working version and say what differs." },
+  ],
+  escalation: [
+    { optionId: "decide-and-note", shortName: "Decide and note it",
+      fullText: "When unsure, make the call, keep going, and list the calls you made in your report." },
+    { optionId: "ask-freely", shortName: "Ask whenever unsure",
+      fullText: "Ask whenever you are unsure, and wait for the answer." },
+  ],
+  questions: [
+    { optionId: "ask-as-they-come", shortName: "Ask as they come up",
+      fullText: "Ask questions as they come up." },
+  ],
+  "offering-options": [
+    { optionId: "options-early", shortName: "Offer options early",
+      fullText: "Offer options early; research the one the user picks." },
+  ],
+  proof: [
+    { optionId: "unit-tests-pass", shortName: "Unit tests pass",
+      fullText: "The work is done when its unit tests pass." },
+    { optionId: "show-it-running", shortName: "Show it running",
+      fullText: "Show it running once before calling it done." },
+  ],
+  troubleshooting: [
+    { optionId: "quick-experiments", shortName: "Quick experiments first",
+      fullText: "Try quick, cheap experiments to narrow the problem down. Research if they do not settle it." },
+  ],
+  "billed-runs": [
+    { optionId: "no-billed-run-limits", shortName: "No restriction",
+      fullText: "No restriction on runs that bill per use." },
+  ],
+  "hand-off": [
+    { optionId: "no-hand-off", shortName: "Not needed",
+      fullText: "No hand-off is needed." },
+  ],
+  report: [
+    { optionId: "brief-report", shortName: "Brief",
+      fullText: "Report briefly: what was done, what is left." },
+    { optionId: "result-only", shortName: "Result only",
+      fullText: "Give the result only." },
+  ],
+  prs: [
+    { optionId: "single-pr", shortName: "One PR at the end",
+      fullText: "Open one pull request when the work is finished." },
+    { optionId: "commit-directly", shortName: "Commit directly",
+      fullText: "Commit directly to the working branch; no pull requests." },
+  ],
+  "parallel-work": [
+    { optionId: "sequential", shortName: "One thing at a time",
+      fullText: "Do the work in sequence, one thing at a time." },
+  ],
+  repo: [
+    { optionId: "no-repo", shortName: "No repo",
+      fullText: "No repository." },
+  ],
+};
+
+/** Text for the testing and naming options that had only a name. */
+const FULL_TEXT_FOR_NAMED_OPTIONS = {
+  "modern-clean": "Short, clean, idiomatic names in the style of the language and framework in use.",
+  "no-testing": "Do not write tests.",
+  "simple-post-testing": "Build first. Then write a few tests through the real entry points to confirm it works.",
+  "tdd-granular": "Strict test-first TDD at every level: one failing test per behaviour, make it pass, refactor. Not just module interfaces.",
+};
+
+for (const category of DEFAULT_RULE_CATEGORIES) {
+  for (const option of category.options) {
+    if (FULL_TEXT_FOR_NAMED_OPTIONS[option.optionId]) {
+      option.fullText = FULL_TEXT_FOR_NAMED_OPTIONS[option.optionId];
+    }
+  }
+  category.options.push(...(ALTERNATIVE_OPTIONS_BY_CATEGORY[category.categoryId] || []));
+}
+
 const WORKER_RULES = [
   { categoryId: "source-of-truth", optionId: "only-what-you-are-given" },
   { categoryId: "adding-details", optionId: "do-not-add-or-change-details" },
