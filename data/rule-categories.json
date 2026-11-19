@@ -114,22 +114,22 @@
     },
     {
       "categoryId": "adding-details",
-      "categoryName": "Adding details",
+      "categoryName": "Interpreting requests",
       "options": [
         {
           "optionId": "do-not-add-or-change-details",
-          "shortName": "Do not add or change details",
-          "fullText": "- Never add or change details\n  - When translating user direction\n- Why: the agent got it wrong twice\n  - Mistake 1\n    - User: \"be brief\"\n    - Agent: \"keep it to one line\"\n    - User never limited length\n    - Agent added a limit itself\n  - Mistake 2\n    - User: \"never add details I didn't state\"\n    - Agent: \"record in the user's own words\"\n    - User never forbade rewording\n      - Only adding or changing detail\n      - Less constraining than exact words\n  - Same mistake both times\n    - A gap\n    - Filled with the agent's detail\n    - Presented as the user's\n- Agents infer and guess far too much\n- The rule\n  - Add no detail\n  - Add no limit\n  - Add no number\n  - Add no rule\n  - Unless the user stated it\n- A gap\n  - Name it as your assumption\n  - Ask, or leave it open\n  - Never quietly make it a rule"
+          "shortName": "Literally: never add or change",
+          "fullText": "- Take requests as stated\n  - Don't infer what the user \"really meant\"\n  - Don't add to it\n  - Don't change it\n- Applies whenever you turn their words into\n  - Tasks\n  - Specs\n  - Rules\n  - Instructions for others\n- Why: an agent got it wrong twice\n  - Mistake 1\n    - User: \"be brief\"\n    - Agent: \"keep it to one line\"\n    - User never limited length\n    - Agent added a limit itself\n  - Mistake 2\n    - User: \"never add details I didn't state\"\n    - Agent: \"record in the user's own words\"\n    - User never forbade rewording\n      - Only adding or changing detail\n      - Less constraining than exact words\n  - Same mistake both times\n    - A gap\n    - Filled with the agent's own guess\n    - Presented as the user's words\n- Agents infer and guess far too much\n- Never add what wasn't stated\n  - No detail\n  - No limit\n  - No number\n  - No rule\n- A gap in the request?\n  - Name it as your assumption\n  - Ask, or leave it open\n  - Never quietly make it a rule"
         },
         {
           "optionId": "fill-gaps-and-list-them",
           "shortName": "Fill gaps, list assumptions",
-          "fullText": "- Fill small gaps sensibly\n- List every assumption\n  - At the end"
+          "fullText": "- Read requests sensibly\n- Small gaps\n  - Fill them with reasonable choices\n- List every assumption\n  - At the end"
         },
         {
           "optionId": "use-judgement",
-          "shortName": "Use your judgement",
-          "fullText": "- Instructions silent?\n  - Decide yourself"
+          "shortName": "Interpret freely",
+          "fullText": "- Interpret requests freely\n  - Infer what the user most likely wants\n  - Decide gaps yourself"
         }
       ]
     },
