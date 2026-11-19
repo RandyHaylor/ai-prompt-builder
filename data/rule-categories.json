@@ -890,7 +890,7 @@
     },
     {
       "categoryId": "speakers-voice",
-      "categoryName": "Speaker's voice",
+      "categoryName": "Speaker's tone",
       "options": [
         {
           "optionId": "match-the-speakers-voice",
