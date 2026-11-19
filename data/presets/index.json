@@ -9,6 +9,9 @@
     "task-tech-spike.json",
     "task-bug-fix.json",
     "task-code-review.json",
-    "small-one-off.json"
+    "small-one-off.json",
+    "document-writer.json",
+    "proofreader.json",
+    "policy-reviewer.json"
   ]
 }

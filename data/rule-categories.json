@@ -32,6 +32,11 @@
           "fullText": "- Before starting, ask or confirm with the user\n  - Never assume any of these\n- What it's for\n  - The goal\n  - Who it's for: the target audience or users\n- Stage of the work, for example\n  - Tech spike\n  - Prototype\n  - Class project\n  - Alpha\n  - Beta\n  - Production\n- Scale\n  - How many users, how much data, how long it must last\n- Technology\n  - Language\n  - Stack and frameworks\n  - Where it runs or deploys\n- Constraints\n  - Deadline\n  - Budget, including paid services\n  - Anything it must work with\n- What done looks like\n- These are examples, not the full list\n  - Ask about anything else the work depends on"
         },
         {
+          "optionId": "must-ask-before-writing",
+          "shortName": "Must ask before writing",
+          "fullText": "- Before writing, ask or confirm with the user\n  - Never assume any of these\n- Purpose\n  - What the document must achieve\n- Audience\n  - Who reads it\n  - What they already know\n- Shape\n  - Length\n  - Format\n  - Required sections\n- Tone\n- Sources\n  - What to draw on\n  - What to cite\n- Deadline\n- These are examples, not the full list\n  - Ask about anything else it depends on"
+        },
+        {
           "optionId": "confirm-what-is-unclear",
           "shortName": "Confirm only what's unclear",
           "fullText": "- Ask only about what's unclear\n  - Goal, audience, stage, scale, technology, constraints, what done looks like\n- State what you assumed for the rest"
@@ -463,6 +468,53 @@
       ]
     },
     {
+      "categoryId": "tone",
+      "categoryName": "Tone",
+      "options": [
+        {
+          "optionId": "plain-and-direct",
+          "shortName": "Plain and direct",
+          "fullText": "- Plain language\n  - Short sentences\n  - Everyday words\n- No filler\n- No marketing tone"
+        },
+        {
+          "optionId": "formal",
+          "shortName": "Formal",
+          "fullText": "- Formal and precise\n  - No contractions\n  - No slang"
+        },
+        {
+          "optionId": "friendly",
+          "shortName": "Friendly",
+          "fullText": "- Warm and conversational\n  - Still clear and exact"
+        },
+        {
+          "optionId": "match-the-source-tone",
+          "shortName": "Match the source",
+          "fullText": "- Match the tone of the existing text or examples given"
+        }
+      ]
+    },
+    {
+      "categoryId": "editing-the-users-text",
+      "categoryName": "Editing my text",
+      "options": [
+        {
+          "optionId": "suggest-only",
+          "shortName": "Suggest only",
+          "fullText": "- Don't change the text\n- List each suggested change\n  - Where\n  - What\n  - Why"
+        },
+        {
+          "optionId": "edit-keep-voice",
+          "shortName": "Edit, keep my voice",
+          "fullText": "- Make the edits\n- Keep the author's voice\n  - Word choices\n  - Sentence style\n- Show every change"
+        },
+        {
+          "optionId": "rewrite-freely",
+          "shortName": "Rewrite freely",
+          "fullText": "- Rewrite as needed\n- Keep every fact and point"
+        }
+      ]
+    },
+    {
       "categoryId": "response-format",
       "categoryName": "Response format",
       "options": [
@@ -564,6 +616,54 @@
           "optionId": "review-quick-read",
           "shortName": "Quick read-through",
           "fullText": "- Read the change\n- Point out\n  - Anything wrong\n  - Anything risky\n- Change nothing"
+        }
+      ]
+    },
+    {
+      "categoryId": "task-write-document",
+      "categoryName": "Task: Write a document",
+      "options": [
+        {
+          "optionId": "outline-first",
+          "shortName": "Outline first",
+          "fullText": "- Outline first\n  - Sections\n  - The point of each\n- Agree the outline with the user\n- Then write the draft"
+        },
+        {
+          "optionId": "straight-to-draft",
+          "shortName": "Straight to a draft",
+          "fullText": "- Write a complete first draft\n- List what you assumed\n  - Audience\n  - Length\n  - Structure"
+        }
+      ]
+    },
+    {
+      "categoryId": "task-proofread",
+      "categoryName": "Task: Proofread",
+      "options": [
+        {
+          "optionId": "errors-only",
+          "shortName": "Errors only",
+          "fullText": "- Fix errors only\n  - Spelling\n  - Grammar\n  - Punctuation\n  - Consistency (names, terms, numbers)\n- Change nothing else\n  - Not wording\n  - Not meaning"
+        },
+        {
+          "optionId": "errors-and-clarity",
+          "shortName": "Errors and clarity",
+          "fullText": "- Fix errors\n  - Spelling, grammar, punctuation, consistency\n- Flag unclear sentences\n  - Suggest a clearer version\n- Meaning unchanged"
+        }
+      ]
+    },
+    {
+      "categoryId": "task-policy-review",
+      "categoryName": "Task: Policy review",
+      "options": [
+        {
+          "optionId": "gaps-and-risks",
+          "shortName": "Gaps and risks",
+          "fullText": "- Review the policy as written\n  - Change nothing\n- Find\n  - Gaps: cases it doesn't cover\n  - Ambiguities: wording open to two readings\n  - Contradictions: within it, or with other policies given\n  - Risks: what could go wrong as written\n- Each finding\n  - Quote the passage\n  - Say why it matters\n  - Suggest a fix\n- Not legal advice\n  - Say so"
+        },
+        {
+          "optionId": "against-a-standard",
+          "shortName": "Against a standard",
+          "fullText": "- Check the policy against [name the standard or regulation]\n  - Change nothing\n- Each requirement of the standard\n  - Met / partly met / not met\n  - Quote the policy passage\n- Not legal advice\n  - Say so"
         }
       ]
     }
