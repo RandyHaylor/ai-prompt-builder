@@ -64,6 +64,18 @@ computer — see below.
 
 ## For AI agents: the skill and the command-line tool
 
+**In short:** instead of you remembering everything, the agent walks you through a checklist.
+It goes rule by rule — *"Testing: none, quick check, or test-first? Docs: none, README, or
+full? Research first or just build? How should it handle paid runs?"* — one question at a
+time, with real options to pick from. So documentation, testing and research get asked
+about every time instead of forgotten.
+
+Or skip all that: pick a preset like *Careful developer*, and the agent only asks what you
+want to change and what the actual task is. Rather click than chat? It opens the web page
+for you, you flip switches, hit **Send to AI agent**, and it gets your finished prompt back.
+
+At the end it offers to save your answers as a preset, so next time it's one click.
+
 The repository is also an **agent skill** that works with any harness — Claude Code,
 Codex, OpenAI agents, anything that can run a command. The agent walks the user through the
 rules one at a time, or opens the web page for them, and gets the finished ruleset back.
