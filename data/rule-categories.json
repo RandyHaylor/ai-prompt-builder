@@ -768,6 +768,91 @@
           "optionId": "faq-style-help-article",
           "shortName": "Help-center article",
           "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Writing to GOV.UK standards (guidance.publishing.service.gov.uk)\n    - Microsoft Writing Style Guide\n- A help-center article\n  - Title phrased as the reader's question\n  - The answer first\n  - Steps if needed\n  - Related articles"
+        },
+        {
+          "optionId": "novel",
+          "shortName": "Book: novel",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A novel\n  - Fiction, 40,000 words or more\n  - Adult: usually 80,000–100,000\n  - Literary fiction: up to about 110,000\n  - Characters, plot, setting, point of view kept consistent"
+        },
+        {
+          "optionId": "novella",
+          "shortName": "Book: novella",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A novella\n  - Fiction, 17,500–40,000 words\n  - One main plot line"
+        },
+        {
+          "optionId": "short-story",
+          "shortName": "Book: short story",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A short story\n  - Fiction, under 7,500 words\n  - Novelette: 7,500–17,500"
+        },
+        {
+          "optionId": "short-story-collection",
+          "shortName": "Book: short story collection",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A collection of short stories\n  - Each complete on its own\n  - A shared theme or thread, if any"
+        },
+        {
+          "optionId": "young-adult-novel",
+          "shortName": "Book: young adult (YA) novel",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A young adult novel\n  - About 50,000–80,000 words\n  - Teen protagonist and concerns"
+        },
+        {
+          "optionId": "middle-grade-novel",
+          "shortName": "Book: middle grade novel",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A middle grade novel\n  - Readers about 8–12\n  - Roughly 25,000–60,000 words\n    - Sources differ"
+        },
+        {
+          "optionId": "chapter-book",
+          "shortName": "Book: chapter book",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A chapter book\n  - Early independent readers\n  - About 5,000–12,000 words\n  - Short chapters"
+        },
+        {
+          "optionId": "picture-book",
+          "shortName": "Book: picture book",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A picture book\n  - Usually under 1,000 words\n    - Often under 600\n  - Text and illustrations tell it together\n  - Illustration notes only where needed"
+        },
+        {
+          "optionId": "memoir",
+          "shortName": "Book: memoir",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A memoir\n  - True story from the author's own life\n  - About 70,000–90,000 words\n  - A theme, not a full life history"
+        },
+        {
+          "optionId": "biography",
+          "shortName": "Book: biography",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A biography\n  - Someone else's life\n  - Researched and sourced"
+        },
+        {
+          "optionId": "narrative-nonfiction",
+          "shortName": "Book: narrative nonfiction",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- Narrative nonfiction\n  - A true story told with fiction's techniques\n  - Every fact sourced"
+        },
+        {
+          "optionId": "prescriptive-nonfiction",
+          "shortName": "Book: self-help / how-to",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- Prescriptive nonfiction\n  - Teaches the reader to do or change something\n  - A clear promise\n  - Steps, examples, exercises"
+        },
+        {
+          "optionId": "business-book",
+          "shortName": "Book: business book",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A business book\n  - One central idea or framework\n  - Cases and evidence\n  - What to do on Monday"
+        },
+        {
+          "optionId": "textbook",
+          "shortName": "Book: textbook",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A textbook\n  - Learning objectives per chapter\n  - Builds from basics\n  - Examples, exercises, summaries"
+        },
+        {
+          "optionId": "cookbook",
+          "shortName": "Book: cookbook",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A cookbook\n  - Recipes in a consistent format\n    - Ingredients with amounts, in order of use\n    - Numbered steps\n    - Yield and times\n  - Head notes for each recipe"
+        },
+        {
+          "optionId": "poetry-collection",
+          "shortName": "Book: poetry collection",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A poetry collection\n  - Poems ordered with intent\n  - Sections or an arc, if any"
+        },
+        {
+          "optionId": "graphic-novel-script",
+          "shortName": "Book: graphic novel / comic script",
+          "fullText": "- First, get a reference\n  - Comparable published books (comp titles)\n    - Recent, same category and audience\n  - The publisher's or agent's guidelines win, if there are any\n- A graphic novel or comic script\n  - Page by page, panel by panel\n  - Art description per panel\n  - Dialogue and captions per panel"
         }
       ]
     },
