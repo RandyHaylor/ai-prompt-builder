@@ -236,6 +236,33 @@ export const DEFAULT_RULE_CATEGORIES = [
 const on = (categoryId, optionId) => ({ categoryId, optionId, enabled: true });
 const off = (categoryId, optionId) => ({ categoryId, optionId, enabled: false });
 
+/**
+ * Example custom text for each preset: where the user says what they actually want done,
+ * turning the ruleset into a specific prompt. Placed at the end unless stated.
+ */
+const EXAMPLE_CUSTOM_TEXT_BY_PRESET = {
+  "Quick developer":
+    "Task: add a \"copy to clipboard\" button next to each code block on the docs page.",
+  "Careful developer":
+    "Task: build a command-line tool that takes a folder of CSV files and merges them into one, matching columns by header name. It must handle files with missing columns and report rows it could not merge.",
+  "Careful dev manager":
+    "Goal: plan and run the work to add user accounts (sign up, sign in, password reset) to the existing web app. Break it into sprint features, propose the plan to me before any building starts, and suggest what can run in parallel.",
+  "Task: Research":
+    "Question: which open-source libraries can render Markdown to PDF from Python today, and which of them keep code-block syntax highlighting?",
+  "Task: Tech spike":
+    "Spike question: can a three.js scene render 10,000 animated sprites at 60 fps in a mobile browser?",
+  "Task: Bug fix":
+    "Bug: after sign-in, users are sent back to the home page instead of the page they came from. Reported on the mobile site only.",
+  "Task: Code review":
+    "Review: the pull request that adds CSV export to the reports page. The requirements are in the linked issue.",
+  "Worker":
+    "Your task: implement the parser module described in the plan, against the interface and tests already in the skeleton.",
+  "Planner":
+    "Plan: a small web app where a team can post and vote on lunch options. Work through it with me before anything is built.",
+  "Small one-off":
+    "Rename the `data` folder to `input_files` and update every reference to it.",
+};
+
 /** The preset selected when the page opens. */
 export const PRESET_SELECTED_WHEN_THE_PAGE_OPENS = "Careful developer";
 
@@ -405,3 +432,8 @@ export const DEFAULT_RULE_PRESETS = [
     ],
   },
 ];
+
+for (const preset of DEFAULT_RULE_PRESETS) {
+  const exampleText = EXAMPLE_CUSTOM_TEXT_BY_PRESET[preset.presetName];
+  if (exampleText) preset.customText = { text: exampleText, placement: "end", enabled: true };
+}

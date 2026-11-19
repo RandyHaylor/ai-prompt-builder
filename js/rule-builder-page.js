@@ -253,8 +253,24 @@ function renderSuggestedTopics() {
     })));
 }
 
+function fitCustomTextFieldToText() {
+  const field = document.getElementById("custom-text-field");
+  field.style.height = "auto";
+  field.style.height = `${field.scrollHeight + 2}px`;
+}
+
+function renderCustomText() {
+  const field = document.getElementById("custom-text-field");
+  if (field.value !== state.customText.text) field.value = state.customText.text;
+  document.getElementById("custom-text-toggle").checked = state.customText.enabled;
+  document.getElementById("custom-text-placement").value = state.customText.placement;
+  document.getElementById("custom-text-block").classList.toggle("is-off", !state.customText.enabled);
+  fitCustomTextFieldToText();
+}
+
 function render() {
   renderPresetMenu();
+  renderCustomText();
   renderSuggestedTopics();
   page.ruleList.replaceChildren(...state.chosenEntries.map(renderEntry));
   page.emptyListNote.hidden = state.chosenEntries.length > 0;
@@ -277,6 +293,14 @@ page.presetMenu.addEventListener("change", () => {
 });
 
 page.clearRulesButton.addEventListener("click", () => state.clearEntries());
+document.getElementById("custom-text-field").addEventListener("input", (event) => {
+  state.changeCustomText({ text: event.target.value });
+  fitCustomTextFieldToText();
+});
+document.getElementById("custom-text-toggle").addEventListener("change", (event) =>
+  state.changeCustomText({ enabled: event.target.checked }));
+document.getElementById("custom-text-placement").addEventListener("change", (event) =>
+  state.changeCustomText({ placement: event.target.value }));
 document.getElementById("check-all-button")
   .addEventListener("click", () => state.setAllEntriesEnabled(true));
 document.getElementById("uncheck-all-button")

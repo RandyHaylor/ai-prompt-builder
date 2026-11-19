@@ -22,6 +22,8 @@ export class RuleSelectionState {
     this.preferenceStore = preferenceStore;
     this.customizations = { customCategories: [], customOptions: [], customPresets: [] };
     this.chosenEntries = [];
+    /** Optional free text that turns the ruleset into a specific prompt. */
+    this.customText = { text: "", placement: "end", enabled: true };
     this.selectedPresetName = null;
     this.changeListeners = new Set();
     this.textEditListeners = new Set();
@@ -79,8 +81,30 @@ export class RuleSelectionState {
     ];
   }
 
-  /** The text to put into a prompt: each chosen rule under its category heading. */
+  /** The text to put into a prompt: each chosen rule under its category heading, with the
+   * custom text (when on and not empty) at the beginning or the end. */
   composePromptText() {
+    const rulesText = this.composeRulesText();
+    const customText = this.customText.enabled ? this.customText.text.trim() : "";
+    if (!customText) return rulesText;
+    if (!rulesText) return customText;
+    return this.customText.placement === "start"
+      ? `${customText}\n\n${rulesText}`
+      : `${rulesText}\n\n${customText}`;
+  }
+
+  /** Change the custom text. Text edits do not redraw the page (the field keeps focus);
+   * placement and on/off do. */
+  changeCustomText(changes) {
+    Object.assign(this.customText, changes);
+    if ("text" in changes) {
+      for (const listener of this.textEditListeners) listener(null);
+    } else {
+      this.notifyChange();
+    }
+  }
+
+  composeRulesText() {
     return this.chosenEntries
       .filter((entry) => entry.enabled !== false)
       .map((entry) => {
@@ -204,6 +228,11 @@ export class RuleSelectionState {
         optionId: category.options[0].optionId, enabled: false, editedText: null,
       });
     }
+    this.customText = {
+      text: preset.customText?.text ?? "",
+      placement: preset.customText?.placement ?? "end",
+      enabled: preset.customText?.enabled ?? true,
+    };
     this.selectedPresetName = presetName;
     this.notifyChange();
   }
@@ -247,7 +276,7 @@ export class RuleSelectionState {
       }));
     this.customizations.customPresets = [
       ...this.customizations.customPresets.filter((preset) => preset.presetName !== presetName),
-      { presetName, entries },
+      { presetName, entries, customText: { ...this.customText } },
     ];
     this.selectedPresetName = presetName;
     await this.saveCustomizations();
