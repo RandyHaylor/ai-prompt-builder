@@ -844,7 +844,7 @@
         {
           "optionId": "speaking-time",
           "shortName": "Speaking time",
-          "fullText": "- Fit [N] minutes of speaking\n- Plan on 125–150 words a minute\n  - 135 is a common drafting figure\n- Calibrate to the speaker\n  - Time them reading a sample aloud"
+          "fullText": "- Fit [N] minutes of speaking\n  - [N] comes from the user\n  - Not given? Ask before writing\n  - Offer typical lengths\n    - Introduction or toast: under 2 minutes\n    - Acceptance speech: under 5 minutes\n    - Eulogy or commencement: 10–20 minutes\n    - Conference keynote: 30–60 minutes, 45 is common\n    - Or the length of their slot in the program\n- Plan on 125–150 words a minute\n  - 135 is a common drafting figure\n- Calibrate to the speaker\n  - Time them reading a sample aloud"
         },
         {
           "optionId": "word-count",
