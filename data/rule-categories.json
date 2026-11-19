@@ -227,37 +227,37 @@
         {
           "optionId": "bottom-line-up-front",
           "shortName": "Bottom line up front (BLUF)",
-          "fullText": "- The bottom line first\n  - The conclusion, recommendation or ask\n- Then the support\n- Source: US Army writing standard (AR 25-50)\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+          "fullText": "- The bottom line first\n  - The conclusion, recommendation or ask\n- Then the support\n- Source: US Army writing standard (AR 25-50)"
         },
         {
           "optionId": "inverted-pyramid",
           "shortName": "Inverted pyramid",
-          "fullText": "- Most important first\n- Then details, in falling importance\n  - It can be cut from the bottom\n- Source: news writing (Purdue OWL)\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+          "fullText": "- Most important first\n- Then details, in falling importance\n  - It can be cut from the bottom\n- Source: news writing (Purdue OWL)"
         },
         {
           "optionId": "situation-complication-resolution",
           "shortName": "Situation, complication, resolution (SCR)",
-          "fullText": "- Situation\n  - What the reader already accepts\n- Complication\n  - What changed or went wrong\n- Resolution\n  - The main point\n- Source: Barbara Minto, The Pyramid Principle\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+          "fullText": "- Situation\n  - What the reader already accepts\n- Complication\n  - What changed or went wrong\n- Resolution\n  - The main point\n- Source: Barbara Minto, The Pyramid Principle"
         },
         {
           "optionId": "problem-then-solution",
           "shortName": "Problem, then solution",
-          "fullText": "- The problem\n  - Causes\n  - Scope\n  - Consequences\n- Then the solution\n- Source: university writing-center organization patterns\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+          "fullText": "- The problem\n  - Causes\n  - Scope\n  - Consequences\n- Then the solution\n- Source: university writing-center organization patterns"
         },
         {
           "optionId": "chronological",
           "shortName": "Chronological",
-          "fullText": "- In time order\n  - Events, or steps in a process\n- Source: university writing-center organization patterns\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+          "fullText": "- In time order\n  - Events, or steps in a process\n- Source: university writing-center organization patterns"
         },
         {
           "optionId": "compare-and-contrast",
           "shortName": "Compare and contrast",
-          "fullText": "- Options side by side\n  - Similarities\n  - Differences\n- Then a verdict, if asked for\n- Source: university writing-center organization patterns\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+          "fullText": "- Options side by side\n  - Similarities\n  - Differences\n- Then a verdict, if asked for\n- Source: university writing-center organization patterns"
         },
         {
           "optionId": "cause-and-effect",
           "shortName": "Cause and effect",
-          "fullText": "- Causes\n- Then their effects\n  - Or each cause paired with its effect\n- Source: university writing-center organization patterns\n- Order only\n  - The document type's sections stay\n  - This sets the order inside them\n  - The writing plan's outline follows it"
+          "fullText": "- Causes\n- Then their effects\n  - Or each cause paired with its effect\n- Source: university writing-center organization patterns"
         }
       ]
     },
