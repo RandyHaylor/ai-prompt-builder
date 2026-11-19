@@ -890,13 +890,24 @@
     },
     {
       "categoryId": "speakers-voice",
-      "categoryName": "Speaker's tone",
+      "categoryName": "Speaker's voice",
       "options": [
         {
           "optionId": "match-the-speakers-voice",
           "shortName": "Match the speaker's voice",
           "fullText": "- Write in the speaker's own voice\n  - The writer stays invisible\n- Study how they really talk\n  - Past speeches\n  - Interviews and recordings\n  - Their writing\n- Build a voice map\n  - Formal or casual\n  - Short or long sentences\n  - Favourite verbs\n  - Phrases and metaphors they repeat\n  - Sign-offs, thank-yous, small jokes\n  - Words they dislike\n  - Sounds they stumble on\n- Use their repeated phrases as the spine\n- Read each line in their voice\n  - Can't hear them say it? Rewrite it"
         },
+        {
+          "optionId": "neutral-voice",
+          "shortName": "Neutral voice",
+          "fullText": "- A clear, neutral voice\n  - Not tied to any one speaker"
+        }
+      ]
+    },
+    {
+      "categoryId": "speakers-tone",
+      "categoryName": "Speaker's tone",
+      "options": [
         {
           "optionId": "conversational",
           "shortName": "Conversational",
@@ -938,9 +949,9 @@
           "fullText": "- For dinners, awards, toasts, retirements\n- Warm, entertaining\n- Gentle, self-deprecating humour\n  - Never about personal lives, religion or ethnicity\n- Anecdotes like spices\n  - Few, and on point\n- After dinner: very short"
         },
         {
-          "optionId": "neutral-voice",
-          "shortName": "Neutral voice",
-          "fullText": "- A clear, neutral voice\n  - Not tied to any one speaker"
+          "optionId": "passionate-empathetic",
+          "shortName": "Passionate, empathetic",
+          "fullText": "- Speak to the audience's feelings first\n  - Name their concerns\n  - Validate them before arguing\n- Share the speaker's own feelings\n  - How they felt, in a real moment\n- Real stories, specific details\n- Conviction\n  - Say the hard truths plainly\n  - Repetition and parallel lines for emphasis\n- Sincere, never performed\n  - Show the feeling, don't just label it\n- Warm and conversational\n  - As if to one listener"
         }
       ]
     },
