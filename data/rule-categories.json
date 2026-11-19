@@ -681,7 +681,7 @@
         {
           "optionId": "speech",
           "shortName": "Speech / talk",
-          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Published speeches of the same kind\n    - Toastmasters International resources\n- A speech\n  - Written to be heard\n    - Read it aloud and edit by ear\n    - Short sentences\n    - Key points repeated\n  - Opening hook\n  - Three main points at most\n  - Key lines built to be remembered\n    - Rule of three\n    - Parallel phrasing\n    - Repetition at the start of lines (anaphora)\n  - Clear close"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Published speeches of the same kind\n    - Toastmasters International resources\n- A speech\n  - Written to be heard\n    - Read it aloud and edit by ear\n    - Short sentences\n    - Key points repeated\n  - Opening hook\n  - Three main points at most\n  - Key lines built to be remembered\n    - Rule of three\n    - Parallel phrasing\n    - Repetition at the start of lines (anaphora)\n  - Clear close\n  - Marked up to read aloud\n    - Short paragraphs, one idea each\n    - [PAUSE] marked where it helps\n    - Key words to stress, marked\n    - Hard names spelled out phonetically"
         },
         {
           "optionId": "presentation-outline",
@@ -766,13 +766,58 @@
         },
         {
           "optionId": "word-document",
-          "shortName": "Word document",
+          "shortName": "Paste into Word / Google Docs",
           "fullText": "- Ready to paste into Word or Google Docs\n  - Real headings\n  - Real lists\n  - No markup symbols"
         },
         {
-          "optionId": "speaking-script",
-          "shortName": "Speaking script",
-          "fullText": "- A script to read aloud\n  - Short paragraphs, one idea each\n  - [PAUSE] marked where it helps\n  - Key words to stress, marked\n  - Hard names spelled out phonetically"
+          "optionId": "word-docx-file",
+          "shortName": "Word file (.docx)",
+          "fullText": "- A Word file (.docx)\n  - Built-in heading styles\n  - Real lists and tables"
+        },
+        {
+          "optionId": "pdf",
+          "shortName": "PDF",
+          "fullText": "- A PDF\n  - Laid out for printing and sharing\n  - Page numbers"
+        },
+        {
+          "optionId": "html",
+          "shortName": "HTML",
+          "fullText": "- An HTML page\n  - Semantic headings and lists\n  - No inline styling unless asked"
+        },
+        {
+          "optionId": "rich-text",
+          "shortName": "Rich text (.rtf)",
+          "fullText": "- Rich text (.rtf)\n  - Opens in any word processor"
+        },
+        {
+          "optionId": "latex",
+          "shortName": "LaTeX",
+          "fullText": "- LaTeX source\n  - Compiles without errors\n  - Standard packages only"
+        },
+        {
+          "optionId": "opendocument-text",
+          "shortName": "OpenDocument text (.odt)",
+          "fullText": "- An OpenDocument text file (.odt)\n  - For LibreOffice and similar"
+        },
+        {
+          "optionId": "slides",
+          "shortName": "Slides (PowerPoint / Google Slides)",
+          "fullText": "- Slides\n  - One idea per slide\n  - Speaker notes under each slide"
+        },
+        {
+          "optionId": "email-body",
+          "shortName": "Email body",
+          "fullText": "- Ready to paste into an email\n  - Subject line first\n  - No markup symbols"
+        },
+        {
+          "optionId": "csv",
+          "shortName": "CSV",
+          "fullText": "- CSV\n  - Header row first\n  - One record per line"
+        },
+        {
+          "optionId": "json",
+          "shortName": "JSON",
+          "fullText": "- JSON\n  - Valid and parseable\n  - No comments"
         }
       ]
     },

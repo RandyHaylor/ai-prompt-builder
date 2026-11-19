@@ -45,12 +45,6 @@
       "editedText": null
     },
     {
-      "categoryId": "document-format",
-      "optionId": "speaking-script",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "tone",
       "optionId": "persuasive",
       "enabled": false,
@@ -65,6 +59,12 @@
     {
       "categoryId": "questions",
       "optionId": "batch-questions",
+      "enabled": false,
+      "editedText": null
+    },
+    {
+      "categoryId": "document-format",
+      "optionId": "word-document",
       "enabled": false,
       "editedText": null
     }
