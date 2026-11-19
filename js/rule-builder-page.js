@@ -189,14 +189,14 @@ function renderEntry(entry, index) {
       toggle,
       createElement("span", { className: "rule-category", textContent: category.categoryName }),
       optionMenu,
-      // Both are offered only on an expanded rule, so neither is hit by accident.
+      createElement("button", {
+        type: "button", className: "icon-button remove-button",
+        title: "Remove from this preset (it goes back to 'Not added yet')",
+        ariaLabel: "Remove from this preset", textContent: "✕",
+        onclick: () => state.removeEntry(entry.entryId),
+      }),
+      // Deleting for good is offered only on an expanded rule, so it is never hit by accident.
       ...(isExpanded ? [
-        createElement("button", {
-          type: "button", className: "icon-button remove-button",
-          title: "Remove from this preset (it goes back to 'Not added yet')",
-          ariaLabel: "Remove from this preset", textContent: "✕",
-          onclick: () => state.removeEntry(entry.entryId),
-        }),
         createElement("button", {
           type: "button", className: "icon-button delete-button",
           title: "Delete this rule for good, everywhere",
