@@ -3,7 +3,8 @@
  * shipped catalog plus the user's own additions), the ordered list of chosen rules, and
  * the presets. Holds no knowledge of the page; the page subscribes to changes.
  *
- * A chosen rule ("entry") is {entryId, categoryId, optionId, editedText}. editedText is
+ * A chosen rule ("entry") is {entryId, categoryId, optionId, enabled, editedText}. A rule
+ * that is not enabled stays in the list, in its place, but is left out of the text. editedText is
  * null until the user changes the rule's text on the page; then that text is used in
  * place of the option's.
  */
@@ -81,6 +82,7 @@ export class RuleSelectionState {
   /** The text to put into a prompt: each chosen rule under its category heading. */
   composePromptText() {
     return this.chosenEntries
+      .filter((entry) => entry.enabled !== false)
       .map((entry) => {
         const category = this.findCategory(entry.categoryId);
         const text = this.textOfEntry(entry);
@@ -118,6 +120,14 @@ export class RuleSelectionState {
     this.textEditListeners.add(listener);
   }
 
+  setEntryEnabled(entryId, enabled) {
+    const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
+    if (!entry) return;
+    entry.enabled = enabled;
+    this.selectedPresetName = null;
+    this.notifyChange();
+  }
+
   resetEntryText(entryId) {
     const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
     if (!entry) return;
@@ -132,6 +142,7 @@ export class RuleSelectionState {
       entryId: newEntryId(),
       categoryId,
       optionId: category.options[0]?.optionId ?? null,
+      enabled: true,
       editedText: null,
     });
     this.selectedPresetName = null;
@@ -172,7 +183,7 @@ export class RuleSelectionState {
     if (!preset) return;
     this.chosenEntries = preset.entries
       .filter((entry) => this.findOption(entry.categoryId, entry.optionId))
-      .map((entry) => ({ entryId: newEntryId(), editedText: null, ...entry }));
+      .map((entry) => ({ entryId: newEntryId(), enabled: true, editedText: null, ...entry }));
     this.selectedPresetName = presetName;
     this.notifyChange();
   }
@@ -211,6 +222,7 @@ export class RuleSelectionState {
       .map((entry) => ({
         categoryId: entry.categoryId,
         optionId: entry.optionId,
+        enabled: entry.enabled !== false,
         editedText: this.entryTextIsEdited(entry) ? entry.editedText : null,
       }));
     this.customizations.customPresets = [

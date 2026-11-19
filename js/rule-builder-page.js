@@ -132,12 +132,21 @@ function renderEntry(entry, index) {
   // Collapsed by default; an entry whose text was edited stays open so the edit is visible.
   const isExpanded = expandedEntryIds.has(entry.entryId) || state.entryTextIsEdited(entry);
 
-  return createElement("li", { className: "rule-card" }, [
+  const isEnabled = entry.enabled !== false;
+  const toggle = createElement("input", {
+    type: "checkbox", className: "toggle-switch", checked: isEnabled,
+    title: isEnabled ? "On — included in the text" : "Off — left out of the text",
+    ariaLabel: `${category.categoryName} on or off`,
+  });
+  toggle.addEventListener("change", () => state.setEntryEnabled(entry.entryId, toggle.checked));
+
+  return createElement("li", { className: isEnabled ? "rule-card" : "rule-card is-off" }, [
     createElement("div", { className: "rule-card-header" }, [
       createElement("button", {
         type: "button", className: "drag-handle", title: "Drag to reorder (or arrow keys)",
         ariaLabel: `Move rule ${index + 1}, ${category.categoryName}`, innerHTML: "<span></span><span></span><span></span>",
       }),
+      toggle,
       createElement("span", { className: "rule-category", textContent: category.categoryName }),
       optionMenu,
       createElement("button", {
@@ -246,7 +255,8 @@ function render() {
   page.promptText.classList.toggle("is-empty", !text);
   page.copyButton.disabled = !text;
   const count = state.chosenEntries.length;
-  page.ruleCount.textContent = `${count} rule${count === 1 ? "" : "s"}`;
+  const onCount = state.chosenEntries.filter((entry) => entry.enabled !== false).length;
+  page.ruleCount.textContent = `${onCount} of ${count} rule${count === 1 ? "" : "s"} on`;
 }
 
 // --- actions ------------------------------------------------------------------------
