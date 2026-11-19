@@ -208,6 +208,8 @@ textarea.text-input { resize: vertical; min-height: 96px; line-height: 1.5; }
   color: var(--text-muted); font-size: 13px; cursor: pointer;
 }
 .icon-button:hover { background: var(--accent-soft); color: var(--danger); }
+.delete-button { display: grid; place-items: center; color: #dc2626; }
+.delete-button:hover { background: rgba(220, 38, 38, .1); color: #b91c1c; }
 
 .rule-text-block { display: grid; gap: 6px; }
 .rule-text-field {

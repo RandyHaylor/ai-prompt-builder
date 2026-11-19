@@ -13,6 +13,11 @@ import { RuleSelectionState } from "./rule-selection-state.js";
 import { makeListReorderableByDragging } from "./drag-to-reorder-list.js";
 
 const NEW_OPTION_MENU_VALUE = "__new-option__";
+const TRASH_CAN_ICON =
+  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+  'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/>' +
+  '<path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>' +
+  '<path d="M10 11v6M14 11v6"/></svg>';
 const NEW_CATEGORY_MENU_VALUE = "__new-category__";
 
 const state = new RuleSelectionState({
@@ -165,10 +170,12 @@ function renderEntry(entry, index) {
           render();
         },
       }),
-      createElement("button", {
-        type: "button", className: "icon-button", title: "Remove this rule", ariaLabel: "Remove this rule",
-        textContent: "✕", onclick: () => state.removeEntry(entry.entryId),
-      }),
+      // Removing is offered only on an expanded rule, so it is never hit by accident.
+      ...(isExpanded ? [createElement("button", {
+        type: "button", className: "icon-button delete-button", title: "Delete this rule",
+        ariaLabel: "Delete this rule", innerHTML: TRASH_CAN_ICON,
+        onclick: () => state.removeEntry(entry.entryId),
+      })] : []),
     ]),
     ...(formIsOpen ? [renderNewOptionForm(entry)] : isExpanded ? [renderEditableRuleText(entry)] : []),
   ]);
