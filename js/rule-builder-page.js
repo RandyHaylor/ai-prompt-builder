@@ -270,6 +270,14 @@ page.presetMenu.addEventListener("change", () => {
 });
 
 page.clearRulesButton.addEventListener("click", () => state.clearEntries());
+document.getElementById("check-all-button")
+  .addEventListener("click", () => state.setAllEntriesEnabled(true));
+document.getElementById("uncheck-all-button")
+  .addEventListener("click", () => state.setAllEntriesEnabled(false));
+document.getElementById("reset-all-text-button").addEventListener("click", () => {
+  state.resetAllEntryTexts();
+  showToast("All text reset");
+});
 
 page.addRuleMenu.addEventListener("change", () => {
   const value = page.addRuleMenu.value;

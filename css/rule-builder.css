@@ -95,7 +95,8 @@ h1, h2, h3 { margin: 0; line-height: 1.25; }
 
 .toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
 .toolbar .select { flex: 0 1 320px; }
-.toolbar-buttons { display: flex; gap: 8px; }
+.toolbar-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+.toolbar-right { margin-left: auto; }
 
 .select, .text-input {
   width: 100%;

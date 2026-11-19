@@ -128,6 +128,17 @@ export class RuleSelectionState {
     this.notifyChange();
   }
 
+  setAllEntriesEnabled(enabled) {
+    for (const entry of this.chosenEntries) entry.enabled = enabled;
+    this.selectedPresetName = null;
+    this.notifyChange();
+  }
+
+  resetAllEntryTexts() {
+    for (const entry of this.chosenEntries) entry.editedText = null;
+    this.notifyChange();
+  }
+
   resetEntryText(entryId) {
     const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
     if (!entry) return;
