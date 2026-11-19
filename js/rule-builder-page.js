@@ -23,6 +23,8 @@ const NEW_CATEGORY_MENU_VALUE = "__new-category__";
  * customizations last for the session and "Send to AI agent" stays disabled.
  */
 async function readLocalServerSessionSettings() {
+  // The tool's server only ever runs on this computer; anywhere else, do not ask.
+  if (!["127.0.0.1", "localhost"].includes(location.hostname)) return null;
   try {
     const response = await fetch("api/session-settings");
     if (!response.ok) return null;
