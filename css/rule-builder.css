@@ -108,6 +108,8 @@ h1, h2, h3 { margin: 0; line-height: 1.25; }
 .toolbar .select { flex: 0 1 320px; }
 .toolbar-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
 .toolbar-right { margin-left: auto; }
+.unsaved-edits-note { align-self: center; font-size: 12.5px; font-style: italic; color: var(--text-muted); }
+.unsaved-edits-note[hidden] { display: none; }
 .button-send:not(:disabled) { background: #059669; border-color: #059669; color: #fff; }
 .button-send:not(:disabled):hover { background: #047857; color: #fff; }
 .button-send:disabled { pointer-events: auto; cursor: help; }

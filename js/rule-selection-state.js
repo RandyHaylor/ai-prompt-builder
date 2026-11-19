@@ -24,7 +24,10 @@ export class RuleSelectionState {
     this.chosenEntries = [];
     /** Optional free text that turns the ruleset into a specific prompt. */
     this.customText = { text: "", placement: "end", enabled: true };
+    /** The preset last loaded (or saved), kept while the user edits it. */
     this.selectedPresetName = null;
+    /** True once anything has changed since that preset was loaded or saved. */
+    this.presetHasUnsavedEdits = false;
     this.changeListeners = new Set();
     this.textEditListeners = new Set();
   }
@@ -97,6 +100,7 @@ export class RuleSelectionState {
    * placement and on/off do. */
   changeCustomText(changes) {
     Object.assign(this.customText, changes);
+    this.presetHasUnsavedEdits = true;
     if ("text" in changes) {
       for (const listener of this.textEditListeners) listener(null);
     } else {
@@ -137,6 +141,7 @@ export class RuleSelectionState {
     const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
     if (!entry) return;
     entry.editedText = text;
+    this.presetHasUnsavedEdits = true;
     for (const listener of this.textEditListeners) listener(entry);
   }
 
@@ -148,18 +153,19 @@ export class RuleSelectionState {
     const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
     if (!entry) return;
     entry.enabled = enabled;
-    this.selectedPresetName = null;
+    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
   setAllEntriesEnabled(enabled) {
     for (const entry of this.chosenEntries) entry.enabled = enabled;
-    this.selectedPresetName = null;
+    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
   resetAllEntryTexts() {
     for (const entry of this.chosenEntries) entry.editedText = null;
+    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
@@ -167,6 +173,7 @@ export class RuleSelectionState {
     const entry = this.chosenEntries.find((candidate) => candidate.entryId === entryId);
     if (!entry) return;
     entry.editedText = null;
+    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
@@ -180,13 +187,13 @@ export class RuleSelectionState {
       enabled: true,
       editedText: null,
     });
-    this.selectedPresetName = null;
+    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
   removeEntry(entryId) {
     this.chosenEntries = this.chosenEntries.filter((entry) => entry.entryId !== entryId);
-    this.selectedPresetName = null;
+    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
@@ -195,7 +202,7 @@ export class RuleSelectionState {
     if (!entry) return;
     entry.optionId = optionId;
     entry.editedText = null;
-    this.selectedPresetName = null;
+    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
@@ -203,13 +210,13 @@ export class RuleSelectionState {
     if (fromIndex === toIndex) return;
     const [moved] = this.chosenEntries.splice(fromIndex, 1);
     this.chosenEntries.splice(toIndex, 0, moved);
-    this.selectedPresetName = null;
+    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
   clearEntries() {
     this.chosenEntries = [];
-    this.selectedPresetName = null;
+    this.presetHasUnsavedEdits = true;
     this.notifyChange();
   }
 
@@ -218,6 +225,7 @@ export class RuleSelectionState {
     if (!preset) return;
     this.loadRuleset(preset);
     this.selectedPresetName = presetName;
+    this.presetHasUnsavedEdits = false;
     this.notifyChange();
   }
 
@@ -248,6 +256,7 @@ export class RuleSelectionState {
       enabled: ruleset.customText?.enabled ?? true,
     };
     this.selectedPresetName = null;
+    this.presetHasUnsavedEdits = false;
   }
 
   openRuleset(ruleset) {
@@ -313,9 +322,14 @@ export class RuleSelectionState {
       ...this.customizations.customPresets.filter((preset) => preset.presetName !== presetName),
       { presetName, entries, customText: { ...this.customText } },
     ];
+    this.presetHasUnsavedEdits = false;
     this.selectedPresetName = presetName;
     await this.saveCustomizations();
     this.notifyChange();
+  }
+
+  presetNameIsTheUsersOwn(presetName) {
+    return this.customizations.customPresets.some((preset) => preset.presetName === presetName);
   }
 
   presetNameIsShipped(presetName) {

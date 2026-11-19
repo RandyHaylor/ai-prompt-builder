@@ -10,6 +10,7 @@ import { RuleSelectionState } from "./rule-selection-state.js";
 import { makeListReorderableByDragging } from "./drag-to-reorder-list.js";
 
 const NEW_OPTION_MENU_VALUE = "__new-option__";
+const EDITED_PRESET_MENU_VALUE = "__edited-preset__";
 const TRASH_CAN_ICON =
   '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
   'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/>' +
@@ -95,15 +96,22 @@ function renderPresetMenu() {
   const shipped = createElement("optgroup", { label: "Presets" },
     presets.filter((preset) => !preset.isCustom).map((preset) => option(preset.presetName, preset.presetName)));
   const custom = presets.filter((preset) => preset.isCustom);
+  // A loaded preset that has been changed shows as "Name*" until it is saved.
+  const editedPresetLabel = state.selectedPresetName && state.presetHasUnsavedEdits
+    ? [option(EDITED_PRESET_MENU_VALUE, `${state.selectedPresetName}*`)] : [];
   page.presetMenu.replaceChildren(
     option("", "Preset…"),
+    ...editedPresetLabel,
     shipped,
     ...(custom.length
       ? [createElement("optgroup", { label: "Your presets" },
           custom.map((preset) => option(preset.presetName, preset.presetName)))]
       : []),
   );
-  page.presetMenu.value = state.selectedPresetName ?? "";
+  page.presetMenu.value = editedPresetLabel.length
+    ? EDITED_PRESET_MENU_VALUE : (state.selectedPresetName ?? "");
+  document.getElementById("unsaved-edits-note").hidden =
+    !(state.selectedPresetName && state.presetHasUnsavedEdits);
 }
 
 function renderNewOptionForm(entry) {
@@ -242,6 +250,7 @@ function renderEditableRuleText(entry) {
 }
 
 function renderOutput() {
+  renderPresetMenu();
   const text = state.composePromptText();
   page.promptText.textContent = text || "Nothing yet.";
   page.promptText.classList.toggle("is-empty", !text);
@@ -308,10 +317,21 @@ function render() {
 // --- actions ------------------------------------------------------------------------
 
 page.presetMenu.addEventListener("change", () => {
-  if (page.presetMenu.value) state.applyPreset(page.presetMenu.value);
+  const value = page.presetMenu.value;
+  if (!value || value === EDITED_PRESET_MENU_VALUE) return;
+  if (state.presetHasUnsavedEdits && !confirm(
+    `Load “${value}”? Your unsaved edits to “${state.selectedPresetName}” will be lost.`)) {
+    renderPresetMenu();
+    return;
+  }
+  state.applyPreset(value);
 });
 
-page.clearRulesButton.addEventListener("click", () => state.clearEntries());
+page.clearRulesButton.addEventListener("click", () => {
+  if (confirm("Clear every rule from the list? This cannot be undone (load a preset to start again).")) {
+    state.clearEntries();
+  }
+});
 document.getElementById("custom-text-field").addEventListener("input", (event) => {
   state.changeCustomText({ text: event.target.value });
   fitCustomTextFieldToText();
@@ -351,10 +371,10 @@ page.newCategoryForm.addEventListener("submit", async (event) => {
 });
 
 page.savePresetButton.addEventListener("click", () => {
-  page.presetNameInput.value = state.selectedPresetName && !state.presetNameIsShipped(state.selectedPresetName)
-    ? state.selectedPresetName : "";
-  page.presetNameNote.textContent = "";
+  page.presetNameInput.value = state.selectedPresetName ?? "";
+  page.presetNameInput.dispatchEvent(new Event("input"));
   page.savePresetDialog.showModal();
+  page.presetNameInput.select();
 });
 
 page.presetNameInput.addEventListener("input", () => {
@@ -369,6 +389,11 @@ page.savePresetForm.addEventListener("submit", async (event) => {
   if (event.submitter?.value !== "save") return;
   const presetName = page.presetNameInput.value.trim();
   if (!presetName || state.presetNameIsShipped(presetName)) {
+    event.preventDefault();
+    return;
+  }
+  if (state.presetNameIsTheUsersOwn(presetName)
+      && !confirm(`Overwrite your preset “${presetName}”?`)) {
     event.preventDefault();
     return;
   }
