@@ -41,7 +41,7 @@
     {
       "categoryId": "document-format",
       "optionId": "markdown",
-      "enabled": true,
+      "enabled": false,
       "editedText": null
     },
     {
