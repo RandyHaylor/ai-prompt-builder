@@ -453,197 +453,197 @@
         {
           "optionId": "email",
           "shortName": "Email",
-          "fullText": "- An email\n  - Subject line\n  - Greeting\n  - The ask or point first\n  - Short paragraphs\n  - Sign-off"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Purdue OWL (owl.purdue.edu)\n    - Microsoft Writing Style Guide\n- An email\n  - Subject line\n  - Greeting\n  - The ask or point first\n  - Short paragraphs\n  - Sign-off"
         },
         {
           "optionId": "memo",
           "shortName": "Memo",
-          "fullText": "- A memo\n  - To / From / Date / Subject\n  - Purpose first\n  - Then background and detail\n  - Actions needed, at the end"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Purdue OWL (owl.purdue.edu)\n    - digital.gov plain language guide (digital.gov/guides/plain-language)\n- A memo\n  - To / From / Date / Subject\n  - Purpose first\n  - Then background and detail\n  - Actions needed, at the end"
         },
         {
           "optionId": "report",
           "shortName": "Report",
-          "fullText": "- A report\n  - Summary first\n  - Sections with headings\n  - Conclusions\n  - Recommendations"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Purdue OWL (owl.purdue.edu)\n    - digital.gov plain language guide (digital.gov/guides/plain-language)\n- A report\n  - Summary first\n  - Sections with headings\n  - Conclusions\n  - Recommendations"
         },
         {
           "optionId": "one-pager",
           "shortName": "One-pager",
-          "fullText": "- One page at most\n  - The point in the first lines\n  - Headings and bullets\n  - Nothing that can be cut"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - digital.gov plain language guide (digital.gov/guides/plain-language)\n    - Nielsen Norman Group (nngroup.com) on writing for skimmers\n- One page at most\n  - The point in the first lines\n  - Headings and bullets\n  - Nothing that can be cut"
         },
         {
           "optionId": "faq",
           "shortName": "FAQ",
-          "fullText": "- Questions and answers\n  - Questions as readers would ask them\n  - Short, direct answers\n  - Most common first"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - digital.gov plain language guide (digital.gov/guides/plain-language)\n    - Writing to GOV.UK standards (guidance.publishing.service.gov.uk)\n- Questions and answers\n  - Questions as readers would ask them\n  - Short, direct answers\n  - Most common first"
         },
         {
           "optionId": "guide",
           "shortName": "Guide / how-to",
-          "fullText": "- A guide\n  - What it helps the reader do, first\n  - Steps in order\n  - One action per step\n  - What to do when something goes wrong"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Google developer documentation style guide\n    - Writing to GOV.UK standards (guidance.publishing.service.gov.uk)\n- A guide\n  - What it helps the reader do, first\n  - Steps in order\n  - One action per step\n  - What to do when something goes wrong"
         },
         {
           "optionId": "policy",
           "shortName": "Policy",
-          "fullText": "- A policy\n  - Purpose and scope first\n  - Defined terms, defined once\n  - Must / may / must not, used exactly\n  - One meaning per sentence\n  - Who owns it, when it's reviewed"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - The organization's existing policies\n    - digital.gov plain language guide (digital.gov/guides/plain-language)\n- A policy\n  - Purpose and scope first\n  - Defined terms, defined once\n  - Must / may / must not, used exactly\n  - One meaning per sentence\n  - Who owns it, when it's reviewed"
         },
         {
           "optionId": "opinion-piece",
           "shortName": "Opinion piece (op-ed)",
-          "fullText": "- An opinion piece\n  - A clear stance, stated early\n  - Argued with evidence\n  - Counterarguments answered\n  - Ends with a call to think or act"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - The target publication's submission guidelines\n- An opinion piece\n  - A clear stance, stated early\n  - Argued with evidence\n  - Counterarguments answered\n  - Ends with a call to think or act"
         },
         {
           "optionId": "technical-documentation",
           "shortName": "Technical documentation",
-          "fullText": "- Technical documentation\n  - Task-focused\n  - Numbered steps\n  - Terms and names verbatim\n  - Examples for each case"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Google developer documentation style guide\n    - Microsoft Writing Style Guide\n- Technical documentation\n  - Task-focused\n  - Numbered steps\n  - Terms and names verbatim\n  - Examples for each case"
         },
         {
           "optionId": "academic-paper",
           "shortName": "Academic paper",
-          "fullText": "- An academic paper\n  - Claims supported and cited\n  - Hedged where evidence is limited\n  - Field terms used correctly\n  - Standard sections for the field"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - The target journal's author guidelines\n    - APA Style (apastyle.apa.org)\n- An academic paper\n  - Claims supported and cited\n  - Hedged where evidence is limited\n  - Field terms used correctly\n  - Standard sections for the field"
         },
         {
           "optionId": "marketing-copy",
           "shortName": "Marketing copy",
-          "fullText": "- Marketing copy\n  - Benefits before features\n  - Concrete and vivid\n  - A clear call to action\n  - No claims that can't be backed up"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - The brand's existing style guide\n    - Mailchimp Content Style Guide\n- Marketing copy\n  - Benefits before features\n  - Concrete and vivid\n  - A clear call to action\n  - No claims that can't be backed up"
         },
         {
           "optionId": "letter",
           "shortName": "Letter",
-          "fullText": "- A letter\n  - Date and recipient\n  - Greeting\n  - Purpose in the first paragraph\n  - Sign-off and name"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Purdue OWL (owl.purdue.edu)\n- A letter\n  - Date and recipient\n  - Greeting\n  - Purpose in the first paragraph\n  - Sign-off and name"
         },
         {
           "optionId": "cover-letter",
           "shortName": "Cover letter",
-          "fullText": "- A cover letter\n  - The role, named first\n  - Why you fit: two or three specifics\n  - Close with next step\n  - One page"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Purdue OWL (owl.purdue.edu)\n    - A university career center's guides\n- A cover letter\n  - The role, named first\n  - Why you fit: two or three specifics\n  - Close with next step\n  - One page"
         },
         {
           "optionId": "resume",
           "shortName": "Resume / CV",
-          "fullText": "- A resume\n  - Contact details\n  - Short summary\n  - Experience, most recent first\n    - Results, with numbers\n  - Skills\n  - Education"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Purdue OWL (owl.purdue.edu)\n    - A university career center's guides\n- A resume\n  - Contact details\n  - Short summary\n  - Experience, most recent first\n    - Results, with numbers\n  - Skills\n  - Education"
         },
         {
           "optionId": "proposal",
           "shortName": "Proposal",
-          "fullText": "- A proposal\n  - The problem\n  - What you propose\n  - Cost and timeline\n  - Why it will work\n  - The decision needed"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Purdue OWL (owl.purdue.edu)\n    - The requester's required format, if given\n- A proposal\n  - The problem\n  - What you propose\n  - Cost and timeline\n  - Why it will work\n  - The decision needed"
         },
         {
           "optionId": "grant-proposal",
           "shortName": "Grant proposal",
-          "fullText": "- A grant proposal\n  - Need and who benefits\n  - Goals and measurable outcomes\n  - Activities and timeline\n  - Budget\n  - How success is evaluated\n  - The funder's required sections, in their order"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - The funder's own guidelines and templates\n    - Grants.gov (for US federal grants)\n- A grant proposal\n  - Need and who benefits\n  - Goals and measurable outcomes\n  - Activities and timeline\n  - Budget\n  - How success is evaluated\n  - The funder's required sections, in their order"
         },
         {
           "optionId": "executive-summary",
           "shortName": "Executive summary",
-          "fullText": "- An executive summary\n  - The conclusion first\n  - Key findings\n  - Recommendation and decision needed\n  - Readable alone, without the full document"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Purdue OWL (owl.purdue.edu)\n    - digital.gov plain language guide (digital.gov/guides/plain-language)\n- An executive summary\n  - The conclusion first\n  - Key findings\n  - Recommendation and decision needed\n  - Readable alone, without the full document"
         },
         {
           "optionId": "business-plan",
           "shortName": "Business plan",
-          "fullText": "- A business plan\n  - Summary\n  - Problem and market\n  - Product or service\n  - How it makes money\n  - Team\n  - Financials\n  - What's needed"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - U.S. Small Business Administration (sba.gov) business plan guide\n    - SCORE (score.org) templates\n- A business plan\n  - Summary\n  - Problem and market\n  - Product or service\n  - How it makes money\n  - Team\n  - Financials\n  - What's needed"
         },
         {
           "optionId": "case-study",
           "shortName": "Case study",
-          "fullText": "- A case study\n  - The client and situation\n  - The challenge\n  - What was done\n  - Results, with numbers\n  - A quote, if given"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Published case studies from leading firms in the field\n- A case study\n  - The client and situation\n  - The challenge\n  - What was done\n  - Results, with numbers\n  - A quote, if given"
         },
         {
           "optionId": "white-paper",
           "shortName": "White paper",
-          "fullText": "- A white paper\n  - The problem, in depth\n  - Evidence and analysis\n  - The approach proposed\n  - Sourced throughout"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Published white papers from leading firms in the field\n    - Purdue OWL (owl.purdue.edu)\n- A white paper\n  - The problem, in depth\n  - Evidence and analysis\n  - The approach proposed\n  - Sourced throughout"
         },
         {
           "optionId": "press-release",
           "shortName": "Press release",
-          "fullText": "- A press release\n  - Headline\n  - Dateline and the news in the first sentence\n  - Who, what, when, where, why\n  - A quote\n  - About the organization\n  - Media contact"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - AP Stylebook\n    - The organization's past press releases\n- A press release\n  - Headline\n  - Dateline and the news in the first sentence\n  - Who, what, when, where, why\n  - A quote\n  - About the organization\n  - Media contact"
         },
         {
           "optionId": "announcement",
           "shortName": "Announcement",
-          "fullText": "- An announcement\n  - What's happening, first\n  - When it takes effect\n  - What it means for the reader\n  - What they need to do"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - digital.gov plain language guide (digital.gov/guides/plain-language)\n    - The organization's past announcements\n- An announcement\n  - What's happening, first\n  - When it takes effect\n  - What it means for the reader\n  - What they need to do"
         },
         {
           "optionId": "newsletter",
           "shortName": "Newsletter",
-          "fullText": "- A newsletter\n  - Short headline items\n  - Most important first\n  - Each item: a line or two and a link"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Mailchimp Content Style Guide\n    - The organization's past newsletters\n- A newsletter\n  - Short headline items\n  - Most important first\n  - Each item: a line or two and a link"
         },
         {
           "optionId": "blog-post",
           "shortName": "Blog post / article",
-          "fullText": "- A blog post\n  - A headline that says what it's about\n  - The point in the opening\n  - Subheadings\n  - A closing takeaway"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Nielsen Norman Group (nngroup.com) on writing for the web\n    - Mailchimp Content Style Guide\n- A blog post\n  - A headline that says what it's about\n  - The point in the opening\n  - Subheadings\n  - A closing takeaway"
         },
         {
           "optionId": "social-media-post",
           "shortName": "Social media post",
-          "fullText": "- A social media post\n  - The point in the first line\n  - Within the platform's length\n  - One call to action"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - The platform's own business and creator guides\n- A social media post\n  - The point in the first line\n  - Within the platform's length\n  - One call to action"
         },
         {
           "optionId": "speech",
           "shortName": "Speech / talk",
-          "fullText": "- A speech\n  - Written to be heard\n    - Short sentences\n    - Key points repeated\n  - Opening hook\n  - Three main points at most\n  - Clear close"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Published speeches of the same kind\n    - Toastmasters International resources\n- A speech\n  - Written to be heard\n    - Short sentences\n    - Key points repeated\n  - Opening hook\n  - Three main points at most\n  - Clear close"
         },
         {
           "optionId": "presentation-outline",
           "shortName": "Presentation outline",
-          "fullText": "- A slide-by-slide outline\n  - One idea per slide\n  - Slide title states the point\n  - Speaker notes under each"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Duarte (duarte.com) presentation resources\n    - The organization's slide templates\n- A slide-by-slide outline\n  - One idea per slide\n  - Slide title states the point\n  - Speaker notes under each"
         },
         {
           "optionId": "meeting-agenda",
           "shortName": "Meeting agenda",
-          "fullText": "- A meeting agenda\n  - Purpose of the meeting\n  - Items in order, each with time and owner\n  - Decisions needed, marked"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Atlassian team playbook and templates\n    - The organization's own templates\n- A meeting agenda\n  - Purpose of the meeting\n  - Items in order, each with time and owner\n  - Decisions needed, marked"
         },
         {
           "optionId": "meeting-minutes",
           "shortName": "Meeting minutes",
-          "fullText": "- Meeting minutes\n  - Date and attendees\n  - Decisions made\n  - Actions: owner and due date\n  - Open questions"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Atlassian meeting-notes templates\n    - Robert's Rules of Order (for formal bodies)\n- Meeting minutes\n  - Date and attendees\n  - Decisions made\n  - Actions: owner and due date\n  - Open questions"
         },
         {
           "optionId": "standard-operating-procedure",
           "shortName": "Standard operating procedure",
-          "fullText": "- A standard operating procedure\n  - Purpose and scope\n  - Who does it\n  - Numbered steps\n  - Checks and records\n  - Version and review date"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - The organization's existing procedures\n    - ISO 9001 documentation guidance (for regulated work)\n- A standard operating procedure\n  - Purpose and scope\n  - Who does it\n  - Numbered steps\n  - Checks and records\n  - Version and review date"
         },
         {
           "optionId": "training-material",
           "shortName": "Training material",
-          "fullText": "- Training material\n  - Learning goals first\n  - Explain, then show an example, then practice\n  - A short check at the end"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - The organization's existing training\n    - Writing to GOV.UK standards (guidance.publishing.service.gov.uk)\n- Training material\n  - Learning goals first\n  - Explain, then show an example, then practice\n  - A short check at the end"
         },
         {
           "optionId": "job-description",
           "shortName": "Job description",
-          "fullText": "- A job description\n  - Role summary\n  - Responsibilities\n  - Required and preferred qualifications, separate\n  - Pay and location, if given\n  - How to apply"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - SHRM (shrm.org) job description templates\n    - The organization's existing job descriptions\n- A job description\n  - Role summary\n  - Responsibilities\n  - Required and preferred qualifications, separate\n  - Pay and location, if given\n  - How to apply"
         },
         {
           "optionId": "product-requirements",
           "shortName": "Product requirements (PRD)",
-          "fullText": "- A product requirements document\n  - Problem and users\n  - Goals and non-goals\n  - Requirements, each testable\n  - Success measures\n  - Open questions"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Atlassian product requirements template\n    - The organization's existing PRDs\n- A product requirements document\n  - Problem and users\n  - Goals and non-goals\n  - Requirements, each testable\n  - Success measures\n  - Open questions"
         },
         {
           "optionId": "release-notes",
           "shortName": "Release notes",
-          "fullText": "- Release notes\n  - Version and date\n  - New\n  - Changed\n  - Fixed\n  - Anything users must do"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Keep a Changelog (keepachangelog.com)\n    - The project's past release notes\n- Release notes\n  - Version and date\n  - New\n  - Changed\n  - Fixed\n  - Anything users must do"
         },
         {
           "optionId": "incident-report",
           "shortName": "Incident report / postmortem",
-          "fullText": "- An incident report\n  - What happened, in a timeline\n  - Impact\n  - Root cause\n  - What fixed it\n  - Actions to prevent it, with owners\n  - Blameless"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Google SRE book: postmortem culture (sre.google)\n    - Atlassian incident postmortem template\n- An incident report\n  - What happened, in a timeline\n  - Impact\n  - Root cause\n  - What fixed it\n  - Actions to prevent it, with owners\n  - Blameless"
         },
         {
           "optionId": "survey",
           "shortName": "Survey / questionnaire",
-          "fullText": "- A survey\n  - Purpose stated to respondents\n  - One idea per question\n  - Neutral wording\n  - Answer choices that cover every case"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Pew Research Center: questionnaire design\n    - SurveyMonkey survey design guidance\n- A survey\n  - Purpose stated to respondents\n  - One idea per question\n  - Neutral wording\n  - Answer choices that cover every case"
         },
         {
           "optionId": "literature-review",
           "shortName": "Literature review",
-          "fullText": "- A literature review\n  - Scope and how sources were chosen\n  - Grouped by theme\n  - Agreements, disagreements, gaps\n  - Every source cited"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Purdue OWL (owl.purdue.edu)\n    - The target field's style guide (APA, MLA, Chicago)\n- A literature review\n  - Scope and how sources were chosen\n  - Grouped by theme\n  - Agreements, disagreements, gaps\n  - Every source cited"
         },
         {
           "optionId": "product-description",
           "shortName": "Product description",
-          "fullText": "- A product description\n  - What it is and who it's for\n  - Key benefits\n  - Specifications\n  - Within the length the channel allows"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - The selling platform's listing guidelines\n    - The brand's existing style guide\n- A product description\n  - What it is and who it's for\n  - Key benefits\n  - Specifications\n  - Within the length the channel allows"
         },
         {
           "optionId": "faq-style-help-article",
           "shortName": "Help-center article",
-          "fullText": "- A help-center article\n  - Title phrased as the reader's question\n  - The answer first\n  - Steps if needed\n  - Related articles"
+          "fullText": "- First, get a reference\n  - Examples and structure from a trusted source\n  - The organization's own template wins, if there is one\n  - Suggested sources\n    - Writing to GOV.UK standards (guidance.publishing.service.gov.uk)\n    - Microsoft Writing Style Guide\n- A help-center article\n  - Title phrased as the reader's question\n  - The answer first\n  - Steps if needed\n  - Related articles"
         }
       ]
     },
