@@ -180,6 +180,27 @@
       ]
     },
     {
+      "categoryId": "plan-first",
+      "categoryName": "Plan first",
+      "options": [
+        {
+          "optionId": "outline-and-agree",
+          "shortName": "Outline, agree, then do",
+          "fullText": "- Outline first\n  - The parts\n  - The point of each\n- Agree the outline with the user\n- Then do the work"
+        },
+        {
+          "optionId": "outline-then-proceed",
+          "shortName": "Outline, then proceed",
+          "fullText": "- Outline first\n  - Show it\n- Then do the work\n  - Without waiting for approval"
+        },
+        {
+          "optionId": "straight-to-a-draft",
+          "shortName": "Straight to a first version",
+          "fullText": "- Go straight to a complete first version\n- List what you assumed\n  - Audience\n  - Length\n  - Structure"
+        }
+      ]
+    },
+    {
       "categoryId": "structure",
       "categoryName": "Build skeleton first",
       "options": [
