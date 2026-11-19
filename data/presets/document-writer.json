@@ -27,6 +27,12 @@
       "editedText": null
     },
     {
+      "categoryId": "document-type",
+      "optionId": "guide",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "document-format",
       "optionId": "markdown",
       "enabled": true,

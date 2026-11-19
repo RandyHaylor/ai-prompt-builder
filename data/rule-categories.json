@@ -447,24 +447,9 @@
       ]
     },
     {
-      "categoryId": "document-format",
-      "categoryName": "Document format",
+      "categoryId": "document-type",
+      "categoryName": "Document type",
       "options": [
-        {
-          "optionId": "markdown",
-          "shortName": "Markdown",
-          "fullText": "- Markdown\n  - Headings for sections\n  - Lists for steps and items\n  - Tables for comparisons"
-        },
-        {
-          "optionId": "plain-text",
-          "shortName": "Plain text",
-          "fullText": "- Plain text\n  - No markup\n  - Blank lines between sections"
-        },
-        {
-          "optionId": "word-document",
-          "shortName": "Word document",
-          "fullText": "- Ready to paste into Word or Google Docs\n  - Real headings\n  - Real lists\n  - No markup symbols"
-        },
         {
           "optionId": "email",
           "shortName": "Email",
@@ -489,6 +474,32 @@
           "optionId": "faq",
           "shortName": "FAQ",
           "fullText": "- Questions and answers\n  - Questions as readers would ask them\n  - Short, direct answers\n  - Most common first"
+        },
+        {
+          "optionId": "guide",
+          "shortName": "Guide / how-to",
+          "fullText": "- A guide\n  - What it helps the reader do, first\n  - Steps in order\n  - One action per step\n  - What to do when something goes wrong"
+        }
+      ]
+    },
+    {
+      "categoryId": "document-format",
+      "categoryName": "File format",
+      "options": [
+        {
+          "optionId": "markdown",
+          "shortName": "Markdown",
+          "fullText": "- Markdown\n  - Headings for sections\n  - Lists for steps and items\n  - Tables for comparisons"
+        },
+        {
+          "optionId": "plain-text",
+          "shortName": "Plain text",
+          "fullText": "- Plain text\n  - No markup\n  - Blank lines between sections"
+        },
+        {
+          "optionId": "word-document",
+          "shortName": "Word document",
+          "fullText": "- Ready to paste into Word or Google Docs\n  - Real headings\n  - Real lists\n  - No markup symbols"
         }
       ]
     },
