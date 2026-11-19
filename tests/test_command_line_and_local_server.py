@@ -60,7 +60,7 @@ class CommandLineTest(unittest.TestCase):
         self.cli("custom-text", self.ruleset_file, "--text", "DO THE THING", "--at", "start")
         text = self.cli("compose", self.ruleset_file)
         self.assertTrue(text.startswith("DO THE THING\n\n## Naming\n\nMY NAMING RULE"))
-        self.assertIn("## Testing\n\nTest what you've made", text)
+        self.assertIn("## Testing\n\n- Test what you've made", text)
         self.cli("all", self.ruleset_file, "reset-text")
         self.assertNotIn("MY NAMING RULE", self.cli("compose", self.ruleset_file))
         self.cli("all", self.ruleset_file, "off")
@@ -86,7 +86,7 @@ class CommandLineTest(unittest.TestCase):
         self.cli("new", self.ruleset_file, "--preset", "Small one-off")
         self.assertNotIn("## Design patterns", self.cli("compose", self.ruleset_file))
         self.cli("set", self.ruleset_file, "design-patterns", "--option", "functional")
-        self.assertIn("## Design patterns\n\nFunctional:", self.cli("compose", self.ruleset_file))
+        self.assertIn("## Design patterns\n\n- Functional", self.cli("compose", self.ruleset_file))
         self.cli("remove", self.ruleset_file, "design-patterns")
         self.assertIn("Design patterns (design-patterns)", self.cli("show", self.ruleset_file))
 
