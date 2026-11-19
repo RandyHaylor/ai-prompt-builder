@@ -19,12 +19,7 @@ export const DEFAULT_RULE_CATEGORIES = [
         optionId: "verbose-oop",
         shortName: "Verbose OOP",
         fullText:
-          "Strive for modular code with clear interfaces designed as part of specs. Name everything for what it IS or what it DOES, in a way that is understandable outside of any app context. This is easy for humans, hard for AI — err on the side of verbosity: a short sentence of a name beats a meaningless name. Names are NEVER for implementation, only for role.\n- You use paper and pencil to map something, but you don't call them a \"mapper tool\". You run a mapping operation and produce a map, yet there was never a mapping tool — only a writing and recording tool.\n- Never brand internal mechanisms with the app name.",
-      },
-      {
-        optionId: "good-clear-naming",
-        shortName: "Good clear naming",
-        fullText: "Use good clear naming that describes what something does.",
+          "Use good clear naming that describes what something does. Strive for modular code with clear interfaces designed as part of specs. Name everything for what it IS or what it DOES, in a way that is understandable outside of any app context. This is easy for humans, hard for AI — err on the side of verbosity: a short sentence of a name beats a meaningless name. Names are NEVER for implementation, only for role.\n- You use paper and pencil to map something, but you don't call them a \"mapper tool\". You run a mapping operation and produce a map, yet there was never a mapping tool — only a writing and recording tool.\n- Never brand internal mechanisms with the app name.",
       },
       {
         optionId: "modern-clean",
@@ -464,7 +459,7 @@ export const DEFAULT_RULE_PRESETS = [
     presetName: "Small one-off",
     entries: [
       { categoryId: "adding-details", optionId: "do-not-add-or-change-details" },
-      { categoryId: "naming", optionId: "good-clear-naming" },
+      { categoryId: "naming", optionId: "verbose-oop" },
       { categoryId: "testing", optionId: "simple-post-testing" },
       { categoryId: "proof", optionId: "proof-before-reliance-and-done" },
     ],
