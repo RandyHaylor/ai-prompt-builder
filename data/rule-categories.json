@@ -479,6 +479,31 @@
           "optionId": "guide",
           "shortName": "Guide / how-to",
           "fullText": "- A guide\n  - What it helps the reader do, first\n  - Steps in order\n  - One action per step\n  - What to do when something goes wrong"
+        },
+        {
+          "optionId": "policy",
+          "shortName": "Policy",
+          "fullText": "- A policy\n  - Purpose and scope first\n  - Defined terms, defined once\n  - Must / may / must not, used exactly\n  - One meaning per sentence\n  - Who owns it, when it's reviewed"
+        },
+        {
+          "optionId": "opinion-piece",
+          "shortName": "Opinion piece (op-ed)",
+          "fullText": "- An opinion piece\n  - A clear stance, stated early\n  - Argued with evidence\n  - Counterarguments answered\n  - Ends with a call to think or act"
+        },
+        {
+          "optionId": "technical-documentation",
+          "shortName": "Technical documentation",
+          "fullText": "- Technical documentation\n  - Task-focused\n  - Numbered steps\n  - Terms and names verbatim\n  - Examples for each case"
+        },
+        {
+          "optionId": "academic-paper",
+          "shortName": "Academic paper",
+          "fullText": "- An academic paper\n  - Claims supported and cited\n  - Hedged where evidence is limited\n  - Field terms used correctly\n  - Standard sections for the field"
+        },
+        {
+          "optionId": "marketing-copy",
+          "shortName": "Marketing copy",
+          "fullText": "- Marketing copy\n  - Benefits before features\n  - Concrete and vivid\n  - A clear call to action\n  - No claims that can't be backed up"
         }
       ]
     },
@@ -508,14 +533,24 @@
       "categoryName": "Tone",
       "options": [
         {
-          "optionId": "plain-and-direct",
-          "shortName": "Plain and direct",
-          "fullText": "- Plain language\n  - Short sentences\n  - Everyday words\n- No filler\n- No marketing tone"
+          "optionId": "neutral-and-precise",
+          "shortName": "Neutral and precise",
+          "fullText": "- Neutral and precise\n  - No opinion\n  - No persuasion\n  - Exact wording"
         },
         {
           "optionId": "formal",
           "shortName": "Formal",
-          "fullText": "- Formal and precise\n  - No contractions\n  - No slang"
+          "fullText": "- Formal\n  - No contractions\n  - No slang"
+        },
+        {
+          "optionId": "internal-formal",
+          "shortName": "Professional, warm",
+          "fullText": "- Professional but not stiff\n  - Courteous\n  - Direct"
+        },
+        {
+          "optionId": "plain-and-direct",
+          "shortName": "Plain and direct",
+          "fullText": "- Plain language\n  - Short sentences\n  - Everyday words\n- No filler\n- No marketing tone"
         },
         {
           "optionId": "friendly",
@@ -523,39 +558,14 @@
           "fullText": "- Warm and conversational\n  - Still clear and exact"
         },
         {
-          "optionId": "op-ed",
-          "shortName": "Op-ed",
-          "fullText": "- Opinion piece\n  - A clear stance, stated early\n  - Argued with evidence\n  - Counterarguments answered\n- Confident, personal voice\n- Ends with a call to think or act"
-        },
-        {
-          "optionId": "professional-policy",
-          "shortName": "Professional policy",
-          "fullText": "- Policy language\n  - Precise and neutral\n  - One meaning per sentence\n- Must / may / must not\n  - Used exactly\n- Defined terms\n  - Defined once, used consistently\n- No persuasion, no hedging"
-        },
-        {
-          "optionId": "internal-formal",
-          "shortName": "Internal formal",
-          "fullText": "- Formal, for colleagues\n  - Professional, not stiff\n  - Shared terms assumed\n- Purpose and ask up front"
-        },
-        {
-          "optionId": "academic",
-          "shortName": "Academic",
-          "fullText": "- Academic register\n  - Claims supported and cited\n  - Hedged where evidence is limited\n- Third person\n- Field terms used correctly"
-        },
-        {
-          "optionId": "technical-documentation",
-          "shortName": "Technical documentation",
-          "fullText": "- Technical documentation\n  - Exact\n  - Task-focused\n  - Second person (\"you\")\n- Steps numbered\n- Terms and names verbatim"
-        },
-        {
-          "optionId": "customer-facing",
-          "shortName": "Customer-facing",
-          "fullText": "- For customers\n  - Clear and courteous\n  - No internal jargon\n- What it means for them, first\n- Next steps spelled out"
-        },
-        {
           "optionId": "persuasive",
-          "shortName": "Persuasive / marketing",
-          "fullText": "- Persuasive\n  - Benefits before features\n  - Concrete and vivid\n- A clear call to action\n- No claims that can't be backed up"
+          "shortName": "Persuasive",
+          "fullText": "- Persuasive\n  - A clear position\n  - Confident\n  - Aimed at a decision or action"
+        },
+        {
+          "optionId": "non-partisan",
+          "shortName": "Non-partisan",
+          "fullText": "- No political opinions\n  - Express none\n  - Imply none\n- Don't support or oppose\n  - Candidates\n  - Parties\n  - Legislation or ballot measures\n- Political topics, when unavoidable\n  - Facts only, sourced\n  - Each side described fairly, in its own terms\n- For organizations that must stay non-partisan\n  - Charities and nonprofits\n  - Public bodies\n  - Employers with a neutrality policy"
         },
         {
           "optionId": "match-the-source-tone",
