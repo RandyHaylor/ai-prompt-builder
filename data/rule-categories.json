@@ -843,6 +843,52 @@
       ]
     },
     {
+      "categoryId": "target-audience",
+      "categoryName": "Target audience",
+      "options": [
+        {
+          "optionId": "general-public",
+          "shortName": "General public",
+          "fullText": "- For the general public\n- Plain language\n  - Aim for 6th–8th grade reading level\n  - Everyday words, no jargon\n  - Any needed term explained\n- Short sentences, short paragraphs\n- People and actions in each sentence\n  - Not passive and impersonal\n- Answer their questions in the order they'd ask"
+        },
+        {
+          "optionId": "non-specialist-professionals",
+          "shortName": "Professionals outside the field",
+          "fullText": "- For educated readers outside this field\n- Don't confuse expertise with intelligence\n  - Never talk down\n- Field terms defined on first use\n- Background given, or pointed to\n- Examples from everyday work, not deep theory"
+        },
+        {
+          "optionId": "experienced-engineers",
+          "shortName": "Experienced engineers / experts",
+          "fullText": "- For experts in the field\n- Skip the basics\n- Precise technical terms, undefined\n- Theory, mechanisms, trade-offs\n- Data and specifics, not simplified examples\n- Assume they will check your claims"
+        },
+        {
+          "optionId": "technicians-practitioners",
+          "shortName": "Technicians, hands-on practitioners",
+          "fullText": "- For people who build, run or repair it\n- Practical, not theoretical\n- Steps in order\n- Exact settings, values, commands\n- Warnings before the step they apply to"
+        },
+        {
+          "optionId": "executives",
+          "shortName": "Executives, decision-makers",
+          "fullText": "- For busy decision-makers\n  - Many read only the opening\n- Conclusion and decision needed, first\n- Impact in their terms\n  - Cost\n  - Risk\n  - Time\n  - Results\n- Short\n- Technical detail only in an appendix"
+        },
+        {
+          "optionId": "policymakers",
+          "shortName": "Policymakers, legislators",
+          "fullText": "- For policymakers short on time\n- Finding first\n  - Not built up to, as in academic writing\n- Two pages, four at most\n- No jargon, but precise\n  - Specific numbers and mechanisms\n- Recommendation stated directly\n  - Ends with a call to action"
+        },
+        {
+          "optionId": "non-native-english-readers",
+          "shortName": "Non-native English readers, global",
+          "fullText": "- For readers who learned English as another language\n- Plain, literal wording\n- No idioms or slang\n  - Say what the idiom means instead\n- No culture-bound references\n- One meaning per word\n  - Same term every time"
+        },
+        {
+          "optionId": "mixed-audience",
+          "shortName": "Mixed audience",
+          "fullText": "- Name the primary audience\n  - Write for them\n- Serve secondary readers too\n  - Executives, experts, other departments\n- Opening states topic, purpose, audience\n- Headings so each reader finds their part\n- Summary and technical detail in separate sections"
+        }
+      ]
+    },
+    {
       "categoryId": "speakers-voice",
       "categoryName": "Speaker's voice",
       "options": [

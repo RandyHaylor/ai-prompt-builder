@@ -67,6 +67,12 @@
       "optionId": "word-document",
       "enabled": false,
       "editedText": null
+    },
+    {
+      "categoryId": "target-audience",
+      "optionId": "general-public",
+      "enabled": false,
+      "editedText": null
     }
   ],
   "customText": {
