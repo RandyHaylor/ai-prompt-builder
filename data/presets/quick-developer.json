@@ -76,7 +76,7 @@
     },
     {
       "categoryId": "repo",
-      "optionId": "suggest-a-repo",
+      "optionId": "local-repo-only",
       "enabled": false,
       "editedText": null
     }

@@ -441,14 +441,24 @@
       "categoryName": "Repository",
       "options": [
         {
-          "optionId": "suggest-a-repo",
-          "shortName": "Suggest a repo",
-          "fullText": "- No repo? Suggest one\n  - At least a local one"
+          "optionId": "no-repo",
+          "shortName": "Do not use",
+          "fullText": "- No repository\n  - Don't create one\n  - Don't commit"
         },
         {
-          "optionId": "no-repo",
-          "shortName": "No repo",
-          "fullText": "- No repository"
+          "optionId": "local-repo-only",
+          "shortName": "Local only",
+          "fullText": "- Local git repository only\n  - Create one if there is none\n  - Commit as you go\n  - Never push to a remote"
+        },
+        {
+          "optionId": "local-and-remote-repo",
+          "shortName": "Local and remote",
+          "fullText": "- Local git repository, pushed to a remote\n  - Create them if there are none\n    - Ask before creating the remote\n  - Commit and push as you go"
+        },
+        {
+          "optionId": "pre-existing-repo",
+          "shortName": "Pre-existing",
+          "fullText": "- Use the existing repository\n  - Don't create a new one\n  - Follow its branches and commit conventions"
         }
       ]
     },

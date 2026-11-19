@@ -100,7 +100,7 @@
     },
     {
       "categoryId": "repo",
-      "optionId": "suggest-a-repo",
+      "optionId": "local-and-remote-repo",
       "enabled": false,
       "editedText": null
     }
