@@ -134,6 +134,27 @@
       ]
     },
     {
+      "categoryId": "requirements-to-gather",
+      "categoryName": "Requirements to gather",
+      "options": [
+        {
+          "optionId": "must-ask-before-starting",
+          "shortName": "Must ask before starting",
+          "fullText": "- Before starting, ask or confirm with the user\n  - Never assume any of these\n- What it's for\n  - The goal\n  - Who it's for: the target audience or users\n- Stage of the work, for example\n  - Tech spike\n  - Prototype\n  - Class project\n  - Alpha\n  - Beta\n  - Production\n- Scale\n  - How many users, how much data, how long it must last\n- Technology\n  - Language\n  - Stack and frameworks\n  - Where it runs or deploys\n- Constraints\n  - Deadline\n  - Budget, including paid services\n  - Anything it must work with\n- What done looks like\n- These are examples, not the full list\n  - Ask about anything else the work depends on"
+        },
+        {
+          "optionId": "confirm-what-is-unclear",
+          "shortName": "Confirm only what's unclear",
+          "fullText": "- Ask only about what's unclear\n  - Goal, audience, stage, scale, technology, constraints, what done looks like\n- State what you assumed for the rest"
+        },
+        {
+          "optionId": "use-defaults",
+          "shortName": "Use defaults, don't ask",
+          "fullText": "- Don't ask\n- Use sensible defaults\n  - State them at the start"
+        }
+      ]
+    },
+    {
       "categoryId": "scope",
       "categoryName": "Scope adherence",
       "options": [
@@ -344,7 +365,7 @@
         {
           "optionId": "batch-questions",
           "shortName": "Batch questions",
-          "fullText": "- Don't alternate asking and working\n- Research first\n- Then ask all questions together\n  - One at a time"
+          "fullText": "- Don't alternate asking and working\n- Research first\n- Then ask all questions together\n  - One at a time\n- Need more?\n  - Another round of research\n  - Another list of questions"
         },
         {
           "optionId": "ask-as-they-come",

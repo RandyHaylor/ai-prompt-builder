@@ -21,6 +21,12 @@
       "editedText": null
     },
     {
+      "categoryId": "requirements-to-gather",
+      "optionId": "must-ask-before-starting",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "design-patterns",
       "optionId": "research-industry-standard",
       "enabled": true,

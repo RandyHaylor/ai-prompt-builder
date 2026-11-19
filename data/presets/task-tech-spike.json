@@ -9,6 +9,12 @@
       "editedText": null
     },
     {
+      "categoryId": "requirements-to-gather",
+      "optionId": "confirm-what-is-unclear",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "existing-solutions",
       "optionId": "follow-established-patterns",
       "enabled": true,

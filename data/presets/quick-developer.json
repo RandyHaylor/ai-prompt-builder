@@ -15,6 +15,12 @@
       "editedText": null
     },
     {
+      "categoryId": "requirements-to-gather",
+      "optionId": "confirm-what-is-unclear",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "scope",
       "optionId": "strict-scope",
       "enabled": true,
