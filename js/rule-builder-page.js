@@ -35,6 +35,10 @@ async function readLocalServerSessionSettings() {
   }
 }
 
+// The public web tool (GitHub Pages) points visitors to the agent skill; a copy opened by
+// the skill itself does not need to.
+document.getElementById("install-skill-link").hidden = !location.hostname.endsWith("github.io");
+
 const shippedCatalog = await loadShippedCatalog();
 const localServerSessionSettings = await readLocalServerSessionSettings();
 
