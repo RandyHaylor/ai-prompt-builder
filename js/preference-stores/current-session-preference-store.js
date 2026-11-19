@@ -21,6 +21,7 @@ export const EMPTY_CUSTOMIZATIONS = Object.freeze({
   customCategories: [],
   customOptions: [],
   customPresets: [],
+  deletedBuiltInCategoryIds: [],
 });
 
 export class CurrentSessionPreferenceStore {

@@ -31,7 +31,8 @@ option.
 | `set <file> <rule> [--option ID] [--on/--off] [--text T / --text-file F] [--reset-text]` | change one rule |
 | `all <file> on / off / reset-text` | change every rule |
 | `move <file> <rule> <position>` | reorder (1 = first) |
-| `remove <file> <rule>` | delete a rule (prefer `--off`) |
+| `remove <file> <rule>` | take a rule out of this ruleset (it becomes "not added yet"; `set` adds it back) |
+| `delete-rule <rule>` | delete a rule from the catalog for good — only when the user asks for exactly that |
 | `custom-text <file> [--text T / --text-file F] [--at end/start] [--on/--off]` | the optional custom text |
 | `compose <file> [--out F]` | the text to paste |
 | `add-option <rule> --name N --text T` | the user's own option, kept for later |

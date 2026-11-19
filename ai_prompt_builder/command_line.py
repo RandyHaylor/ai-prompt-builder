@@ -18,7 +18,8 @@ from .rule_catalog import RuleCatalog, read_json, write_json
 from .ruleset import (
     compose_prompt_text,
     find_entry,
-    include_every_category,
+    find_or_add_entry,
+    list_rules_not_added_yet,
     new_ruleset,
     text_of_entry,
 )
@@ -90,7 +91,6 @@ def command_new(catalog: RuleCatalog, arguments) -> None:
 
 def command_show(catalog: RuleCatalog, arguments) -> None:
     ruleset = load_ruleset(arguments.ruleset_file)
-    include_every_category(catalog, ruleset)
     if arguments.json:
         return print_json(ruleset)
     print(f"Ruleset: {ruleset.get('name', 'Untitled')}")
@@ -107,12 +107,15 @@ def command_show(catalog: RuleCatalog, arguments) -> None:
         if arguments.full and entry.get("enabled", True):
             for line in (text_of_entry(catalog, entry) or "").splitlines():
                 print(f"       {line}")
+    not_added = list_rules_not_added_yet(catalog, ruleset)
+    if not_added:
+        print("\nNot added yet: " + ", ".join(
+            f"{c['categoryName']} ({c['categoryId']})" for c in not_added))
 
 
 def command_set(catalog: RuleCatalog, arguments) -> None:
     ruleset = load_ruleset(arguments.ruleset_file)
-    include_every_category(catalog, ruleset)
-    entry = find_entry(ruleset, arguments.category_id)
+    entry = find_or_add_entry(catalog, ruleset, arguments.category_id)
     if arguments.option:
         if catalog.find_option(arguments.category_id, arguments.option) is None:
             sys.exit(f"no option '{arguments.option}' in '{arguments.category_id}' "
@@ -134,7 +137,6 @@ def command_set(catalog: RuleCatalog, arguments) -> None:
 
 def command_all(catalog: RuleCatalog, arguments) -> None:
     ruleset = load_ruleset(arguments.ruleset_file)
-    include_every_category(catalog, ruleset)
     for entry in ruleset["entries"]:
         if arguments.action == "on":
             entry["enabled"] = True
@@ -160,7 +162,13 @@ def command_remove(catalog: RuleCatalog, arguments) -> None:
     ruleset = load_ruleset(arguments.ruleset_file)
     ruleset["entries"].remove(find_entry(ruleset, arguments.category_id))
     write_json(Path(arguments.ruleset_file), ruleset)
-    print(f"removed {arguments.category_id} (switching it off keeps it in the list instead)")
+    print(f"removed {arguments.category_id} from this ruleset (it is 'not added yet' now; "
+          f"switching it off keeps it in the list instead)")
+
+
+def command_delete_rule(catalog: RuleCatalog, arguments) -> None:
+    catalog.delete_rule(arguments.category_id)
+    print(f"deleted rule {arguments.category_id} for good (saved in {catalog.user_folder})")
 
 
 def command_custom_text(catalog: RuleCatalog, arguments) -> None:
@@ -286,7 +294,8 @@ def build_argument_parser() -> argparse.ArgumentParser:
     command.add_argument("--full", action="store_true", help="also print the text of each rule that is on")
     command.add_argument("--json", action="store_true")
 
-    command = add("set", command_set, "change one rule: its option, on/off, or its text")
+    command = add("set", command_set,
+                  "change one rule: its option, on/off, or its text (adds it if not added yet)")
     command.add_argument("ruleset_file")
     command.add_argument("category_id")
     command.add_argument("--option", help="choose this option")
@@ -305,7 +314,11 @@ def build_argument_parser() -> argparse.ArgumentParser:
     command.add_argument("category_id")
     command.add_argument("position", type=int)
 
-    command = add("remove", command_remove, "delete a rule from the ruleset")
+    command = add("delete-rule", command_delete_rule,
+                  "delete a rule from the catalog for good (your own: removed; built-in: hidden)")
+    command.add_argument("category_id")
+
+    command = add("remove", command_remove, "take a rule out of this ruleset (back to 'not added yet')")
     command.add_argument("ruleset_file")
     command.add_argument("category_id")
 

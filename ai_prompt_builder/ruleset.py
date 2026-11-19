@@ -10,8 +10,8 @@ rulesets and share one file shape:
   "customText": {"text": "...", "placement": "end" | "start", "enabled": true}
 }
 
-Every category is always present: a ruleset made from a preset lists the preset's rules
-first, then every other category switched off. editedText, when not null, replaces the
+A ruleset holds only the rules it lists (switched on or off); every other rule in the
+catalog is "not added yet" and can be added. editedText, when not null, replaces the
 option's text. The composed text is identical to what the web page produces.
 """
 
@@ -35,19 +35,28 @@ def new_ruleset(catalog: RuleCatalog, preset: "dict | None" = None, name: "str |
                 "enabled": entry.get("enabled", True) is not False,
                 "editedText": entry.get("editedText"),
             })
-    include_every_category(catalog, ruleset)
     return ruleset
 
 
-def include_every_category(catalog: RuleCatalog, ruleset: dict) -> None:
+def list_rules_not_added_yet(catalog: RuleCatalog, ruleset: dict) -> list:
     present = {entry["categoryId"] for entry in ruleset["entries"]}
-    for category in catalog.list_categories():
-        if category["categoryId"] in present or not category["options"]:
-            continue
-        ruleset["entries"].append({
-            "categoryId": category["categoryId"], "optionId": category["options"][0]["optionId"],
-            "enabled": False, "editedText": None,
-        })
+    return [category for category in catalog.list_categories()
+            if category["categoryId"] not in present and category["options"]]
+
+
+def find_or_add_entry(catalog: RuleCatalog, ruleset: dict, category_id: str) -> dict:
+    """The ruleset's entry for this rule, added at the end (switched on, first option) when
+    the rule is not in the ruleset yet."""
+    for entry in ruleset["entries"]:
+        if entry["categoryId"] == category_id:
+            return entry
+    category = catalog.find_category(category_id)
+    if category is None or not category["options"]:
+        raise KeyError(f"no rule '{category_id}' (see: categories)")
+    entry = {"categoryId": category_id, "optionId": category["options"][0]["optionId"],
+             "enabled": True, "editedText": None}
+    ruleset["entries"].append(entry)
+    return entry
 
 
 def find_entry(ruleset: dict, category_id: str) -> dict:

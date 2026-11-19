@@ -121,6 +121,18 @@
       "optionId": "full-report",
       "enabled": true,
       "editedText": null
+    },
+    {
+      "categoryId": "prs",
+      "optionId": "stacked-prs-and-review",
+      "enabled": false,
+      "editedText": null
+    },
+    {
+      "categoryId": "parallel-work",
+      "optionId": "suggest-parallel-work",
+      "enabled": false,
+      "editedText": null
     }
   ],
   "customText": {

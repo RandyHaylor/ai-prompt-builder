@@ -80,17 +80,19 @@ class RuleCatalog:
 
     def read_customizations(self) -> dict:
         if not self.customizations_path.exists():
-            return {"customCategories": [], "customOptions": []}
+            return {"customCategories": [], "customOptions": [], "deletedBuiltInCategoryIds": []}
         content = read_json(self.customizations_path)
         return {
             "customCategories": content.get("customCategories", []),
             "customOptions": content.get("customOptions", []),
+            "deletedBuiltInCategoryIds": content.get("deletedBuiltInCategoryIds", []),
         }
 
     def write_customizations(self, customizations: dict) -> None:
         write_json(self.customizations_path, {
             "customCategories": customizations.get("customCategories", []),
             "customOptions": customizations.get("customOptions", []),
+            "deletedBuiltInCategoryIds": customizations.get("deletedBuiltInCategoryIds", []),
         })
 
     def read_user_presets(self) -> list:
@@ -141,13 +143,32 @@ class RuleCatalog:
         self.write_customizations(customizations)
         return category_id
 
+    def delete_rule(self, category_id: str) -> None:
+        """Delete a rule from the catalog for good: the user's own rule (and its options) is
+        removed; a built-in rule is hidden from now on. Rulesets that list it skip it."""
+        customizations = self.read_customizations()
+        own = [c for c in customizations["customCategories"] if c["categoryId"] == category_id]
+        if own:
+            customizations["customCategories"] = [
+                c for c in customizations["customCategories"] if c["categoryId"] != category_id]
+            customizations["customOptions"] = [
+                o for o in customizations["customOptions"] if o["categoryId"] != category_id]
+        elif any(c["categoryId"] == category_id for c in self.shipped_categories):
+            if category_id not in customizations["deletedBuiltInCategoryIds"]:
+                customizations["deletedBuiltInCategoryIds"].append(category_id)
+        else:
+            raise KeyError(f"no rule '{category_id}'")
+        self.write_customizations(customizations)
+
     # --- reading -----------------------------------------------------------------------
 
     def list_categories(self) -> list:
         """Every category, shipped then the user's, each with every option (shipped
         options first, then the user's)."""
         customizations = self.read_customizations()
-        categories = [dict(category, isCustom=False) for category in self.shipped_categories]
+        deleted = set(customizations["deletedBuiltInCategoryIds"])
+        categories = [dict(category, isCustom=False) for category in self.shipped_categories
+                      if category["categoryId"] not in deleted]
         categories += [dict(category, isCustom=True) for category in customizations["customCategories"]]
         listed = []
         for category in categories:

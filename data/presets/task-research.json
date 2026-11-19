@@ -43,6 +43,12 @@
       "optionId": "wiki-style",
       "enabled": true,
       "editedText": null
+    },
+    {
+      "categoryId": "questions",
+      "optionId": "batch-questions",
+      "enabled": false,
+      "editedText": null
     }
   ],
   "customText": {

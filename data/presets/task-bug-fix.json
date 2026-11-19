@@ -55,6 +55,12 @@
       "optionId": "full-report",
       "enabled": true,
       "editedText": null
+    },
+    {
+      "categoryId": "task-code-review",
+      "optionId": "review-against-requirements",
+      "enabled": false,
+      "editedText": null
     }
   ],
   "customText": {

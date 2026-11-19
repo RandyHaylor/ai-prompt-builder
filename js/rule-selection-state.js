@@ -55,7 +55,10 @@ export class RuleSelectionState {
   /** Every category, shipped and custom, each with its shipped and custom options. */
   listAllCategories() {
     const categories = [
-      ...this.defaultCategories.map((category) => ({ ...category, isCustom: false })),
+      ...this.defaultCategories
+        .filter((category) => !(this.customizations.deletedBuiltInCategoryIds || [])
+          .includes(category.categoryId))
+        .map((category) => ({ ...category, isCustom: false })),
       ...this.customizations.customCategories.map((category) => ({ ...category, isCustom: true })),
     ];
     return categories.map((category) => ({
@@ -231,14 +234,6 @@ export class RuleSelectionState {
         enabled: entry.enabled !== false,
         editedText: entry.editedText ?? null,
       }));
-    const categoryIdsInRuleset = new Set(this.chosenEntries.map((entry) => entry.categoryId));
-    for (const category of this.listAllCategories()) {
-      if (categoryIdsInRuleset.has(category.categoryId) || !category.options.length) continue;
-      this.chosenEntries.push({
-        entryId: newEntryId(), categoryId: category.categoryId,
-        optionId: category.options[0].optionId, enabled: false, editedText: null,
-      });
-    }
     this.customText = {
       text: ruleset.customText?.text ?? "",
       placement: ruleset.customText?.placement ?? "end",
@@ -283,6 +278,24 @@ export class RuleSelectionState {
     await this.saveCustomizations();
     this.notifyChange();
     return optionId;
+  }
+
+  /** Delete a rule from the catalog for good: the user's own rule (and its options) is
+   * removed; a built-in rule is hidden from now on. It also leaves the current list. */
+  async deleteRuleFromCatalog(categoryId) {
+    const isOwn = this.customizations.customCategories.some((c) => c.categoryId === categoryId);
+    if (isOwn) {
+      this.customizations.customCategories =
+        this.customizations.customCategories.filter((c) => c.categoryId !== categoryId);
+      this.customizations.customOptions =
+        this.customizations.customOptions.filter((o) => o.categoryId !== categoryId);
+    } else {
+      this.customizations.deletedBuiltInCategoryIds = [
+        ...(this.customizations.deletedBuiltInCategoryIds || []), categoryId];
+    }
+    this.chosenEntries = this.chosenEntries.filter((entry) => entry.categoryId !== categoryId);
+    await this.saveCustomizations();
+    this.notifyChange();
   }
 
   async addCustomCategory(categoryName) {

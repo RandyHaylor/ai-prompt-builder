@@ -37,11 +37,13 @@ class CommandLineTest(unittest.TestCase):
     def cli(self, *arguments) -> str:
         return run("--user-folder", self.user_folder, *arguments)
 
-    def test_a_new_ruleset_from_a_preset_shows_every_category_and_composes(self):
+    def test_a_new_ruleset_holds_the_presets_rules_and_lists_the_rest_as_not_added(self):
         self.cli("new", self.ruleset_file, "--preset", "Careful developer")
         ruleset = json.loads(pathlib.Path(self.ruleset_file).read_text())
-        category_count = len(json.loads(self.cli("categories", "--json")))
-        self.assertEqual(len(ruleset["entries"]), category_count)
+        preset = json.loads((REPOSITORY / "data/presets/careful-developer.json").read_text())
+        self.assertEqual([e["categoryId"] for e in ruleset["entries"]],
+                         [e["categoryId"] for e in preset["entries"]])
+        self.assertIn("Not added yet:", self.cli("show", self.ruleset_file))
         text = self.cli("compose", self.ruleset_file)
         self.assertIn("## Source of truth", text)
         self.assertIn("## Design patterns", text)
@@ -78,6 +80,24 @@ class CommandLineTest(unittest.TestCase):
         text = self.cli("compose", second)
         self.assertIn("## Deployment\n\nDeploy to staging first.", text)
         self.assertIn("Run a smoke test.", text)
+
+    def test_set_adds_a_rule_that_is_not_added_yet_and_remove_takes_it_out(self):
+        self.cli("new", self.ruleset_file, "--preset", "Small one-off")
+        self.assertNotIn("## Design patterns", self.cli("compose", self.ruleset_file))
+        self.cli("set", self.ruleset_file, "design-patterns", "--option", "functional")
+        self.assertIn("## Design patterns\n\nFunctional style", self.cli("compose", self.ruleset_file))
+        self.cli("remove", self.ruleset_file, "design-patterns")
+        self.assertIn("Design patterns (design-patterns)", self.cli("show", self.ruleset_file))
+
+    def test_deleting_a_rule_removes_it_from_the_catalog_for_good(self):
+        self.cli("delete-rule", "prs")
+        self.assertNotIn("prs", [c["categoryId"] for c in json.loads(self.cli("categories", "--json"))])
+        self.cli("new", self.ruleset_file, "--preset", "Careful dev manager")   # lists prs
+        self.assertNotIn("## Pull requests", self.cli("compose", self.ruleset_file))
+        own = self.cli("add-category", "Deployment").split()[2].rstrip(";")
+        self.cli("delete-rule", own)
+        self.assertIsNone(next((c for c in json.loads(self.cli("categories", "--json"))
+                                if c["categoryId"] == own), None))
 
     def test_a_built_in_preset_name_cannot_be_overwritten(self):
         self.cli("new", self.ruleset_file)

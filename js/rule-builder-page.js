@@ -185,12 +185,21 @@ function renderEntry(entry, index) {
       toggle,
       createElement("span", { className: "rule-category", textContent: category.categoryName }),
       optionMenu,
-      // Removing is offered only on an expanded rule, so it is never hit by accident.
-      ...(isExpanded ? [createElement("button", {
-        type: "button", className: "icon-button delete-button", title: "Delete this rule",
-        ariaLabel: "Delete this rule", innerHTML: TRASH_CAN_ICON,
-        onclick: () => state.removeEntry(entry.entryId),
-      })] : []),
+      // Both are offered only on an expanded rule, so neither is hit by accident.
+      ...(isExpanded ? [
+        createElement("button", {
+          type: "button", className: "icon-button remove-button",
+          title: "Remove from this preset (it goes back to 'Not added yet')",
+          ariaLabel: "Remove from this preset", textContent: "✕",
+          onclick: () => state.removeEntry(entry.entryId),
+        }),
+        createElement("button", {
+          type: "button", className: "icon-button delete-button",
+          title: "Delete this rule for good, everywhere",
+          ariaLabel: "Delete this rule for good", innerHTML: TRASH_CAN_ICON,
+          onclick: () => confirmAndDeleteRuleForGood(category),
+        }),
+      ] : []),
       createElement("button", {
         type: "button", className: "icon-button expand-button",
         title: isExpanded ? "Hide the text" : "Show and edit the text",
@@ -255,6 +264,20 @@ function renderOutput() {
   page.promptText.textContent = text || "Nothing yet.";
   page.promptText.classList.toggle("is-empty", !text);
   page.copyButton.disabled = !text;
+}
+
+async function confirmAndDeleteRuleForGood(category) {
+  const consequence = category.isCustom
+    ? "It and all of its options will be deleted. This cannot be undone."
+    : "This is a built-in rule. It will be hidden for you from now on.";
+  const confirmed = confirm(
+    `Delete the rule “${category.categoryName}” for good?\n\n`
+    + "This is NOT the same as ✕ (remove from this preset). Deleting removes the rule "
+    + "everywhere: from every preset, from “Not added yet” and from “Add a rule”.\n\n"
+    + consequence);
+  if (!confirmed) return;
+  await state.deleteRuleFromCatalog(category.categoryId);
+  showToast(`Deleted “${category.categoryName}”`);
 }
 
 function renderAddRuleMenu() {

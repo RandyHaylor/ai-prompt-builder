@@ -79,6 +79,18 @@
       "optionId": "tldr",
       "enabled": true,
       "editedText": null
+    },
+    {
+      "categoryId": "existing-solutions",
+      "optionId": "check-for-existing-libraries",
+      "enabled": false,
+      "editedText": null
+    },
+    {
+      "categoryId": "repo",
+      "optionId": "suggest-a-repo",
+      "enabled": false,
+      "editedText": null
     }
   ],
   "customText": {

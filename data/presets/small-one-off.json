@@ -37,6 +37,12 @@
       "optionId": "tldr",
       "enabled": true,
       "editedText": null
+    },
+    {
+      "categoryId": "documentation",
+      "optionId": "keep-docs-in-sync",
+      "enabled": false,
+      "editedText": null
     }
   ],
   "customText": {
