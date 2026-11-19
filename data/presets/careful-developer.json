@@ -3,18 +3,6 @@
   "name": "Careful developer",
   "entries": [
     {
-      "categoryId": "source-of-truth",
-      "optionId": "official-researched-truths",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "existing-solutions",
-      "optionId": "follow-established-patterns",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "adding-details",
       "optionId": "do-not-add-or-change-details",
       "enabled": true,
@@ -23,6 +11,18 @@
     {
       "categoryId": "requirements-to-gather",
       "optionId": "must-ask-before-starting",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "source-of-truth",
+      "optionId": "official-researched-truths",
+      "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "existing-solutions",
+      "optionId": "follow-established-patterns",
       "enabled": true,
       "editedText": null
     },
@@ -39,38 +39,8 @@
       "editedText": null
     },
     {
-      "categoryId": "questions",
-      "optionId": "batch-questions",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "offering-options",
-      "optionId": "research-before-options",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "design-patterns",
-      "optionId": "research-industry-standard",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "structure",
       "optionId": "hollow-before-full",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "work-chunks",
-      "optionId": "sprint-features",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "naming",
-      "optionId": "verbose-oop",
       "enabled": true,
       "editedText": null
     },
@@ -81,8 +51,8 @@
       "editedText": null
     },
     {
-      "categoryId": "formatting",
-      "optionId": "specify-formatting",
+      "categoryId": "naming",
+      "optionId": "verbose-oop",
       "enabled": true,
       "editedText": null
     },
@@ -99,20 +69,8 @@
       "editedText": null
     },
     {
-      "categoryId": "billed-runs",
-      "optionId": "research-then-permission",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "documentation",
-      "optionId": "full-documentation",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "repo",
-      "optionId": "suggest-a-repo",
+      "optionId": "readme-for-what-you-build",
       "enabled": true,
       "editedText": null
     },
@@ -123,14 +81,26 @@
       "editedText": null
     },
     {
-      "categoryId": "prs",
-      "optionId": "stacked-prs-and-review",
+      "categoryId": "questions",
+      "optionId": "batch-questions",
       "enabled": false,
       "editedText": null
     },
     {
-      "categoryId": "parallel-work",
-      "optionId": "suggest-parallel-work",
+      "categoryId": "offering-options",
+      "optionId": "research-before-options",
+      "enabled": false,
+      "editedText": null
+    },
+    {
+      "categoryId": "billed-runs",
+      "optionId": "research-then-permission",
+      "enabled": false,
+      "editedText": null
+    },
+    {
+      "categoryId": "repo",
+      "optionId": "suggest-a-repo",
       "enabled": false,
       "editedText": null
     }

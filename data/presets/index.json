@@ -9,8 +9,6 @@
     "task-tech-spike.json",
     "task-bug-fix.json",
     "task-code-review.json",
-    "worker.json",
-    "planner.json",
     "small-one-off.json"
   ]
 }

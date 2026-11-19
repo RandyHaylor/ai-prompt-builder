@@ -9,26 +9,8 @@
       "editedText": null
     },
     {
-      "categoryId": "source-of-truth",
-      "optionId": "only-what-you-are-given",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "adding-details",
       "optionId": "do-not-add-or-change-details",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "naming",
-      "optionId": "verbose-oop",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "modularity",
-      "optionId": "generic-standalone-modules",
       "enabled": true,
       "editedText": null
     },
@@ -36,6 +18,24 @@
       "categoryId": "response-format",
       "optionId": "full-report",
       "enabled": true,
+      "editedText": null
+    },
+    {
+      "categoryId": "source-of-truth",
+      "optionId": "only-what-you-are-given",
+      "enabled": false,
+      "editedText": null
+    },
+    {
+      "categoryId": "naming",
+      "optionId": "verbose-oop",
+      "enabled": false,
+      "editedText": null
+    },
+    {
+      "categoryId": "modularity",
+      "optionId": "generic-standalone-modules",
+      "enabled": false,
       "editedText": null
     }
   ],

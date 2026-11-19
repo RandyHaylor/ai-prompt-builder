@@ -2,117 +2,6 @@
   "format": "ai-prompt-builder/rule-categories@1",
   "categories": [
     {
-      "categoryId": "task-research",
-      "categoryName": "Task: Research",
-      "options": [
-        {
-          "optionId": "research-findings-with-sources",
-          "shortName": "Findings with sources",
-          "fullText": "- Research only\n  - Change nothing\n- Use official sources\n  - Cite every finding\n- Keep apart\n  - Established\n  - Likely\n  - Unknown"
-        },
-        {
-          "optionId": "research-compare-options",
-          "shortName": "Compare options",
-          "fullText": "- Research the realistic options\n- Compare side by side\n  - With sources\n- Don't choose\n  - Unless asked"
-        },
-        {
-          "optionId": "research-quick-answer",
-          "shortName": "Quick answer",
-          "fullText": "- Find the answer\n  - Reliable source\n  - Cite it\n- Then stop"
-        }
-      ]
-    },
-    {
-      "categoryId": "existing-solutions",
-      "categoryName": "Reinvent wheels",
-      "options": [
-        {
-          "optionId": "follow-established-patterns",
-          "shortName": "Never",
-          "fullText": "- Never reinvent a wheel\n- Prioritize\n  - Industry standards\n  - Proven patterns\n  - How major products and libraries already do it\n- Find them with good, broad research\n  - Generic search terms\n  - NOT searches built on your own guesses\n- Your own reasoning is no substitute\n- Departing from the standard pattern\n  - Approval first\n  - Say what the pattern is\n  - Say why you depart"
-        },
-        {
-          "optionId": "check-for-existing-libraries",
-          "shortName": "Check for libraries first",
-          "fullText": "- Before writing general-purpose code\n  - Check for a maintained library"
-        },
-        {
-          "optionId": "build-from-scratch",
-          "shortName": "Fine to build your own",
-          "fullText": "- Build what's needed directly"
-        }
-      ]
-    },
-    {
-      "categoryId": "task-tech-spike",
-      "categoryName": "Task: Tech spike",
-      "options": [
-        {
-          "optionId": "spike-throwaway-proof",
-          "shortName": "Throwaway proof",
-          "fullText": "- Prove one thing works\n  - Before real work depends on it\n- Keep it minimal\n  - Smallest possible\n  - Fastest possible\n  - Throwaway code\n    - Never the start of the real build\n- State the question first\n- Show the proof\n  - Commands and output\n  - Or screenshots\n- Can't judge it yourself?\n  - Video, motion, feel\n  - Say so\n  - Ask for a human check\n- End with\n  - Answer: works / doesn't / partly\n  - The proof\n  - What the real build must know"
-        },
-        {
-          "optionId": "spike-keepable-prototype",
-          "shortName": "Keepable prototype",
-          "fullText": "- Prove it works\n- Small, clean prototype\n  - The real build grows from it"
-        }
-      ]
-    },
-    {
-      "categoryId": "task-bug-fix",
-      "categoryName": "Task: Bug fix",
-      "options": [
-        {
-          "optionId": "bug-reproduce-first",
-          "shortName": "Reproduce, find cause, fix",
-          "fullText": "- Reproduce the bug first\n  - Show the reproduction\n- Find the cause\n  - With evidence\n  - Before changing anything\n  - No guess-and-retry\n- Fix the cause\n  - Not the symptom\n  - No workarounds\n- Add a test\n  - Fails without the fix\n  - Passes with it\n- Change nothing else"
-        },
-        {
-          "optionId": "bug-quick-fix",
-          "shortName": "Quick fix",
-          "fullText": "- Find the likely cause\n- Fix it\n- Show the problem is gone"
-        }
-      ]
-    },
-    {
-      "categoryId": "task-code-review",
-      "categoryName": "Task: Code review",
-      "options": [
-        {
-          "optionId": "review-against-requirements",
-          "shortName": "Against the requirements",
-          "fullText": "- Review only\n  - Change nothing\n- Check every requirement\n  - One by one\n- Verify claims yourself\n  - Read the code\n  - Run the tests\n  - Run the program\n- Unverifiable claim = NOT met\n- Each item\n  - Met or NOT met\n  - With evidence\n- List defects\n  - By severity\n  - File and line"
-        },
-        {
-          "optionId": "review-quick-read",
-          "shortName": "Quick read-through",
-          "fullText": "- Read the change\n- Point out\n  - Anything wrong\n  - Anything risky\n- Change nothing"
-        }
-      ]
-    },
-    {
-      "categoryId": "source-of-truth",
-      "categoryName": "Source of truth",
-      "options": [
-        {
-          "optionId": "only-what-you-are-given",
-          "shortName": "Only what you are given",
-          "fullText": "- True = only what you were given\n- Other files or work\n  - Only when told you may\n  - Only as told"
-        },
-        {
-          "optionId": "official-researched-truths",
-          "shortName": "Official researched truths",
-          "fullText": "- True only when confirmed\n  - By current official sources\n    - Documentation\n    - Specifications\n    - Release notes\n    - Issue tracker\n  - Or by running it yourself\n- Training memory = hypothesis\n  - Until checked\n- Cite each fact's source"
-        },
-        {
-          "optionId": "explore-freely",
-          "shortName": "Explore freely",
-          "fullText": "- Use anything that helps\n  - In the project\n  - In the environment"
-        }
-      ]
-    },
-    {
       "categoryId": "adding-details",
       "categoryName": "Interpreting requests",
       "options": [
@@ -155,13 +44,55 @@
       ]
     },
     {
+      "categoryId": "source-of-truth",
+      "categoryName": "Source of truth",
+      "options": [
+        {
+          "optionId": "only-what-you-are-given",
+          "shortName": "Only what you are given",
+          "fullText": "- True = only what you were given\n- Other files or work\n  - Only when told you may\n  - Only as told"
+        },
+        {
+          "optionId": "official-researched-truths",
+          "shortName": "Official researched truths",
+          "fullText": "- True only when confirmed\n  - By current official sources\n    - Documentation\n    - Specifications\n    - Release notes\n    - Issue tracker\n  - Or by running it yourself\n- Training memory = hypothesis\n  - Until checked\n- Cite each fact's source"
+        },
+        {
+          "optionId": "explore-freely",
+          "shortName": "Explore freely",
+          "fullText": "- Use anything that helps\n  - In the project\n  - In the environment"
+        }
+      ]
+    },
+    {
+      "categoryId": "existing-solutions",
+      "categoryName": "Reinvent wheels",
+      "options": [
+        {
+          "optionId": "follow-established-patterns",
+          "shortName": "Never",
+          "fullText": "- Never reinvent a wheel\n- Prioritize\n  - Industry standards\n  - Proven patterns\n  - How major products and libraries already do it\n- Find them with good, broad research\n  - Generic search terms\n  - NOT searches built on your own guesses\n- Your own reasoning is no substitute\n- Departing from the standard pattern\n  - Approval first\n  - Say what the pattern is\n  - Say why you depart"
+        },
+        {
+          "optionId": "check-for-existing-libraries",
+          "shortName": "Check for libraries first",
+          "fullText": "- Before writing general-purpose code\n  - Check for a maintained library"
+        },
+        {
+          "optionId": "build-from-scratch",
+          "shortName": "Fine to build your own",
+          "fullText": "- Build what's needed directly"
+        }
+      ]
+    },
+    {
       "categoryId": "scope",
       "categoryName": "Scope adherence",
       "options": [
         {
           "optionId": "strict-scope",
           "shortName": "Strict scope",
-          "fullText": "- Exactly what was asked\n  - No more\n  - No less\n- Nothing outside the scope\n  - Not added\n  - Not cleaned up\n  - Not \"improved\"\n  - However tempting\n- Noticed something outside it?\n  - Report it\n  - Don't act on it\n- Build to spec, then stop\n- Can't build a piece to spec?\n  - Leave it incomplete\n  - Never substitute\n- Roadblock or broken spec?\n  - Halt\n  - Ask for approval"
+          "fullText": "- Exactly what was asked\n  - No more\n  - No less\n- Nothing outside the scope\n  - Not added\n  - Not cleaned up\n  - Not \"improved\"\n  - However tempting\n- Noticed something outside it?\n  - Report it\n  - Don't act on it\n- Can't build a piece to spec?\n  - Leave it incomplete\n  - Never substitute"
         },
         {
           "optionId": "scope-with-reported-extras",
@@ -202,70 +133,44 @@
       ]
     },
     {
-      "categoryId": "naming",
-      "categoryName": "Naming",
+      "categoryId": "questions",
+      "categoryName": "Asking questions",
       "options": [
         {
-          "optionId": "verbose-oop",
-          "shortName": "Verbose OOP",
-          "fullText": "- Name for what it IS or DOES\n- NEVER for implementation\n  - `retry_with_backoff`, not `loop_helper`\n  - `customer_lookup`, not `redis_cache_wrapper`\n- NEVER for who uses it\n  - Applies a rule to a string?\n  - It's a `string_rule_applier`\n  - Even if only checkout calls it\n- Paper and pencil analogy\n  - You map with them\n  - They aren't a \"mapper tool\"\n  - They're writing and recording tools\n- Clear outside any app context\n  - No app or product branding\n- Err toward verbose\n  - A sentence-long name beats a vague one"
+          "optionId": "batch-questions",
+          "shortName": "Batch questions",
+          "fullText": "- Don't alternate asking and working\n- Research first\n- Then ask all questions together\n  - One at a time\n- Answers raise new questions?\n  - Research again\n  - Then ask the new ones together"
         },
         {
-          "optionId": "modern-clean",
-          "shortName": "Modern clean",
-          "fullText": "- Short, idiomatic names\n  - In the language's style\n  - In the framework's style"
-        },
-        {
-          "optionId": "match-the-codebase",
-          "shortName": "Match the codebase",
-          "fullText": "- Name things like the codebase does"
+          "optionId": "ask-as-they-come",
+          "shortName": "Ask as they come up",
+          "fullText": "- Ask questions as they come up"
         }
       ]
     },
     {
-      "categoryId": "modularity",
-      "categoryName": "Modularity",
+      "categoryId": "offering-options",
+      "categoryName": "Choices",
       "options": [
         {
-          "optionId": "generic-standalone-modules",
-          "shortName": "Generic, standalone modules",
-          "fullText": "- Separable piece = standalone module\n- Knows nothing of its user\n  - No project names\n  - No project assumptions\n  - No reaching into caller data\n- Liftable into any project\n  - Small, explicit interface\n  - Own short docs\n  - Own tests\n- Project glue\n  - Thin\n  - Separate from the modules"
+          "optionId": "decide-without-asking",
+          "shortName": "Decide yourself",
+          "fullText": "- A choice? Make it yourself\n- Say what you chose"
         },
         {
-          "optionId": "clear-interfaces",
-          "shortName": "Clear interfaces only",
-          "fullText": "- Split work into parts\n  - Small, explicit interfaces"
+          "optionId": "quick-options",
+          "shortName": "Quick options, with your pick",
+          "fullText": "- A choice? List the options you see\n  - Briefly\n- Say which you'd pick"
         },
         {
-          "optionId": "abstract-on-second-use",
-          "shortName": "Abstract on second use",
-          "fullText": "- Abstract only on a second use"
-        }
-      ]
-    },
-    {
-      "categoryId": "design-patterns",
-      "categoryName": "Design patterns",
-      "options": [
-        {
-          "optionId": "object-oriented",
-          "shortName": "OOP",
-          "fullText": "- Object-oriented\n  - Small single-purpose classes\n  - Composition over inheritance"
+          "optionId": "research-before-options",
+          "shortName": "Researched options, with your pick",
+          "fullText": "- A choice? Research it first\n- Then present\n  - The options\n  - What you found\n  - Your recommendation\n- Asking is not researching"
         },
         {
-          "optionId": "functional",
-          "shortName": "Functional",
-          "fullText": "- Functional\n  - Pure functions\n  - No mutation\n  - Side effects at the edges"
-        },
-        {
-          "optionId": "research-industry-standard",
-          "shortName": "Research industry standard",
-          "fullText": "- Research industry-standard patterns\n  - Current\n  - For this problem\n- Use them\n- Say which and why"
-        },
-        {
-          "optionId": "match-the-codebase-patterns",
-          "shortName": "Match the codebase",
-          "fullText": "- Use the codebase's existing patterns"
+          "optionId": "researched-neutral-options",
+          "shortName": "Researched options, no pick",
+          "fullText": "- A choice? Research it first\n- Then present\n  - The options\n  - Their trade-offs\n- Recommend none"
         }
       ]
     },
@@ -312,28 +217,65 @@
       ]
     },
     {
-      "categoryId": "testing",
-      "categoryName": "Testing",
+      "categoryId": "design-patterns",
+      "categoryName": "Design patterns",
       "options": [
         {
-          "optionId": "no-testing",
-          "shortName": "No testing",
-          "fullText": "- No tests"
+          "optionId": "object-oriented",
+          "shortName": "OOP",
+          "fullText": "- Object-oriented\n  - Small single-purpose classes\n  - Composition over inheritance"
         },
         {
-          "optionId": "simple-post-testing",
-          "shortName": "Simple post testing",
-          "fullText": "- Test what you've made\n  - Ensure it works"
+          "optionId": "functional",
+          "shortName": "Functional",
+          "fullText": "- Functional\n  - Pure functions\n  - No mutation\n  - Side effects at the edges"
         },
         {
-          "optionId": "tdd-module-level",
-          "shortName": "Test first TDD, module level",
-          "fullText": "- Test first\n  - Interface level\n  - Module level\n- Automated tests\n  - Wherever possible\n  - In git or similar\n  - Alongside the code\n- Each module\n  - Interface tests first\n  - They fail\n  - Then pass once built\n- Finer tests inside modules\n  - Your discretion\n- Integration tests fully real\n  - Real entry points\n  - Real services\n  - Real data\n- Unit tests pass?\n  - Time to integration test\n  - NOT done yet"
+          "optionId": "match-the-codebase-patterns",
+          "shortName": "Match the codebase",
+          "fullText": "- Use the codebase's existing patterns"
+        }
+      ]
+    },
+    {
+      "categoryId": "modularity",
+      "categoryName": "Modularity",
+      "options": [
+        {
+          "optionId": "generic-standalone-modules",
+          "shortName": "Generic, standalone modules",
+          "fullText": "- Separable piece = standalone module\n- Knows nothing of its user\n  - No project names\n  - No project assumptions\n  - No reaching into caller data\n- Liftable into any project\n  - Small, explicit interface\n  - Own short docs\n  - Own tests\n- Project glue\n  - Thin\n  - Separate from the modules"
         },
         {
-          "optionId": "tdd-granular",
-          "shortName": "Test first TDD, granular",
-          "fullText": "- Strict test-first TDD\n  - Every behaviour\n- Automated tests\n  - In version control"
+          "optionId": "clear-interfaces",
+          "shortName": "Clear interfaces only",
+          "fullText": "- Split work into parts\n  - Small, explicit interfaces"
+        },
+        {
+          "optionId": "abstract-on-second-use",
+          "shortName": "Abstract on second use",
+          "fullText": "- Abstract only on a second use"
+        }
+      ]
+    },
+    {
+      "categoryId": "naming",
+      "categoryName": "Naming",
+      "options": [
+        {
+          "optionId": "verbose-oop",
+          "shortName": "Verbose OOP",
+          "fullText": "- Name for what it IS or DOES\n- NEVER for implementation\n  - `retry_with_backoff`, not `loop_helper`\n  - `customer_lookup`, not `redis_cache_wrapper`\n- NEVER for who uses it\n  - Applies a rule to a string?\n  - It's a `string_rule_applier`\n  - Even if only checkout calls it\n- Paper and pencil analogy\n  - You map with them\n  - They aren't a \"mapper tool\"\n  - They're writing and recording tools\n- Clear outside any app context\n  - No app or product branding\n- Err toward verbose\n  - A sentence-long name beats a vague one"
+        },
+        {
+          "optionId": "modern-clean",
+          "shortName": "Modern clean",
+          "fullText": "- Short, idiomatic names\n  - In the language's style\n  - In the framework's style"
+        },
+        {
+          "optionId": "match-the-codebase",
+          "shortName": "Match the codebase",
+          "fullText": "- Name things like the codebase does"
         }
       ]
     },
@@ -359,44 +301,28 @@
       ]
     },
     {
-      "categoryId": "questions",
-      "categoryName": "Asking questions",
+      "categoryId": "testing",
+      "categoryName": "Testing",
       "options": [
         {
-          "optionId": "batch-questions",
-          "shortName": "Batch questions",
-          "fullText": "- Don't alternate asking and working\n- Research first\n- Then ask all questions together\n  - One at a time\n- Answers raise new questions?\n  - Research again\n  - Then ask the new ones together"
+          "optionId": "no-testing",
+          "shortName": "No testing",
+          "fullText": "- No tests"
         },
         {
-          "optionId": "ask-as-they-come",
-          "shortName": "Ask as they come up",
-          "fullText": "- Ask questions as they come up"
-        }
-      ]
-    },
-    {
-      "categoryId": "offering-options",
-      "categoryName": "Choices",
-      "options": [
-        {
-          "optionId": "decide-without-asking",
-          "shortName": "Decide yourself",
-          "fullText": "- A choice? Make it yourself\n- Say what you chose"
+          "optionId": "simple-post-testing",
+          "shortName": "Simple post testing",
+          "fullText": "- Test what you've made\n  - Ensure it works"
         },
         {
-          "optionId": "quick-options",
-          "shortName": "Quick options, with your pick",
-          "fullText": "- A choice? List the options you see\n  - Briefly\n- Say which you'd pick"
+          "optionId": "tdd-module-level",
+          "shortName": "Test first TDD, module level",
+          "fullText": "- Test first\n  - Interface level\n  - Module level\n- Automated tests\n  - Wherever possible\n  - In git or similar\n  - Alongside the code\n- Each module\n  - Interface tests first\n  - They fail\n  - Then pass once built\n- Finer tests inside modules\n  - Your discretion\n- Integration tests fully real\n  - Real entry points\n  - Real services\n  - Real data\n- Unit tests pass?\n  - Time to integration test\n  - NOT done yet"
         },
         {
-          "optionId": "research-before-options",
-          "shortName": "Researched options, with your pick",
-          "fullText": "- A choice? Research it first\n- Then present\n  - The options\n  - What you found\n  - Your recommendation\n- Asking is not researching"
-        },
-        {
-          "optionId": "researched-neutral-options",
-          "shortName": "Researched options, no pick",
-          "fullText": "- A choice? Research it first\n- Then present\n  - The options\n  - Their trade-offs\n- Recommend none"
+          "optionId": "tdd-granular",
+          "shortName": "Test first TDD, granular",
+          "fullText": "- Strict test-first TDD\n  - Every behaviour\n- Automated tests\n  - In version control"
         }
       ]
     },
@@ -474,42 +400,6 @@
       ]
     },
     {
-      "categoryId": "response-format",
-      "categoryName": "Response format",
-      "options": [
-        {
-          "optionId": "full-report",
-          "shortName": "Full report",
-          "fullText": "- End with\n  - Status\n  - Built\n  - Tests: commands and results\n  - Deviations\n  - Decisions\n  - Open items"
-        },
-        {
-          "optionId": "wiki-style",
-          "shortName": "Wiki style",
-          "fullText": "- Respond wiki style\n  - Headings\n  - Short indented bullets\n  - No prose paragraphs"
-        },
-        {
-          "optionId": "slides-style",
-          "shortName": "Slide style",
-          "fullText": "- Respond like slides\n  - Short titled sections\n  - 3–5 bullets each"
-        },
-        {
-          "optionId": "tldr",
-          "shortName": "TL;DR",
-          "fullText": "- Start with a TL;DR\n  - One or two sentences"
-        },
-        {
-          "optionId": "takeaway-only",
-          "shortName": "Takeaway only",
-          "fullText": "- Give only the answer or result"
-        },
-        {
-          "optionId": "condensed",
-          "shortName": "Condensed",
-          "fullText": "- Condensed\n  - Nested fragments\n  - No filler\n  - No lost facts\n  - Outcome first, detail nested under it\n  - Every list split into bullets\n  - A contrast stays on one line\n- Example\n  - Before\n    - \"I bumped the S3 retry count from 3 to 5 on the platform team's suggestion, though I doubt it fixes the timeouts since the failures we saw were permission errors rather than load. I did not touch the parquet writer, which is still the slowest step.\"\n  - Not quite\n    ```\n    - S3 retry count 3 -> 5\n      - Platform team's suggestion\n      - Doubt it fixes the timeouts\n      - Failures\n        - Permission errors\n      - Success\n        - Load\n    - Parquet writer NOT touched\n      - Still the slowest step\n    ```\n  - Why not quite\n    - \"Success: load\" was never said\n      - Splitting the contrast invented it\n    - The reason sits beside the doubt, not under it\n    - \"I\" dropped\n      - \"NOT touched\" now claims no one touched it\n  - Ideal\n    ```\n    - I bumped the S3 retry count 3 -> 5\n      - Platform team's suggestion\n      - I doubt it fixes the timeouts\n        - Failures we saw were permission errors, not load\n    - I did NOT touch the parquet writer\n      - Still the slowest step\n    ```"
-        }
-      ]
-    },
-    {
       "categoryId": "prs",
       "categoryName": "Pull requests",
       "options": [
@@ -559,6 +449,111 @@
           "optionId": "no-repo",
           "shortName": "No repo",
           "fullText": "- No repository"
+        }
+      ]
+    },
+    {
+      "categoryId": "response-format",
+      "categoryName": "Response format",
+      "options": [
+        {
+          "optionId": "full-report",
+          "shortName": "Full report",
+          "fullText": "- End with\n  - Status\n  - Built\n  - Tests: commands and results\n  - Deviations\n  - Decisions\n  - Open items"
+        },
+        {
+          "optionId": "wiki-style",
+          "shortName": "Wiki style",
+          "fullText": "- Respond wiki style\n  - Headings\n  - Short indented bullets\n  - No prose paragraphs"
+        },
+        {
+          "optionId": "slides-style",
+          "shortName": "Slide style",
+          "fullText": "- Respond like slides\n  - Short titled sections\n  - 3–5 bullets each"
+        },
+        {
+          "optionId": "tldr",
+          "shortName": "TL;DR",
+          "fullText": "- Start with a TL;DR\n  - One or two sentences"
+        },
+        {
+          "optionId": "takeaway-only",
+          "shortName": "Takeaway only",
+          "fullText": "- Give only the answer or result"
+        },
+        {
+          "optionId": "condensed",
+          "shortName": "Condensed",
+          "fullText": "- Condensed\n  - Nested fragments\n  - No filler\n  - No lost facts\n  - Outcome first, detail nested under it\n  - Every list split into bullets\n  - A contrast stays on one line\n- Example\n  - Before\n    - \"I bumped the S3 retry count from 3 to 5 on the platform team's suggestion, though I doubt it fixes the timeouts since the failures we saw were permission errors rather than load. I did not touch the parquet writer, which is still the slowest step.\"\n  - Not quite\n    ```\n    - S3 retry count 3 -> 5\n      - Platform team's suggestion\n      - Doubt it fixes the timeouts\n      - Failures\n        - Permission errors\n      - Success\n        - Load\n    - Parquet writer NOT touched\n      - Still the slowest step\n    ```\n  - Why not quite\n    - \"Success: load\" was never said\n      - Splitting the contrast invented it\n    - The reason sits beside the doubt, not under it\n    - \"I\" dropped\n      - \"NOT touched\" now claims no one touched it\n  - Ideal\n    ```\n    - I bumped the S3 retry count 3 -> 5\n      - Platform team's suggestion\n      - I doubt it fixes the timeouts\n        - Failures we saw were permission errors, not load\n    - I did NOT touch the parquet writer\n      - Still the slowest step\n    ```"
+        }
+      ]
+    },
+    {
+      "categoryId": "task-research",
+      "categoryName": "Task: Research",
+      "options": [
+        {
+          "optionId": "research-findings-with-sources",
+          "shortName": "Findings with sources",
+          "fullText": "- Research only\n  - Change nothing\n- Use official sources\n  - Cite every finding\n- Keep apart\n  - Established\n  - Likely\n  - Unknown"
+        },
+        {
+          "optionId": "research-compare-options",
+          "shortName": "Compare options",
+          "fullText": "- Research the realistic options\n- Compare side by side\n  - With sources\n- Don't choose\n  - Unless asked"
+        },
+        {
+          "optionId": "research-quick-answer",
+          "shortName": "Quick answer",
+          "fullText": "- Find the answer\n  - Reliable source\n  - Cite it\n- Then stop"
+        }
+      ]
+    },
+    {
+      "categoryId": "task-tech-spike",
+      "categoryName": "Task: Tech spike",
+      "options": [
+        {
+          "optionId": "spike-throwaway-proof",
+          "shortName": "Throwaway proof",
+          "fullText": "- Prove one thing works\n  - Before real work depends on it\n- Keep it minimal\n  - Smallest possible\n  - Fastest possible\n  - Throwaway code\n    - Never the start of the real build\n- State the question first\n- Show the proof\n  - Commands and output\n  - Or screenshots\n- Can't judge it yourself?\n  - Video, motion, feel\n  - Say so\n  - Ask for a human check\n- End with\n  - Answer: works / doesn't / partly\n  - The proof\n  - What the real build must know"
+        },
+        {
+          "optionId": "spike-keepable-prototype",
+          "shortName": "Keepable prototype",
+          "fullText": "- Prove it works\n- Small, clean prototype\n  - The real build grows from it"
+        }
+      ]
+    },
+    {
+      "categoryId": "task-bug-fix",
+      "categoryName": "Task: Bug fix",
+      "options": [
+        {
+          "optionId": "bug-reproduce-first",
+          "shortName": "Reproduce, find cause, fix",
+          "fullText": "- Reproduce the bug first\n  - Show the reproduction\n- Find the cause\n  - With evidence\n  - Before changing anything\n  - No guess-and-retry\n- Fix the cause\n  - Not the symptom\n  - No workarounds\n- Add a test\n  - Fails without the fix\n  - Passes with it\n- Change nothing else"
+        },
+        {
+          "optionId": "bug-quick-fix",
+          "shortName": "Quick fix",
+          "fullText": "- Find the likely cause\n- Fix it\n- Show the problem is gone"
+        }
+      ]
+    },
+    {
+      "categoryId": "task-code-review",
+      "categoryName": "Task: Code review",
+      "options": [
+        {
+          "optionId": "review-against-requirements",
+          "shortName": "Against the requirements",
+          "fullText": "- Review only\n  - Change nothing\n- Check every requirement\n  - One by one\n- Verify claims yourself\n  - Read the code\n  - Run the tests\n  - Run the program\n- Unverifiable claim = NOT met\n- Each item\n  - Met or NOT met\n  - With evidence\n- List defects\n  - By severity\n  - File and line"
+        },
+        {
+          "optionId": "review-quick-read",
+          "shortName": "Quick read-through",
+          "fullText": "- Read the change\n- Point out\n  - Anything wrong\n  - Anything risky\n- Change nothing"
         }
       ]
     }

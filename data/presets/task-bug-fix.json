@@ -9,12 +9,6 @@
       "editedText": null
     },
     {
-      "categoryId": "source-of-truth",
-      "optionId": "official-researched-truths",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "scope",
       "optionId": "strict-scope",
       "enabled": true,
@@ -33,27 +27,27 @@
       "editedText": null
     },
     {
-      "categoryId": "testing",
-      "optionId": "simple-post-testing",
+      "categoryId": "response-format",
+      "optionId": "full-report",
       "enabled": true,
       "editedText": null
     },
     {
-      "categoryId": "billed-runs",
-      "optionId": "research-then-permission",
-      "enabled": true,
+      "categoryId": "source-of-truth",
+      "optionId": "official-researched-truths",
+      "enabled": false,
       "editedText": null
     },
     {
       "categoryId": "documentation",
       "optionId": "keep-docs-in-sync",
-      "enabled": true,
+      "enabled": false,
       "editedText": null
     },
     {
-      "categoryId": "response-format",
-      "optionId": "full-report",
-      "enabled": true,
+      "categoryId": "billed-runs",
+      "optionId": "research-then-permission",
+      "enabled": false,
       "editedText": null
     },
     {

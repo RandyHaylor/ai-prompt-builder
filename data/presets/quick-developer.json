@@ -3,12 +3,6 @@
   "name": "Quick developer",
   "entries": [
     {
-      "categoryId": "source-of-truth",
-      "optionId": "explore-freely",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "adding-details",
       "optionId": "fill-gaps-and-list-them",
       "enabled": true,
@@ -33,20 +27,14 @@
       "editedText": null
     },
     {
+      "categoryId": "offering-options",
+      "optionId": "quick-options",
+      "enabled": true,
+      "editedText": null
+    },
+    {
       "categoryId": "naming",
       "optionId": "modern-clean",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "modularity",
-      "optionId": "abstract-on-second-use",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "structure",
-      "optionId": "just-build-it",
       "enabled": true,
       "editedText": null
     },
@@ -63,20 +51,8 @@
       "editedText": null
     },
     {
-      "categoryId": "offering-options",
-      "optionId": "quick-options",
-      "enabled": true,
-      "editedText": null
-    },
-    {
       "categoryId": "billed-runs",
       "optionId": "explicit-permission",
-      "enabled": true,
-      "editedText": null
-    },
-    {
-      "categoryId": "documentation",
-      "optionId": "keep-docs-in-sync",
       "enabled": true,
       "editedText": null
     },
@@ -89,6 +65,12 @@
     {
       "categoryId": "existing-solutions",
       "optionId": "check-for-existing-libraries",
+      "enabled": false,
+      "editedText": null
+    },
+    {
+      "categoryId": "documentation",
+      "optionId": "keep-docs-in-sync",
       "enabled": false,
       "editedText": null
     },

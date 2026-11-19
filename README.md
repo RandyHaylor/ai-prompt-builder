@@ -37,7 +37,7 @@ Every rule is one topic — *Naming*, *Testing*, *Scope adherence*, *When blocke
 | **Quick developer** | builds fast, researches only when needed, tests what it made |
 | **Careful dev manager** | plans and delegates: sprint features, parallel work, stacked PRs |
 | **Task: Research** · **Tech spike** · **Bug fix** · **Code review** | one kind of task, with the rules that fit it |
-| **Worker** · **Planner** · **Small one-off** | an agent's role in a larger system, or a tiny job |
+| **Small one-off** | a tiny, well-defined job |
 
 Each preset comes with example custom text showing how it becomes a real request.
 

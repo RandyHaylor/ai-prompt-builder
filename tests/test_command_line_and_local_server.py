@@ -47,7 +47,7 @@ class CommandLineTest(unittest.TestCase):
         self.assertIn("Not added yet:", self.cli("show", self.ruleset_file))
         text = self.cli("compose", self.ruleset_file)
         self.assertIn("## Source of truth", text)
-        self.assertIn("## Design patterns", text)
+        self.assertIn("## Build skeleton first", text)
         self.assertNotIn("## Pull requests", text)           # off in this preset
         self.assertTrue(text.strip().endswith("could not merge."))  # example custom text at end
 
